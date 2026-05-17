@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Luxury palette ─────────────────────────────────────────────────────── */
+:root {
+  --obsidian:   #0A0908;   /* near-black, warm */
+  --charcoal:   #161310;   /* card surfaces */
+  --gold:       #B8935A;   /* antique gold — matches the copper lamps */
+  --gold-light: #D4AC6E;   /* hover / highlight */
+  --ivory:      #F2EBE0;   /* warm white text */
+  --bone:       #E8DFD1;   /* secondary cream */
+  --stone:      #7A6D5E;   /* muted copy */
+  --border-col: #2A221A;   /* subtle border */
+}
+
+html { scroll-behavior: smooth; background: var(--obsidian); }
+
+body {
+  background: var(--obsidian);
+  color: var(--ivory);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: var(--gold); color: var(--obsidian); }
+
+/* ── Typography ─────────────────────────────────────────────────────────── */
+
+/* PULS exclusive brand wordmark — Playfair Display, used ONLY for the logotype */
+.brand-mark {
+  font-family: var(--font-brand), "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Large editorial headline — Cormorant Garamond for luxury feel */
+.display-hero {
+  font-family: var(--font-editorial), "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 0.93;
+  letter-spacing: -0.03em;
+}
+
+/* Section headings — Jost (geometric, Futura-like) bold caps */
+.display-section {
+  font-family: var(--font-display), "Jost", "Futura PT", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.94;
+  letter-spacing: -0.025em;
+}
+
+/* Italic editorial accent */
+.italic-display {
+  font-family: var(--font-editorial), "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+
+/* Eyebrow label */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.8rem;
+  background: var(--gold);
+  color: var(--obsidian);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  border: 1px solid var(--gold);
+  transition: all 0.35s ease;
+}
+.btn-gold:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  box-shadow: 0 0 36px rgba(184, 147, 90, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.8rem;
+  background: transparent;
+  color: var(--ivory);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  border: 1px solid rgba(242, 235, 224, 0.25);
+  transition: all 0.35s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btn-ivory {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.8rem;
+  background: var(--ivory);
+  color: var(--obsidian);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  border: 1px solid var(--ivory);
+  transition: all 0.35s ease;
+}
+.btn-ivory:hover {
+  background: transparent;
+  color: var(--ivory);
+}
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.8rem;
+  background: var(--obsidian);
+  color: var(--ivory);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  border: 1px solid var(--obsidian);
+  transition: all 0.35s ease;
+}
+.btn-dark:hover {
+  background: transparent;
+  color: var(--obsidian);
+}
+
+/* Tailwind aliases still work → point to gold/ivory/dark */
+.btn-accent  { @apply btn-gold; }
+.btn-outline { @apply btn-ghost; }
+.btn-light   { @apply btn-ivory; }
+.btn-ink     { @apply btn-dark; }
+
+/* ── Layout helpers ─────────────────────────────────────────────────────── */
+.section-pad {
+  padding-top: clamp(4rem, 9vw, 8rem);
+  padding-bottom: clamp(4rem, 9vw, 8rem);
+}
+
+.container-max {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 4vw, 3rem);
+  padding-right: clamp(1.25rem, 4vw, 3rem);
+}
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+a { transition: color 0.2s ease; }
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadein {
+  animation: fadein 1s ease forwards;
+  opacity: 0;
+}
