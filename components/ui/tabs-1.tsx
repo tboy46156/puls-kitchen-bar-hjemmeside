@@ -32,7 +32,7 @@ export function MenuTabs({ tabs, selected, setSelected }: MenuTabsProps) {
             className={clsx(
               "relative group flex items-center gap-2.5 px-5 py-3 md:px-6 md:py-3.5",
               "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold transition-colors",
-              isActive ? "text-obsidian" : "text-obsidian/50 hover:text-obsidian/75"
+              isActive ? "text-obsidian" : "text-ivory/50 hover:text-ivory/80"
             )}
           >
             {isActive && (
@@ -48,7 +48,7 @@ export function MenuTabs({ tabs, selected, setSelected }: MenuTabsProps) {
                 strokeWidth={1.75}
                 className={clsx(
                   "transition-colors",
-                  isActive ? "text-obsidian" : "text-obsidian/45 group-hover:text-obsidian/70"
+                  isActive ? "text-obsidian" : "text-ivory/45 group-hover:text-ivory/70"
                 )}
               />
               <span className="font-sans font-semibold uppercase tracking-[0.2em] text-[11px]">

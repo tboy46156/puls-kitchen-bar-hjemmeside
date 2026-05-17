@@ -53,25 +53,25 @@ export default function MenuPageClient() {
 
   return (
     <>
-      <section className="pt-44 md:pt-56 pb-0 bg-ivory text-obsidian">
+      <section className="pt-44 md:pt-56 pb-0 bg-obsidian text-ivory">
         <div className="container-max">
-          <FadeIn><p className="eyebrow !text-obsidian/55 [&::before]:bg-obsidian/35">Menukort</p></FadeIn>
+          <FadeIn><p className="eyebrow">Menukort</p></FadeIn>
           <FadeIn delay={0.05}>
-            <h1 className="display-hero mt-6 text-6xl md:text-8xl lg:text-9xl max-w-[16ch]">
+            <h1 className="display-hero mt-6 text-6xl md:text-8xl lg:text-9xl max-w-[16ch] text-ivory">
               Hvad du kan{" "}
-              <span className="italic-display font-[400] normal-case text-obsidian/75">
+              <span className="italic-display font-[400] normal-case text-gold">
                 forvente
               </span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="mt-8 text-lg text-obsidian/60 max-w-2xl leading-relaxed">
+            <p className="mt-8 text-lg text-ivory/60 max-w-2xl leading-relaxed">
               Menuen skifter med sæsonen — herunder finder du aktuelle frokost-,
               aften-, drinks- og vinkort. Klik på et billede for fuld størrelse.
             </p>
           </FadeIn>
           <FadeIn delay={0.18}>
-            <div className="mt-14 border-b border-obsidian/12">
+            <div className="mt-14 border-b border-ivory/12">
               <MenuTabs tabs={tabs} selected={selected} setSelected={setSelected} />
             </div>
           </FadeIn>

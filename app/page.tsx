@@ -20,7 +20,6 @@ export default function Home() {
       <DishesSection />
       <EventsTeaserSection />
       <SignatureGrid />
-      <BrunchSection />
       <BarSection />
       <Testimonials />
       <EventsSection />
