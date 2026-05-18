@@ -9,13 +9,13 @@ const hours = [
 
 export default function HoursSection() {
   return (
-    <section id="hours" className="bg-obsidian px-4 md:px-6 pb-4 md:pb-6">
-      <div className="bg-charcoal text-ivory rounded-2xl md:rounded-3xl py-10 md:py-14">
+    <section id="hours" className="bg-bone px-4 md:px-6 pb-2 md:pb-3">
+      <div className="bg-sand text-obsidian rounded-2xl md:rounded-3xl py-7 md:py-10">
       <div className="container-max">
 
         <FadeIn>
-          <div className="text-center mb-14 border-b border-border-col pb-8">
-            <p className="eyebrow justify-center">Åbningstider & find os</p>
+          <div className="text-center mb-8 border-b border-obsidian/10 pb-6">
+            <p className="eyebrow justify-center !text-obsidian/60 [&::before]:hidden">Åbningstider & find os</p>
           </div>
         </FadeIn>
 
@@ -26,15 +26,15 @@ export default function HoursSection() {
               {hours.map((h) => (
                 <li
                   key={h.day}
-                  className="grid grid-cols-[1fr_auto] sm:grid-cols-[1fr_1fr_auto] items-center gap-x-6 gap-y-1 py-5 border-b border-border-col first:border-t first:border-border-col"
+                  className="grid grid-cols-[1fr_auto] sm:grid-cols-[1fr_1fr_auto] items-center gap-x-6 gap-y-1 py-5 border-b border-obsidian/10 first:border-t first:border-obsidian/10"
                 >
-                  <span className="text-base md:text-lg font-semibold text-ivory">
+                  <span className="text-base md:text-lg font-semibold text-obsidian">
                     {h.day}
                   </span>
-                  <span className="font-display font-semibold text-2xl md:text-3xl text-ivory tracking-tight">
+                  <span className="font-display font-semibold text-2xl md:text-3xl text-obsidian tracking-tight">
                     {h.time}
                   </span>
-                  <span className="col-span-2 sm:col-span-1 text-sm md:text-base text-ivory/70 sm:text-right">
+                  <span className="col-span-2 sm:col-span-1 text-sm md:text-base text-obsidian/60 sm:text-right">
                     {h.kitchen}
                   </span>
                 </li>
@@ -43,27 +43,27 @@ export default function HoursSection() {
           </FadeIn>
 
           <FadeIn className="lg:col-span-5" delay={0.15}>
-            <div className="bg-charcoal p-8 md:p-10 h-full flex flex-col justify-between">
+            <div className="h-full flex flex-col justify-between">
               <div>
                 <p className="text-xs tracking-[0.22em] uppercase text-gold mb-6">Adresse</p>
                 <address className="not-italic">
-                  <p className="font-display font-bold text-3xl md:text-4xl text-ivory leading-tight">
+                  <p className="font-display font-bold text-3xl md:text-4xl text-obsidian leading-tight">
                     Arne Jacobsens Allé 9
                   </p>
-                  <p className="mt-4 text-ivory/70 text-sm tracking-wide">2300 København S</p>
+                  <p className="mt-4 text-obsidian/60 text-sm tracking-wide">2300 København S</p>
                 </address>
 
-                <div className="mt-8 space-y-3 border-t border-border-col pt-8">
+                <div className="mt-8 space-y-3 border-t border-obsidian/10 pt-8">
                   <a
                     href="tel:+4532626030"
                     className="flex items-center gap-3 hover:text-gold transition-colors"
                   >
                     <span className="text-xs tracking-[0.18em] uppercase text-stone w-12 shrink-0">Tlf.</span>
-                    <span className="text-ivory font-semibold text-lg tracking-wide">+45 3262 6030</span>
+                    <span className="text-obsidian font-semibold text-lg tracking-wide">+45 3262 6030</span>
                   </a>
                   <a
                     href="mailto:info@pulskitchen.dk"
-                    className="flex items-center gap-3 text-ivory/60 hover:text-gold transition-colors text-sm"
+                    className="flex items-center gap-3 text-obsidian/60 hover:text-gold transition-colors text-sm"
                   >
                     <span className="text-xs tracking-[0.18em] uppercase text-stone w-12 shrink-0">Mail</span>
                     info@pulskitchen.dk
@@ -76,7 +76,7 @@ export default function HoursSection() {
         </div>
 
         <FadeIn delay={0.2}>
-          <div className="mt-12 overflow-hidden rounded-2xl border border-border-col">
+          <div className="mt-12 overflow-hidden rounded-2xl border border-obsidian/10">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2250.9!2d12.5779!3d55.6303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652535c2be74a25%3A0x3b0e7c2e0e4e4e4e!2sArne%20Jacobsens%20All%C3%A9%209%2C%202300%20K%C3%B8benhavn%20S!5e0!3m2!1sda!2sdk!4v1700000000000!5m2!1sda!2sdk"
               width="100%"

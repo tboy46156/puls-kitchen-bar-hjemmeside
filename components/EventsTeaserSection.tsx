@@ -4,24 +4,24 @@ import FadeIn from "./FadeIn";
 
 export default function EventsTeaserSection() {
   return (
-    <section className="bg-obsidian px-4 md:px-6 pb-4 md:pb-6">
-      <div className="bg-charcoal rounded-2xl md:rounded-3xl overflow-hidden">
-        <div className="container-max py-8 md:py-10">
+    <section className="bg-bone px-4 md:px-6 pb-2 md:pb-3">
+      <div className="bg-sand rounded-2xl md:rounded-3xl overflow-hidden">
+        <div className="container-max py-6 md:py-8">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
 
             {/* Left — casual dining */}
             <FadeIn>
               <div className="text-center lg:text-left">
-                <h2 className="display-section text-3xl md:text-4xl text-ivory max-w-[16ch] mx-auto lg:mx-0">
+                <h2 className="display-section text-3xl md:text-4xl text-obsidian max-w-[16ch] mx-auto lg:mx-0">
                   Casual dining fra kl. 17
                 </h2>
-                <p className="mt-4 text-ivory/80 leading-relaxed text-sm max-w-sm mx-auto lg:mx-0">
+                <p className="mt-4 text-obsidian/70 leading-relaxed text-sm max-w-sm mx-auto lg:mx-0">
                   Italian, French & Nordic fusion kitchen. Aftenkortet gælder
                   fra kl. 17.00 alle dage. Køkkenet lukker kl. 22.00 — søndag kl. 21.00.
                 </p>
                 <Link
                   href="/menu"
-                  className="mt-6 inline-flex items-center gap-2 border border-ivory/25 px-5 py-3 text-xs tracking-[0.18em] uppercase font-semibold text-ivory hover:border-gold hover:text-gold transition-colors"
+                  className="mt-6 inline-flex items-center gap-2 border border-obsidian/25 px-5 py-3 text-xs tracking-[0.18em] uppercase font-semibold text-obsidian hover:border-gold hover:text-gold transition-colors"
                 >
                   Se aftenkortet →
                 </Link>

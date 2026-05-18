@@ -3,9 +3,9 @@ import FadeIn from "./FadeIn";
 
 export default function AboutSection() {
   return (
-    <section id="om" className="bg-obsidian px-4 md:px-6 pb-4 md:pb-6">
+    <section id="om" className="bg-bone px-4 md:px-6 pb-2 md:pb-3">
       <div className="bg-ivory rounded-2xl md:rounded-3xl">
-      <div className="container-max py-8 md:py-10 text-center">
+      <div className="container-max py-6 md:py-8 text-center">
         <FadeIn>
           <p className="eyebrow justify-center !text-obsidian/60 [&::before]:hidden mb-6">
             Velkommen til PULS

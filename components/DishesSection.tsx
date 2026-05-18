@@ -19,15 +19,15 @@ const cards = [
 
 export default function DishesSection() {
   return (
-    <section className="bg-obsidian py-8 md:py-12">
+    <section className="bg-bone px-4 md:px-6 pb-2 md:pb-3">
+      <div className="bg-sand rounded-2xl md:rounded-3xl py-5 md:py-6">
       <div className="container-max">
         <FadeIn>
-          <div className="text-center mb-12">
-            <p className="eyebrow justify-center mb-5 [&::before]:hidden !text-ivory">Hvad vi tilbyder</p>
-            <h2 className="display-section text-5xl md:text-6xl lg:text-7xl text-ivory">
+          <div className="text-center mb-6">
+            <h2 className="display-section text-5xl md:text-6xl lg:text-7xl text-obsidian">
               Hvad vi{" "}
               <span className="italic-display text-gold font-[400] normal-case">
-                laver og skænker
+                tilbyder
               </span>
             </h2>
           </div>
@@ -66,6 +66,7 @@ export default function DishesSection() {
             <Link href="/menu" className="btn-ghost">Se hele menuen →</Link>
           </div>
         </FadeIn>
+      </div>
       </div>
     </section>
   );

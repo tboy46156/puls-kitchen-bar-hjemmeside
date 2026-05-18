@@ -155,8 +155,8 @@ export default function Testimonials() {
   const onTouchEnd = () => { isDragging.current = false; };
 
   return (
-    <section className="bg-obsidian py-4 md:py-6">
-      <div className="mx-4 md:mx-6 bg-bone rounded-2xl md:rounded-3xl overflow-hidden py-8 md:py-10">
+    <section className="bg-bone py-2 md:py-3">
+      <div className="mx-4 md:mx-6 bg-bone rounded-2xl md:rounded-3xl overflow-hidden py-6 md:py-8">
 
         {/* Title */}
         <FadeIn>
@@ -176,17 +176,17 @@ export default function Testimonials() {
         <div className="px-4 md:px-6 grid md:grid-cols-3 gap-3 mb-10 md:mb-14">
           {reviews.slice(0, 3).map((r, i) => (
             <FadeIn key={r.name} delay={0.06 + i * 0.06}>
-              <article className={`p-5 rounded-xl border border-obsidian/10 ${r.dark ? "bg-charcoal text-ivory" : "bg-white text-obsidian"}`}>
+              <article className={`p-5 rounded-xl border border-obsidian/10 ${r.dark ? "bg-sand text-obsidian" : "bg-ivory text-obsidian"}`}>
                 <p className="text-sm leading-relaxed mb-4">
                   &ldquo;{r.body}&rdquo;
                 </p>
-                <div className={`flex items-center gap-2.5 pt-3 border-t ${r.dark ? "border-ivory/10" : "border-obsidian/10"}`}>
-                  <div className={`h-7 w-7 rounded-full grid place-items-center font-display font-bold text-xs shrink-0 ${r.dark ? "bg-ivory/10" : "bg-obsidian/10"}`}>
+                <div className="flex items-center gap-2.5 pt-3 border-t border-obsidian/10">
+                  <div className="h-7 w-7 rounded-full grid place-items-center font-display font-bold text-xs shrink-0 bg-obsidian/10">
                     {r.name.charAt(0)}
                   </div>
                   <div>
                     <p className="font-semibold text-xs">{r.name}</p>
-                    <p className={`text-xs ${r.dark ? "text-ivory/60" : "text-obsidian/60"}`}>{r.role}</p>
+                    <p className="text-xs text-obsidian/60">{r.role}</p>
                   </div>
                 </div>
               </article>

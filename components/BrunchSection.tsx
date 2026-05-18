@@ -23,10 +23,10 @@ const cards = [
 
 export default function BrunchSection() {
   return (
-    <section id="brunch" className="bg-obsidian px-4 md:px-6 pb-4 md:pb-6">
-      <div className="bg-ivory text-obsidian rounded-2xl md:rounded-3xl py-8 md:py-12">
+    <section id="brunch" className="bg-bone px-4 md:px-6 pb-2 md:pb-3">
+      <div className="bg-ivory text-obsidian rounded-2xl md:rounded-3xl py-6 md:py-8">
       <div className="container-max">
-        <div className="text-center mb-14">
+        <div className="text-center mb-8">
           <FadeIn>
             <p className="eyebrow justify-center !text-obsidian/55 [&::before]:hidden mb-5">Brunch</p>
           </FadeIn>

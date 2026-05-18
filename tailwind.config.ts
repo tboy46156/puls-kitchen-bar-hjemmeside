@@ -16,6 +16,7 @@ const config: Config = {
         "gold-light":"#D4AC6E",
         ivory:       "#F2EBE0",
         bone:        "#E8DFD1",
+        sand:        "#D4C9B8",
         stone:       "#7A6D5E",
         "border-col":"#2A221A",
 

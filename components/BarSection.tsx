@@ -3,7 +3,7 @@ import FadeIn from "./FadeIn";
 
 export default function BarSection() {
   return (
-    <section id="bar" className="bg-obsidian px-4 md:px-6 pb-4 md:pb-6">
+    <section id="bar" className="bg-bone px-4 md:px-6 pb-2 md:pb-3">
       <div className="relative overflow-hidden rounded-2xl md:rounded-3xl">
         <div className="absolute inset-0">
           <Image
