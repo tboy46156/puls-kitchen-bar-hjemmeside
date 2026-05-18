@@ -12,7 +12,7 @@ export default function VideoRow() {
       <div className="container-max">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
           {videos.map((src, i) => (
-            <div key={i} className="overflow-hidden border border-border-col">
+            <div key={i} className="overflow-hidden rounded-xl md:rounded-2xl border border-border-col">
               <video
                 src={src}
                 autoPlay

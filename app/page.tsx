@@ -6,10 +6,7 @@ import EventsTeaserSection from "@/components/EventsTeaserSection";
 import BrunchSection from "@/components/BrunchSection";
 import BarSection from "@/components/BarSection";
 import Testimonials from "@/components/Testimonials";
-import EventsSection from "@/components/EventsSection";
 import HoursSection from "@/components/HoursSection";
-import ClosingCTA from "@/components/ClosingCTA";
-
 export default function Home() {
   return (
     <>
@@ -20,9 +17,7 @@ export default function Home() {
       <EventsTeaserSection />
       <BarSection />
       <Testimonials />
-      <EventsSection />
       <HoursSection />
-      <ClosingCTA />
     </>
   );
 }

@@ -70,6 +70,18 @@ export default function KontaktPage() {
               </a>
             </div>
 
+            <div className="mt-10 pt-10 border-t border-ink2/15">
+              <p className="text-[10px] tracking-[0.28em] uppercase text-ink2/50 mb-4">Selskaber</p>
+              <p className="text-ink2/70 leading-relaxed text-base">
+                Ved selskaber over 8 personer bedes De venligst reservere bord
+                på forhånd. Vi foretrækker ligeledes en forudbestilling af maden.
+                Man kan endvidere booke vores selskabslokale op til 50 personer.
+              </p>
+              <p className="mt-4 text-ink2/70 leading-relaxed text-base">
+                Vi glæder os til at byde Dem velkommen.
+              </p>
+            </div>
+
             <div className="mt-12 pt-10 border-t border-ink2/15">
               <p className="text-[10px] tracking-[0.32em] uppercase text-ink2/55 mb-5">
                 Følg os

@@ -23,7 +23,7 @@ export default function DishesSection() {
       <div className="container-max">
         <FadeIn>
           <div className="text-center mb-12">
-            <p className="eyebrow justify-center mb-5">Vores menu</p>
+            <p className="eyebrow justify-center mb-5 [&::before]:hidden">Hvad vi laver</p>
             <h2 className="display-section text-5xl md:text-6xl lg:text-7xl text-ivory">
               Hvad vi{" "}
               <span className="italic-display text-gold font-[400] normal-case">
@@ -33,10 +33,10 @@ export default function DishesSection() {
           </div>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto">
           {cards.map((c, i) => (
             <FadeIn key={c.label} delay={i * 0.08}>
-              <Link href={c.href} className="group block relative overflow-hidden rounded-2xl md:rounded-3xl" style={{ aspectRatio: "3/5" }}>
+              <Link href={c.href} className="group block relative overflow-hidden rounded-2xl md:rounded-3xl" style={{ aspectRatio: "3/4" }}>
                 <Image
                   src={c.image}
                   alt={c.label}

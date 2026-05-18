@@ -53,31 +53,35 @@ export default function Testimonials() {
         />
       </div>
 
-      <div className="relative container-max section-pad">
+      <div className="relative container-max py-14 md:py-20">
         <FadeIn>
-          <p className="eyebrow mb-5">Gæster om os</p>
-          <h2 className="display-section text-5xl md:text-6xl lg:text-7xl max-w-[18ch] text-ivory mb-14">
-            Hvorfor gæsterne{" "}
-            <span className="italic-display text-gold font-[400] normal-case">
-              kommer igen
-            </span>
-          </h2>
+          <div className="flex items-end justify-between mb-10 border-b border-border-col pb-8">
+            <div>
+              <p className="eyebrow mb-3">Gæster om os</p>
+              <h2 className="display-section text-4xl md:text-5xl text-ivory">
+                Hvorfor de{" "}
+                <span className="italic-display text-gold font-[400] normal-case">
+                  kommer igen
+                </span>
+              </h2>
+            </div>
+          </div>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {reviews.map((r, i) => (
-            <FadeIn key={r.name} delay={0.07 + i * 0.07}>
-              <article className={`h-full p-8 md:p-10 border border-border-col ${r.dark ? "bg-charcoal text-ivory" : "bg-bone text-obsidian"}`}>
-                <div className="flex gap-0.5 mb-5">
+            <FadeIn key={r.name} delay={0.06 + i * 0.06}>
+              <article className={`h-full p-6 border border-border-col ${r.dark ? "bg-charcoal text-ivory" : "bg-bone text-obsidian"}`}>
+                <div className="flex gap-0.5 mb-4">
                   {Array.from({ length: 5 }).map((_, idx) => (
-                    <span key={idx} className="text-gold text-sm">★</span>
+                    <span key={idx} className="text-gold text-xs">★</span>
                   ))}
                 </div>
-                <p className="font-editorial italic text-xl md:text-2xl leading-snug mb-6">
+                <p className="text-base leading-relaxed mb-5">
                   &ldquo;{r.body}&rdquo;
                 </p>
-                <div className={`flex items-center gap-3 pt-5 border-t ${r.dark ? "border-ivory/10" : "border-obsidian/12"}`}>
-                  <div className={`h-9 w-9 grid place-items-center font-display font-bold text-sm ${r.dark ? "bg-ivory/10" : "bg-obsidian/10"}`}>
+                <div className={`flex items-center gap-3 pt-4 border-t ${r.dark ? "border-ivory/10" : "border-obsidian/12"}`}>
+                  <div className={`h-8 w-8 grid place-items-center font-display font-bold text-xs shrink-0 ${r.dark ? "bg-ivory/10" : "bg-obsidian/10"}`}>
                     {r.name.charAt(0)}
                   </div>
                   <div>

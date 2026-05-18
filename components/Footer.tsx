@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SocialCard } from "./ui/social-card";
 
 const hours = [
   ["Man – Tor", "11.00 – 22.00"],
@@ -62,20 +63,7 @@ export default function Footer() {
 
           <div className="lg:col-span-2">
             <p className="text-[9px] tracking-[0.38em] uppercase text-gold mb-5">Følg os</p>
-            <ul className="space-y-2 text-sm">
-              {[
-                ["Instagram", "https://www.instagram.com/pulskitchenbar/"],
-                ["Facebook",  "https://www.facebook.com/pulskitchenbar"],
-                ["TripAdvisor", "https://www.tripadvisor.dk/Restaurant_Review-g189541-d23380540-Reviews-Puls_Kitchen_Bar-Copenhagen_Zealand.html"],
-                ["Gavekort",  "https://order.lifepeaks.dk/puls"],
-              ].map(([label, href]) => (
-                <li key={label}>
-                  <a href={href} target="_blank" rel="noopener" className="text-ivory/75 hover:text-gold">
-                    {label} ↗
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <SocialCard />
           </div>
         </div>
 
