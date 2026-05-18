@@ -58,7 +58,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Content — never starts invisible; scroll-fade applied as overlay only */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-end pb-24 md:pb-36 px-[clamp(1.25rem,4vw,3rem)] max-w-[1440px] mx-auto text-center">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center pb-0 pt-16 px-[clamp(1.25rem,4vw,3rem)] max-w-[1440px] mx-auto text-center">
         {/* Scroll-fade overlay (separate from content so text is always rendered) */}
         <motion.div style={{ opacity }} className="absolute inset-0 pointer-events-none" />
 
@@ -68,26 +68,19 @@ export default function Hero() {
         {/* Brand wordmark */}
         <h1
           className="font-brand font-bold text-ivory leading-[0.88] tracking-[0.06em] animate-fadein"
-          style={{ fontSize: "clamp(4.5rem,17vw,13rem)" }}
+          style={{ fontSize: "clamp(3.8rem,13vw,10rem)" }}
         >
           PULS
         </h1>
 
         {/* Tagline */}
         <p
-          className="mt-5 font-brand font-normal text-ivory tracking-[0.12em] animate-fadein"
-          style={{ fontSize: "clamp(1rem,2.2vw,1.6rem)", animationDelay: "0.3s", textShadow: "0 2px 20px rgba(0,0,0,0.9)" }}
+          className="mt-5 font-body font-normal text-ivory/80 animate-fadein max-w-2xl mx-auto"
+          style={{ fontSize: "clamp(0.9rem,1.6vw,1.15rem)", animationDelay: "0.3s", textShadow: "0 2px 20px rgba(0,0,0,0.9)", lineHeight: 1.7, letterSpacing: "0.03em" }}
         >
-          The feeling of New Yorker rawness and Parisian elegance
+          Vi byder på det bedste fra det danske køkken hele dagen. Nyd en klassisk frokost, en smagfuld middag eller mærk stemningen over professionelle cocktails i vores bar.
         </p>
 
-        {/* Description */}
-        <p
-          className="mt-6 text-ivory/70 leading-[1.8] mx-auto animate-fadein"
-          style={{ fontSize: "clamp(0.8rem,1.2vw,0.95rem)", letterSpacing: "0.12em", textShadow: "0 2px 16px rgba(0,0,0,0.8)", animationDelay: "0.5s" }}
-        >
-          Restaurant i Ørestad med fransk, italiensk og nordisk mad
-        </p>
 
         {/* CTAs */}
         <div className="mt-10 flex flex-wrap justify-center gap-3 animate-fadein" style={{ animationDelay: "0.75s" }}>

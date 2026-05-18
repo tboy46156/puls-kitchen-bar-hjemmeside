@@ -23,22 +23,21 @@ const cards = [
 
 export default function BrunchSection() {
   return (
-    <section id="brunch" className="bg-ivory text-obsidian section-pad">
+    <section id="brunch" className="bg-obsidian px-4 md:px-6 pb-4 md:pb-6">
+      <div className="bg-ivory text-obsidian rounded-2xl md:rounded-3xl py-8 md:py-12">
       <div className="container-max">
-        <div className="grid lg:grid-cols-12 gap-8 mb-14">
-          <div className="lg:col-span-5">
-            <FadeIn>
-              <p className="eyebrow !text-obsidian/55 [&::before]:bg-obsidian/35 mb-5">Brunch</p>
-            </FadeIn>
-            <FadeIn delay={0.05}>
-              <h2 className="display-section text-5xl md:text-6xl lg:text-7xl text-obsidian max-w-[14ch]">
-                Weekendens{" "}
-                <span className="italic-display font-[400] normal-case text-obsidian/80">slow start</span>
-              </h2>
-            </FadeIn>
-          </div>
-          <FadeIn className="lg:col-span-7 lg:pt-12" delay={0.1}>
-            <p className="text-obsidian/65 max-w-xl leading-[1.75] text-lg">
+        <div className="text-center mb-14">
+          <FadeIn>
+            <p className="eyebrow justify-center !text-obsidian/55 [&::before]:hidden mb-5">Brunch</p>
+          </FadeIn>
+          <FadeIn delay={0.05}>
+            <h2 className="display-section text-5xl md:text-6xl lg:text-7xl text-obsidian mx-auto max-w-[14ch]">
+              Weekendens{" "}
+              <span className="italic-display font-[400] normal-case text-obsidian/80">slow start</span>
+            </h2>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <p className="mt-6 text-obsidian/65 mx-auto max-w-xl leading-[1.75] text-lg">
               To formater: byg din egen fra tre til fem retter på hverdage,
               eller spis ad libitum i weekenden med fri kaffe, juice og hjemmelavet lemonade.
             </p>
@@ -48,36 +47,35 @@ export default function BrunchSection() {
         <div className="grid md:grid-cols-2 gap-5">
           {cards.map((c, i) => (
             <FadeIn key={c.title} delay={i * 0.1}>
-              <article className={`relative h-full p-8 md:p-11 border ${
+              <article className={`relative h-full p-8 md:p-11 border text-center ${
                 c.dark
                   ? "bg-charcoal text-ivory border-border-col"
                   : "bg-bone text-obsidian border-obsidian/10"
               }`}>
                 {c.badge && (
-                  <span className="absolute top-6 right-6 text-[9px] tracking-[0.34em] uppercase text-gold">
+                  <span className="absolute top-6 right-6 text-xs tracking-[0.22em] uppercase text-gold">
                     {c.badge}
                   </span>
                 )}
-                <p className={`text-[9px] tracking-[0.38em] uppercase ${c.dark ? "text-ivory/50" : "text-obsidian/45"}`}>
+                <p className={`text-xs tracking-[0.25em] uppercase ${c.dark ? "text-ivory/60" : "text-obsidian/55"}`}>
                   {c.tag}
                 </p>
                 <h3 className="display-section text-3xl md:text-4xl mt-3">{c.title}</h3>
-                <p className={`mt-3 text-[11px] tracking-[0.12em] ${c.dark ? "text-gold" : "text-stone"}`}>
+                <p className={`mt-3 text-sm tracking-[0.12em] ${c.dark ? "text-gold" : "text-stone"}`}>
                   {c.hours}
                 </p>
                 <p className={`mt-5 leading-[1.7] text-base ${c.dark ? "text-ivory/75" : "text-obsidian/65"}`}>
                   {c.description}
                 </p>
 
-                {/* Prices — integrated as editorial type, part of the card rhythm */}
-                <ul className={`mt-8 pt-6 space-y-4 border-t ${c.dark ? "border-ivory/8" : "border-obsidian/8"}`}>
+                <ul className={`mt-8 pt-6 space-y-4 border-t ${c.dark ? "border-ivory/10" : "border-obsidian/10"}`}>
                   {c.prices.map(([k, v]) => (
                     <li key={k} className="flex items-baseline gap-3">
-                      <span className={`text-[9px] tracking-[0.32em] uppercase w-20 shrink-0 ${c.dark ? "text-ivory/45" : "text-obsidian/40"}`}>
+                      <span className={`text-xs tracking-[0.22em] uppercase w-20 shrink-0 text-left ${c.dark ? "text-ivory/60" : "text-obsidian/55"}`}>
                         {k}
                       </span>
                       <span className="h-px flex-1 bg-current opacity-[0.08]" />
-                      <span className="font-editorial italic text-2xl text-gold leading-none">
+                      <span className="font-display font-bold text-xl text-gold leading-none">
                         {v}
                       </span>
                     </li>
@@ -86,7 +84,7 @@ export default function BrunchSection() {
 
                 <Link
                   href="/brunch"
-                  className={`mt-9 inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase font-semibold ${
+                  className={`mt-9 inline-flex items-center gap-2 text-xs tracking-[0.22em] uppercase font-semibold ${
                     c.dark ? "text-ivory hover:text-gold" : "text-obsidian hover:text-gold"
                   } transition-colors`}
                 >
@@ -96,6 +94,7 @@ export default function BrunchSection() {
             </FadeIn>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

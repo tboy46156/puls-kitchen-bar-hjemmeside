@@ -1,145 +1,198 @@
 import Image from "next/image";
 import Link from "next/link";
-import PageHero from "@/components/PageHero";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata = {
-  title: "Selskaber & Events — PULS Kitchen & Bar",
-  description:
-    "To selskabslokaler op til 50 og 30 personer. Firmafest, julefrokost, konfirmation, team-building og mere.",
+  title: "Selskaber — PULS Kitchen & Bar",
+  description: "Book selskabslokale til op til 50 personer hos PULS Kitchen & Bar i Ørestad. Firmafest, fødselsdag, konfirmation og private arrangementer.",
 };
-
-const types = [
-  "Firmafest",
-  "Julefrokost",
-  "Konfirmation",
-  "Team-building",
-  "Dagsmøde",
-  "Fødselsdag",
-  "Barnedåb",
-  "Bryllup",
-];
 
 export default function SelskaberPage() {
   return (
-    <>
-      <PageHero
-        eyebrow="Selskaber & Events"
-        title={
-          <>
-            Plads til at <span className="italic-display text-accent">fejre</span>.
-          </>
-        }
-        description="To separate lokaler op til 50 og 30 personer. AV-udstyr inkluderet. Lokalerne kan lejes helt eller delvis — vi skræddersyer menuen til netop jeres arrangement."
-      />
+    <div className="bg-obsidian pt-24 md:pt-32 space-y-4 md:space-y-6 pb-4 md:pb-6">
 
-      <section className="bg-cream text-ink2 section-pad">
-        <div className="container-max grid lg:grid-cols-12 gap-12">
-          <FadeIn className="lg:col-span-7">
-            <div className="relative aspect-[4/3] overflow-hidden border border-ink2/15">
-              <Image
-                src="/images/gallery-4.jpeg"
-                alt="Selskabslokale på PULS Kitchen & Bar"
-                fill
-                sizes="(min-width: 1024px) 60vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-          </FadeIn>
-
-          <FadeIn className="lg:col-span-5" delay={0.1}>
-            <p className="eyebrow text-ink2/70 mb-6">Vi arrangerer</p>
-            <h2 className="display-section text-4xl md:text-5xl mb-8">
-              Fra <span className="italic-display">10 til 80</span> gæster.
-            </h2>
-            <p className="text-ink2/70 leading-relaxed mb-6">
-              Vores to lokaler kan rumme op til 80 personer tilsammen, eller
-              bookes hver for sig. Vi tager os af menu, drikkevarer,
-              AV-opsætning og service — I tager jer af at nyde aftenen.
-            </p>
-            <ul className="grid grid-cols-2 gap-y-2 gap-x-6 mt-6">
-              {types.map((t) => (
-                <li key={t} className="flex items-center gap-3 py-1">
-                  <span className="h-px w-5 bg-accent" />
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </FadeIn>
+      {/* Hero */}
+      <section className="px-4 md:px-6">
+        <div className="bg-ivory rounded-2xl md:rounded-3xl">
+          <div className="container-max py-10 md:py-14 text-center">
+            <FadeIn>
+              <p className="eyebrow justify-center mb-5">Selskaber</p>
+            </FadeIn>
+            <FadeIn delay={0.05}>
+              <h1 className="display-section text-5xl md:text-7xl text-obsidian leading-[0.92] mx-auto max-w-[14ch]">
+                Plads til at{" "}
+                <span className="italic-display text-gold font-[400] normal-case">fejre det</span>
+              </h1>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <p className="mt-5 text-obsidian/70 mx-auto max-w-xl leading-relaxed">
+                Vi tager os af maden, drikkevarerne og servicen. I tager jer af at nyde aftenen.
+                Op til 50 personer i selskabslokalet — eller hele restauranten til større fejringer.
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <div className="flex flex-wrap justify-center gap-3 mt-8">
+                <Link href="https://www.pulskitchen.dk/booking" target="_blank" rel="noopener" className="btn-gold">
+                  Book selskab →
+                </Link>
+                <a href="mailto:info@pulskitchen.dk" className="btn-ghost">
+                  Send forespørgsel
+                </a>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
-      <section className="bg-ink text-text section-pad">
-        <div className="container-max">
-          <FadeIn>
-            <p className="eyebrow text-accent mb-6">Lokalerne</p>
-            <h2 className="display-section text-4xl md:text-5xl mb-12 max-w-[16ch]">
-              To rum med hver sit{" "}
-              <span className="italic-display text-accent">temperament</span>.
-            </h2>
-          </FadeIn>
+      {/* Billede + al information */}
+      <section className="px-4 md:px-6">
+        <div className="bg-bone rounded-2xl md:rounded-3xl overflow-hidden">
+          <div className="container-max py-10 md:py-12">
+            <div className="grid md:grid-cols-[2fr_3fr] gap-8 md:gap-12 items-start">
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                cap: "50",
-                title: "Det store lokale",
-                desc: "Til de større lejligheder — firmafest, julefrokost, runde fødselsdage. Plads til scene, taler og dansegulv.",
-              },
-              {
-                cap: "30",
-                title: "Det intime lokale",
-                desc: "Mindre selskaber, men ingen kompromisser på maden. Konfirmation, barnedåb, dagsmøde eller en helt særlig fødselsdag.",
-              },
-            ].map((r, i) => (
-              <FadeIn key={r.title} delay={i * 0.1}>
-                <div className="border border-border bg-surface p-10 md:p-12 h-full hover:border-accent transition-colors">
-                  <span className="block font-display text-7xl md:text-8xl text-accent leading-none">
-                    {r.cap}
-                  </span>
-                  <p className="text-[10px] tracking-[0.32em] uppercase text-text/60 mt-2">
-                    Personer
-                  </p>
-                  <h3 className="display-section text-3xl mt-8">{r.title}</h3>
-                  <p className="text-text/80 leading-relaxed mt-3">{r.desc}</p>
-                  <ul className="mt-6 space-y-1 text-sm text-text/60">
-                    <li>— AV-udstyr</li>
-                    <li>— Skræddersyet menu</li>
-                    <li>— Fuld eller delvis leje</li>
-                  </ul>
+              {/* Billede */}
+              <FadeIn>
+                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
+                  <Image
+                    src="/images/selskaber.jpg"
+                    alt="Selskab ved bardisken hos PULS Kitchen & Bar"
+                    fill
+                    sizes="(min-width: 768px) 40vw, 100vw"
+                    className="object-cover"
+                    priority
+                  />
                 </div>
               </FadeIn>
-            ))}
-          </div>
 
-          <FadeIn delay={0.2}>
-            <div className="mt-12 bg-accent text-ink2 p-10 md:p-12">
-              <div className="grid lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-8">
-                  <p className="text-[10px] tracking-[0.32em] uppercase text-ink2/70 mb-3">
-                    Forespørgsel
-                  </p>
-                  <h3 className="display-section text-3xl md:text-4xl mb-3">
-                    Send os en mail med dato, antal gæster og ønsker.
-                  </h3>
-                  <p className="text-ink2/80">
-                    Vi vender hurtigt tilbage med et oplæg, der passer til jeres
-                    arrangement.
-                  </p>
+              {/* Al tekst */}
+              <FadeIn delay={0.08}>
+                <div className="text-center md:text-left">
+                  <p className="text-xs tracking-[0.22em] uppercase text-gold mb-4">Om lokalet</p>
+                  <h2 className="display-section text-3xl md:text-4xl text-obsidian mb-6 leading-tight">
+                    Jeres aften,{" "}
+                    <span className="italic-display text-gold font-[400] normal-case">jeres regler</span>
+                  </h2>
+
+                  {/* Kapacitet tal */}
+                  <div className="grid grid-cols-2 gap-x-6 gap-y-5 mb-7 border-y border-obsidian/10 py-5">
+                    {[
+                      { tal: "50",  label: "Gæster i selskabslokalet" },
+                      { tal: "140", label: "Gæster indendørs i alt" },
+                      { tal: "150", label: "Pladser på terrassen" },
+                      { tal: "8+",  label: "Reservér altid på forhånd" },
+                    ].map((s) => (
+                      <div key={s.label} className="flex items-baseline gap-3">
+                        <p className="font-display font-bold text-2xl md:text-3xl text-obsidian leading-none shrink-0">{s.tal}</p>
+                        <p className="text-xs text-obsidian/60 leading-snug">{s.label}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Lokale info */}
+                  <div className="space-y-4 mb-7">
+                    {[
+                      { titel: "Kun jeres selskab", tekst: "Lokalet er reserveret til jer. Dedikeret service, ingen deling med resten af restauranten." },
+                      { titel: "Op til 50 personer", tekst: "Indret lokalet som det passer jer — formelt middagsselskab, reception eller uformel fest." },
+                      { titel: "Hele restauranten", tekst: "Større fejring? Vi har 140 indendørs og 150 på terrassen i sommersæsonen." },
+                    ].map((item) => (
+                      <div key={item.titel}>
+                        <p className="font-semibold text-obsidian mb-1">{item.titel}</p>
+                        <p className="text-obsidian/70 text-sm leading-relaxed">{item.tekst}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Hvad er inkluderet */}
+                  <p className="text-xs tracking-[0.22em] uppercase text-gold mb-4">Inkluderet</p>
+                  <div className="space-y-0">
+                    {[
+                      { nr: "01", titel: "Skræddersyet menu", tekst: "Fra tre retters middag til buffet — vi sammensætter efter jeres ønsker og budget." },
+                      { nr: "02", titel: "Drikkevarer", tekst: "Vin, fadøl, cocktails og alkoholfri alternativer. Pakke eller løbende bestilling." },
+                      { nr: "03", titel: "Lyd og AV", tekst: "Musikanlæg og mulighed for præsentationer og taler." },
+                      { nr: "04", titel: "Dedikeret service", tekst: "Eget serveringsteam der kender jeres program og sørger for at aftenen kører." },
+                    ].map((item) => (
+                      <div key={item.nr} className="flex gap-4 py-4 border-b border-obsidian/10 last:border-0">
+                        <span className="font-display font-bold text-lg text-gold/60 w-8 shrink-0">{item.nr}</span>
+                        <div>
+                          <p className="font-semibold text-obsidian text-sm mb-0.5">{item.titel}</p>
+                          <p className="text-obsidian/60 text-sm leading-relaxed">{item.tekst}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="lg:col-span-4 flex flex-col gap-3">
-                  <a href="mailto:info@pulskitchen.dk" className="btn-ink">
-                    info@pulskitchen.dk
-                  </a>
-                  <a href="tel:+4532626030" className="btn-outline text-ink2">
-                    <span>+45 3262 6030</span>
-                  </a>
-                </div>
-              </div>
+              </FadeIn>
+
             </div>
-          </FadeIn>
+          </div>
         </div>
       </section>
-    </>
+
+      {/* Hvem passer det til */}
+      <section className="px-4 md:px-6">
+        <div className="bg-ivory rounded-2xl md:rounded-3xl">
+          <div className="container-max py-10 md:py-12 text-center">
+            <FadeIn>
+              <p className="eyebrow justify-center !text-obsidian/60 [&::before]:hidden mb-6">Hvem passer det til</p>
+            </FadeIn>
+            <FadeIn delay={0.05}>
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
+                {["Firmafest", "Julefrokost", "Fødselsdag", "Konfirmation", "Barnedåb", "Teambuilding", "Dagsmøde med frokost", "Royal Arena-aften"].map((tag) => (
+                  <span key={tag} className="border border-obsidian/25 text-obsidian px-4 py-2 text-sm tracking-wide">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <p className="text-obsidian/70 leading-relaxed mx-auto max-w-xl text-sm">
+                Ligger I tæt på Royal Arena? Vi er et naturligt samlingspunkt før og efter events.
+                Mange grupper starter med middag hos os og fortsætter til showet — eller omvendt.
+              </p>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-4 md:px-6">
+        <div className="bg-bone rounded-2xl md:rounded-3xl">
+          <div className="container-max py-10 md:py-12 text-center">
+            <FadeIn>
+              <h2 className="display-section text-3xl md:text-4xl text-obsidian leading-tight mb-4">
+                Fortæl os hvad I{" "}
+                <span className="italic-display text-gold font-[400] normal-case">fejrer</span>
+              </h2>
+              <p className="text-obsidian/70 text-sm leading-relaxed mx-auto max-w-lg mb-8">
+                Dato, antal gæster og ønsker til maden — vi vender tilbage med et forslag inden for 24 timer.
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <div className="flex flex-col items-center gap-3 max-w-xs mx-auto">
+                <Link
+                  href="https://www.pulskitchen.dk/booking"
+                  target="_blank"
+                  rel="noopener"
+                  className="btn-gold w-full text-center"
+                >
+                  Book selskab online →
+                </Link>
+                <a
+                  href="mailto:info@pulskitchen.dk"
+                  className="text-center border border-obsidian/25 px-4 py-2.5 text-xs tracking-[0.18em] uppercase font-semibold text-obsidian/70 hover:text-gold hover:border-gold transition-colors w-full"
+                >
+                  info@pulskitchen.dk
+                </a>
+                <a href="tel:+4532626030" className="flex items-center justify-center gap-2 hover:text-gold transition-colors pt-1">
+                  <span className="text-xs tracking-[0.18em] uppercase text-stone">Tlf.</span>
+                  <span className="text-obsidian font-semibold text-lg">+45 3262 6030</span>
+                </a>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+    </div>
   );
 }

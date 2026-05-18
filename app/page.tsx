@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import DishesSection from "@/components/DishesSection";
-import VideoRow from "@/components/VideoRow";
 import EventsTeaserSection from "@/components/EventsTeaserSection";
 import BrunchSection from "@/components/BrunchSection";
 import BarSection from "@/components/BarSection";
@@ -12,11 +11,10 @@ export default function Home() {
     <>
       <Hero />
       <AboutSection />
-      <VideoRow />
       <DishesSection />
+      <Testimonials />
       <EventsTeaserSection />
       <BarSection />
-      <Testimonials />
       <HoursSection />
     </>
   );

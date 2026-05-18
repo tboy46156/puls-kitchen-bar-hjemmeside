@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:www.pulskitchen.dk)",
-      "Read(//Users/bamsefar/.claude/skills/humanizer/**)"
+      "Read(//Users/bamsefar/.claude/skills/humanizer/**)",
+      "Skill(humanizer)",
+      "Skill(humanizer:*)"
     ]
   }
 }

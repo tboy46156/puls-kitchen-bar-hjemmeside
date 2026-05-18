@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Menu",      href: "/menu" },
+  { label: "Selskaber", href: "/selskaber" },
   { label: "Gavekort",  href: "/gavekort" },
   { label: "Kontakt",   href: "/kontakt" },
 ];

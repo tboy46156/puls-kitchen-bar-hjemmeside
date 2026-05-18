@@ -10,10 +10,9 @@ const videos = [
   "/Videos/AQOGUSM-5etVkDa6dDXEahcz0Dn_T4J-4ibsm7aHSZ6vXL0k4DPrZc25RghgxjGWJ0g8p1sokIEmoUbHhWdnlLnQhvAYNNl-xGyKIE8.mp4",
   "/Videos/AQOWPkPE_XJ5h_ijlaF2PKJe929CZPBFFUhHGzXQN7tnSYoioHNqUXeG7rnbPdhlPcbGcuuHZq6__YFeG5_phBR2.mp4",
   "/Videos/AQP0gPoS1ADKNIjgqm1gSwXQtGdgCikfXSU1YDmZhWbZ1IPc7L9rbiCjCLHDhirdfv2010rTFeCEeurGRq65Wz6q.mp4",
-  "/Videos/AQPHqyaoBx-nXji7KmOFY-bnpIgAlaJeQGDqpSuAFYa6mYofcdc32JT3USzU9Gmw7ITLnkwkGcmT_nagZW3e1Rw7iR9oO0Diqf2JHEhjGt8Kyg.mp4",
   "/Videos/AQPS2AbRS0gWQVNSOTgoFOtmO-rztOPqlhLjOToPdNddKZDDaQtEBAB42DGdhiYqU6ZP71MQh0zbksAlrvsRspb1emXUz-jzVqhawlneulLl6Q (1).mp4",
-  "/Videos/AQPS2AbRS0gWQVNSOTgoFOtmO-rztOPqlhLjOToPdNddKZDDaQtEBAB42DGdhiYqU6ZP71MQh0zbksAlrvsRspb1emXUz-jzVqhawlneulLl6Q.mp4",
   "/Videos/AQOIfyuagYyuY7nTC05h0JTcWnMaWXXNxl6_D175z6Fa29mwEiCD_FIBSjHSE9z1fHzwbsxOxjYEV8YttuhHsqpe2KZ3o39N3E4.mp4",
+  "/Videos/AQMhCEWVrrAexQw6KM0v_GCf-Sr1LJEO9redmRUp1Y5MVW0257bhIU2n0ytBUyahikswdnoZUnO3CfzEgOndKni_.mp4",
 ];
 
 const doubled = [...videos, ...videos];
@@ -139,8 +138,8 @@ export default function VideoRow() {
               {doubled.map((src, i) => (
                 <div
                   key={i}
-                  className="shrink-0 px-1.5 md:px-2"
-                  style={{ width: "clamp(160px, 42vw, 200px)" }}
+                  className="shrink-0 px-2.5 md:px-3"
+                  style={{ width: "clamp(180px, 42vw, 240px)" }}
                 >
                   <div className="overflow-hidden rounded-xl md:rounded-2xl border border-border-col">
                     <video

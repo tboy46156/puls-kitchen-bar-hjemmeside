@@ -19,7 +19,7 @@ const cards = [
 
 export default function DishesSection() {
   return (
-    <section className="bg-obsidian section-pad !pt-10 md:!pt-14">
+    <section className="bg-obsidian py-8 md:py-12">
       <div className="container-max">
         <FadeIn>
           <div className="text-center mb-12">

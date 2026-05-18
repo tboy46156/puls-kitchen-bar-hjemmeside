@@ -37,7 +37,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <p className="text-[9px] tracking-[0.38em] uppercase text-gold mb-5">Find os</p>
+            <p className="text-xs tracking-[0.22em] uppercase text-gold mb-5">Find os</p>
             <address className="not-italic text-ivory/80 leading-relaxed text-sm">
               Arne Jacobsens Allé 9<br />
               2300 København S
@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <p className="text-[9px] tracking-[0.38em] uppercase text-gold mb-5">Åbent</p>
+            <p className="text-xs tracking-[0.22em] uppercase text-gold mb-5">Åbent</p>
             <ul className="space-y-2 text-sm">
               {hours.map(([d, t]) => (
                 <li key={d}>
@@ -62,12 +62,12 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <p className="text-[9px] tracking-[0.38em] uppercase text-gold mb-5">Følg os</p>
+            <p className="text-xs tracking-[0.22em] uppercase text-gold mb-5">Følg os</p>
             <SocialCard />
           </div>
         </div>
 
-        <div className="mt-20 pt-8 border-t border-border-col flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[11px] text-stone">
+        <div className="mt-20 pt-8 border-t border-border-col flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-stone">
           <p>© {new Date().getFullYear()} PULS Kitchen & Bar. All rights reserved.</p>
           <div className="flex gap-6">
             {[["Menu","/menu"],["Gavekort","/gavekort"],["Kontakt","/kontakt"]].map(([l,h]) => (

@@ -41,7 +41,7 @@ const menuContent: Record<string, { images: { src: string; title: string }[]; in
 };
 
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
-const item = {
+const fadeItem = {
   hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.2, 0.65, 0.2, 1] } },
   exit:    { opacity: 0, y: -14, transition: { duration: 0.28 } },
@@ -52,92 +52,97 @@ export default function MenuPageClient() {
   const content = menuContent[selected];
 
   return (
-    <>
-      <section className="pt-28 md:pt-32 pb-0 bg-ivory text-obsidian">
-        <div className="container-max">
-          <FadeIn>
-            <div className="flex items-end justify-between gap-6 border-b border-obsidian/12 pb-0">
-              <h1 className="display-section text-3xl md:text-4xl text-obsidian">
-                Menukort
-              </h1>
-              <MenuTabs tabs={tabs} selected={selected} setSelected={setSelected} />
-            </div>
-          </FadeIn>
+    <div className="bg-obsidian pt-24 md:pt-32 space-y-4 md:space-y-6 pb-4 md:pb-6">
+
+      {/* Header */}
+      <section className="px-4 md:px-6">
+        <div className="bg-ivory rounded-2xl md:rounded-3xl">
+          <div className="container-max py-8 md:py-10">
+            <FadeIn>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <h1 className="display-section text-3xl md:text-4xl text-obsidian">Menukort</h1>
+                <MenuTabs tabs={tabs} selected={selected} setSelected={setSelected} />
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
-      <section className="bg-ivory text-obsidian pt-12 pb-24 md:pb-32">
-        <div className="container-max">
-          <AnimatePresence mode="wait">
-            <motion.div key={selected} variants={stagger} initial="hidden" animate="visible" exit="exit">
-              <motion.div
-                variants={item}
-                className="mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-obsidian/10 pb-8"
-              >
-                <p className="text-obsidian/55 text-sm tracking-wide">{content.info}</p>
-                <Link
-                  href="https://www.pulskitchen.dk/booking"
-                  target="_blank"
-                  rel="noopener"
-                  className="btn-dark shrink-0 !py-2.5"
+      {/* Menu content */}
+      <section className="px-4 md:px-6">
+        <div className="bg-bone rounded-2xl md:rounded-3xl overflow-hidden">
+          <div className="container-max py-10 md:py-12">
+            <AnimatePresence mode="wait">
+              <motion.div key={selected} variants={stagger} initial="hidden" animate="visible" exit="exit">
+                <motion.div
+                  variants={fadeItem}
+                  className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-obsidian/10 pb-6"
                 >
-                  Book bord
-                </Link>
-              </motion.div>
-
-              <div className={`grid gap-5 ${content.images.length === 1 ? "max-w-2xl" : "md:grid-cols-2"}`}>
-                {content.images.map((m) => (
-                  <motion.figure key={m.src} variants={item} className="group">
-                    <a
-                      href={m.src}
-                      target="_blank"
-                      rel="noopener"
-                      className="relative block aspect-[3/4] border border-obsidian/12 overflow-hidden bg-bone"
-                    >
-                      <Image
-                        src={m.src}
-                        alt={m.title}
-                        fill
-                        sizes="(min-width:768px) 50vw, 100vw"
-                        className="object-contain p-3 transition-transform duration-700 group-hover:scale-[1.015]"
-                      />
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <span className="bg-gold text-obsidian text-[10px] tracking-[0.22em] uppercase font-semibold px-4 py-2">
-                          Åbn i fuld størrelse ↗
-                        </span>
-                      </div>
-                    </a>
-                    <figcaption className="mt-4 flex items-center justify-between">
-                      <span className="font-editorial italic text-xl text-obsidian">{m.title}</span>
-                      <span className="text-obsidian/35 text-[10px] tracking-[0.25em] uppercase">Klik</span>
-                    </figcaption>
-                  </motion.figure>
-                ))}
-              </div>
-
-              <motion.div
-                variants={item}
-                className="mt-16 bg-charcoal text-ivory p-10 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-6"
-              >
-                <div>
-                  <p className="text-[9px] tracking-[0.38em] uppercase text-gold mb-2">Klar til at smage?</p>
-                  <h3 className="display-section text-3xl md:text-4xl">
-                    Book bord eller bestil take-away.
-                  </h3>
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  <Link href="https://www.pulskitchen.dk/booking" target="_blank" rel="noopener" className="btn-gold">
+                  <p className="text-obsidian/70 text-sm tracking-wide">{content.info}</p>
+                  <Link
+                    href="https://www.pulskitchen.dk/booking"
+                    target="_blank"
+                    rel="noopener"
+                    className="btn-dark shrink-0 !py-2.5"
+                  >
                     Book bord
                   </Link>
-                  <Link href="https://www.pulskitchen.dk/takeaway" target="_blank" rel="noopener" className="btn-ghost">
-                    Take-away
-                  </Link>
+                </motion.div>
+
+                <div className={`grid gap-5 ${content.images.length === 1 ? "max-w-2xl" : "md:grid-cols-2"}`}>
+                  {content.images.map((m) => (
+                    <motion.figure key={m.src} variants={fadeItem} className="group">
+                      <a
+                        href={m.src}
+                        target="_blank"
+                        rel="noopener"
+                        className="relative block aspect-[3/4] border border-obsidian/12 overflow-hidden bg-white rounded-xl"
+                      >
+                        <Image
+                          src={m.src}
+                          alt={m.title}
+                          fill
+                          sizes="(min-width:768px) 50vw, 100vw"
+                          className="object-contain p-3 transition-transform duration-700 group-hover:scale-[1.015]"
+                        />
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                          <span className="bg-gold text-obsidian text-xs tracking-[0.22em] uppercase font-semibold px-4 py-2">
+                            Åbn i fuld størrelse ↗
+                          </span>
+                        </div>
+                      </a>
+                      <figcaption className="mt-3 text-sm font-semibold text-obsidian">{m.title}</figcaption>
+                    </motion.figure>
+                  ))}
                 </div>
               </motion.div>
-            </motion.div>
-          </AnimatePresence>
+            </AnimatePresence>
+          </div>
         </div>
       </section>
-    </>
+
+      {/* CTA */}
+      <section className="px-4 md:px-6">
+        <div className="bg-charcoal rounded-2xl md:rounded-3xl">
+          <div className="container-max py-10 md:py-12 flex flex-col md:flex-row md:items-center justify-between gap-6 text-center md:text-left">
+            <div>
+              <p className="text-xs tracking-[0.22em] uppercase text-gold mb-2">Klar til at smage?</p>
+              <h3 className="display-section text-3xl md:text-4xl text-ivory">
+                Book bord eller bestil take-away.
+              </h3>
+            </div>
+            <div className="flex flex-wrap justify-center md:justify-start gap-3">
+              <Link href="https://www.pulskitchen.dk/booking" target="_blank" rel="noopener" className="btn-gold">
+                Book bord
+              </Link>
+              <Link href="https://www.pulskitchen.dk/takeaway" target="_blank" rel="noopener" className="btn-ghost">
+                Take-away
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
   );
 }

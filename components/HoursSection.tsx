@@ -9,19 +9,18 @@ const hours = [
 
 export default function HoursSection() {
   return (
-    <section id="hours" className="bg-obsidian text-ivory section-pad">
+    <section id="hours" className="bg-obsidian px-4 md:px-6 pb-4 md:pb-6">
+      <div className="bg-charcoal text-ivory rounded-2xl md:rounded-3xl py-10 md:py-14">
       <div className="container-max">
 
-        {/* Top label */}
         <FadeIn>
-          <div className="mb-14 border-b border-border-col pb-8">
-            <p className="eyebrow">Åbningstider & find os</p>
+          <div className="text-center mb-14 border-b border-border-col pb-8">
+            <p className="eyebrow justify-center">Åbningstider & find os</p>
           </div>
         </FadeIn>
 
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
 
-          {/* Hours table */}
           <FadeIn className="lg:col-span-7" delay={0.08}>
             <ul className="space-y-0">
               {hours.map((h) => (
@@ -43,32 +42,30 @@ export default function HoursSection() {
             </ul>
           </FadeIn>
 
-          {/* Address + contact */}
           <FadeIn className="lg:col-span-5" delay={0.15}>
             <div className="bg-charcoal p-8 md:p-10 h-full flex flex-col justify-between">
               <div>
-                <p className="text-[9px] tracking-[0.38em] uppercase text-gold mb-6">Adresse</p>
+                <p className="text-xs tracking-[0.22em] uppercase text-gold mb-6">Adresse</p>
                 <address className="not-italic">
-                  <p className="display-section text-3xl md:text-4xl text-ivory leading-tight">
-                    Arne Jacobsens<br />
-                    <span className="italic-display font-[400] normal-case text-gold">Allé 9</span>
+                  <p className="font-display font-bold text-3xl md:text-4xl text-ivory leading-tight">
+                    Arne Jacobsens Allé 9
                   </p>
-                  <p className="mt-4 text-ivory/55 text-sm tracking-wide">2300 København S</p>
+                  <p className="mt-4 text-ivory/70 text-sm tracking-wide">2300 København S</p>
                 </address>
 
                 <div className="mt-8 space-y-3 border-t border-border-col pt-8">
                   <a
                     href="tel:+4532626030"
-                    className="flex items-center gap-3 text-ivory/70 hover:text-gold transition-colors text-sm"
+                    className="flex items-center gap-3 hover:text-gold transition-colors"
                   >
-                    <span className="text-[9px] tracking-[0.28em] uppercase text-stone w-10 shrink-0">Tlf.</span>
-                    +45 3262 6030
+                    <span className="text-xs tracking-[0.18em] uppercase text-stone w-12 shrink-0">Tlf.</span>
+                    <span className="text-ivory font-semibold text-lg tracking-wide">+45 3262 6030</span>
                   </a>
                   <a
                     href="mailto:info@pulskitchen.dk"
-                    className="flex items-center gap-3 text-ivory/70 hover:text-gold transition-colors text-sm"
+                    className="flex items-center gap-3 text-ivory/60 hover:text-gold transition-colors text-sm"
                   >
-                    <span className="text-[9px] tracking-[0.28em] uppercase text-stone w-10 shrink-0">Mail</span>
+                    <span className="text-xs tracking-[0.18em] uppercase text-stone w-12 shrink-0">Mail</span>
                     info@pulskitchen.dk
                   </a>
                 </div>
@@ -78,7 +75,6 @@ export default function HoursSection() {
 
         </div>
 
-        {/* Google Maps */}
         <FadeIn delay={0.2}>
           <div className="mt-12 overflow-hidden rounded-2xl border border-border-col">
             <iframe
@@ -94,6 +90,7 @@ export default function HoursSection() {
           </div>
         </FadeIn>
 
+      </div>
       </div>
     </section>
   );
