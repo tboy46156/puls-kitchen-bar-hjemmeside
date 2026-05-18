@@ -216,7 +216,7 @@ export default function Testimonials() {
                 className="shrink-0 px-2.5 md:px-3"
                 style={{ width: "clamp(180px, 42vw, 240px)" }}
               >
-                <div className="overflow-hidden rounded-xl md:rounded-2xl border border-obsidian/15">
+                <div className="overflow-hidden rounded-xl md:rounded-2xl border border-obsidian/15 relative aspect-[9/16]">
                   <video
                     src={src}
                     autoPlay
@@ -225,7 +225,8 @@ export default function Testimonials() {
                     playsInline
                     preload="none"
                     draggable={false}
-                    className="w-full object-cover aspect-[9/16] pointer-events-none"
+                    className="absolute inset-0 w-full h-full pointer-events-none"
+                    style={{ objectFit: "cover", transform: "scale(1.18)" }}
                   />
                 </div>
               </div>
