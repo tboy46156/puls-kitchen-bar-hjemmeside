@@ -49,9 +49,9 @@ export default function ClosingCTA() {
           transition={{ duration: 1.1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="display-section text-ivory text-5xl md:text-7xl lg:text-[7rem] leading-[0.93] max-w-[14ch]"
         >
-          Dit bord venter{" "}
+          Kom forbi.{" "}
           <span className="italic-display text-gold font-[400] normal-case">
-            på dig
+            Vi er der.
           </span>
         </motion.h2>
 
@@ -61,7 +61,7 @@ export default function ClosingCTA() {
           transition={{ duration: 0.9, delay: 0.38 }}
           className="mt-7 max-w-sm text-ivory/55 text-base leading-[1.75]"
         >
-          Hverdagsaften eller særlig lejlighed — vi stiller bordet klar.
+          Book et bord eller stik bare hovedet ind.
         </motion.p>
 
         {/* Gold ornament */}

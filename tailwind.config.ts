@@ -37,9 +37,9 @@ const config: Config = {
       },
       fontFamily: {
         brand:     ["var(--font-brand)", "Playfair Display", "Georgia", "serif"],
-        display:   ["var(--font-display)", "Jost", "Futura PT", "sans-serif"],
+        display:   ["var(--font-display)", "Fraunces", "Georgia", "serif"],
         editorial: ["var(--font-editorial)", "Cormorant Garamond", "Georgia", "serif"],
-        sans:      ["var(--font-body)", "DM Sans", "system-ui", "sans-serif"],
+        sans:      ["var(--font-body)", "Outfit", "system-ui", "sans-serif"],
       },
     },
   },

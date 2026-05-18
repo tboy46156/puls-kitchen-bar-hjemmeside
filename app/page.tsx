@@ -3,7 +3,6 @@ import AboutSection from "@/components/AboutSection";
 import DishesSection from "@/components/DishesSection";
 import VideoRow from "@/components/VideoRow";
 import EventsTeaserSection from "@/components/EventsTeaserSection";
-import SignatureGrid from "@/components/SignatureGrid";
 import BrunchSection from "@/components/BrunchSection";
 import BarSection from "@/components/BarSection";
 import Testimonials from "@/components/Testimonials";
@@ -19,7 +18,6 @@ export default function Home() {
       <VideoRow />
       <DishesSection />
       <EventsTeaserSection />
-      <SignatureGrid />
       <BarSection />
       <Testimonials />
       <EventsSection />

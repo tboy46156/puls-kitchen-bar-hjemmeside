@@ -14,14 +14,15 @@ export default function EventsTeaserSection() {
                 Events & sæsonmenuer
               </p>
               <h2 className="display-section text-4xl md:text-5xl lg:text-6xl max-w-[16ch]">
-                Oplevelser du{" "}
+                Særlige aftener{" "}
                 <span className="italic-display font-[400] normal-case">
-                  ikke vil gå glip af
+                  når vi finder på noget
                 </span>
               </h2>
               <p className="mt-6 text-obsidian/65 max-w-md leading-relaxed">
-                Vi holder løbende aftener med temaer, sæsonmenuer og tasting
-                events. Følg med på Instagram for at se hvad der er på vej.
+                En gang imellem lukker vi tidligt og åbner for noget andet.
+                Sæsonmenu, vinaften, eller et tema vi har haft lyst til at prøve.
+                Det annonceres på Instagram.
               </p>
             </div>
             <div className="mt-10 flex items-center gap-5">
@@ -60,19 +61,19 @@ export default function EventsTeaserSection() {
                 Eksklusive aftener
               </p>
               <h3 className="display-section text-3xl md:text-4xl lg:text-5xl mt-4 max-w-[14ch]">
-                Chef&apos;s Seasonal{" "}
+                Fem retter.{" "}
                 <span className="italic-display text-gold font-[400] normal-case">
-                  Tasting
+                  Sæsonens menu.
                 </span>
               </h3>
               <p className="mt-4 max-w-sm text-ivory/75 leading-relaxed">
-                Fem retter bygget på sæsonens bedste råvarer. Menuen ændres
-                løbende — ingen ret er der for at blive.
+                Køkkenet sætter menuen hver sæson. Fem retter, ingen valg —
+                vi bestemmer hvad der er godt den aften.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-5">
                 <div>
                   <p className="text-[9px] tracking-[0.32em] uppercase text-stone">Pris</p>
-                  <p className="font-editorial italic text-4xl text-gold mt-1">695 kr</p>
+                  <p className="font-display font-semibold text-4xl text-gold mt-1 tracking-tight">695 kr</p>
                   <p className="text-[10px] tracking-[0.18em] uppercase text-stone">Per gæst</p>
                 </div>
                 <Link

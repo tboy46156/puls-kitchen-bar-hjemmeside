@@ -14,7 +14,7 @@ function TypewriterEyebrow() {
   return (
     <p
       ref={ref}
-      className="text-[15px] tracking-[0.4em] uppercase text-gold mb-8 flex items-center gap-4 font-medium"
+      className="text-[13px] tracking-[0.35em] uppercase text-gold mb-6 flex items-center gap-4 font-semibold"
       style={{ textShadow: "0 2px 20px rgba(0,0,0,0.95)" }}
     >
       <span className="flex">
@@ -67,27 +67,27 @@ export default function Hero() {
 
         {/* Brand wordmark */}
         <h1
-          className="font-brand font-bold text-ivory leading-[0.88] tracking-[0.04em] animate-fadein"
-          style={{ fontSize: "clamp(6rem,22vw,18rem)" }}
+          className="font-brand font-bold text-ivory leading-[0.88] tracking-[0.06em] animate-fadein"
+          style={{ fontSize: "clamp(4.5rem,17vw,13rem)" }}
         >
           PULS
         </h1>
 
-        {/* Tagline */}
+        {/* Tagline — Playfair Display to complement the wordmark, lighter weight */}
         <p
-          className="mt-4 font-editorial italic text-gold font-light tracking-wide animate-fadein"
-          style={{ fontSize: "clamp(1.4rem,3.5vw,3rem)", animationDelay: "0.3s" }}
+          className="mt-5 font-brand font-normal text-gold tracking-[0.18em] uppercase animate-fadein"
+          style={{ fontSize: "clamp(0.85rem,2vw,1.35rem)", animationDelay: "0.3s", textShadow: "0 2px 20px rgba(0,0,0,0.9)" }}
         >
           Smag på pulsen
         </p>
 
         {/* Description */}
         <p
-          className="mt-7 max-w-sm md:max-w-md text-ivory/80 leading-[1.75] text-base mx-auto animate-fadein"
+          className="mt-8 max-w-sm md:max-w-lg text-ivory/85 leading-[1.8] text-[1.05rem] md:text-[1.15rem] mx-auto animate-fadein"
           style={{ textShadow: "0 2px 16px rgba(0,0,0,0.8)", animationDelay: "0.55s" }}
         >
-          Køkken og bar i ét rum. Retter der mærkes og drinks der giver
-          anledning til at blive siddende lidt længere.
+          Mad og bar i ét rum på Arne Jacobsens Allé.
+          Fra brunch til sent — ingen gardin foran køkkenet.
         </p>
 
         {/* CTAs */}

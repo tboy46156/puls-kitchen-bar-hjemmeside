@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Jost, DM_Sans, Cormorant_Garamond } from "next/font/google";
+import { Playfair_Display, Fraunces, Outfit, Cormorant_Garamond } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-// Playfair Display — the exclusive PULS brand wordmark font.
-// Used ONLY for the "PULS" logotype across nav, hero, and footer.
+// Playfair Display — PULS brand wordmark only
 const brand = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-brand",
@@ -14,11 +13,12 @@ const brand = Playfair_Display({
   display: "swap",
 });
 
-// Jost (Futura PT substitute) — display headings / section titles
-const display = Jost({
+// Fraunces — display headings / section titles
+const display = Fraunces({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -31,8 +31,8 @@ const editorial = Cormorant_Garamond({
   display: "swap",
 });
 
-// DM Sans — body copy
-const body = DM_Sans({
+// Outfit — body copy
+const body = Outfit({
   subsets: ["latin"],
   variable: "--font-body",
   weight: ["300", "400", "500", "600"],

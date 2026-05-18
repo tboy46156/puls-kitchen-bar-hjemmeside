@@ -7,7 +7,8 @@ export default function VideoRow() {
   ];
 
   return (
-    <section className="bg-obsidian pt-0 pb-8 md:pb-12">
+    <section className="bg-ivory pt-4 pb-0">
+      <div className="bg-obsidian rounded-t-[2rem] md:rounded-t-[3rem] pt-8 md:pt-10 pb-10 md:pb-14">
       <div className="container-max">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
           {videos.map((src, i) => (
@@ -24,6 +25,7 @@ export default function VideoRow() {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

@@ -8,7 +8,7 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-20">
           <div className="lg:col-span-3">
             <FadeIn>
-              <p className="eyebrow !text-obsidian/60 [&::before]:bg-obsidian/40">
+              <p className="eyebrow !text-obsidian/60 [&::before]:hidden">
                 Velkommen til PULS
               </p>
             </FadeIn>
@@ -16,17 +16,18 @@ export default function AboutSection() {
           <div className="lg:col-span-9">
             <FadeIn delay={0.05}>
               <h2 className="display-section text-4xl md:text-6xl lg:text-7xl max-w-[22ch] text-obsidian">
-                Sæsonens retter{" "}
+                Mad og bar{" "}
                 <span className="italic-display font-[400] normal-case !tracking-normal text-obsidian/80">
-                  lavet med omhu
+                  i ét rum
                 </span>{" "}
-                og de råvarer der faktisk er i sæson
+                — fra brunch til bar
               </h2>
             </FadeIn>
             <FadeIn delay={0.12}>
               <p className="mt-10 max-w-2xl text-obsidian/65 leading-relaxed text-base md:text-lg">
-                PULS er restaurant og bar i ét rum. Brunch om morgenen, god mad
-                og cocktails til sent — vi er ikke kun det ene eller det andet.
+                Vi laver mad af det der er i sæson og blander drinks vi selv
+                gider drikke. Ingen gardin foran køkkenet, ingen lang liste af
+                allergener på kridt. Bare et sted du har lyst til at sidde.
               </p>
             </FadeIn>
             <FadeIn delay={0.2}>

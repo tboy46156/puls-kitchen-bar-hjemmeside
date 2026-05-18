@@ -53,7 +53,7 @@ export default function HoursSection() {
                 <span className="font-display font-bold text-xl md:text-2xl uppercase tracking-[0.02em]">
                   {h.day}
                 </span>
-                <span className="font-editorial italic text-2xl md:text-3xl text-gold sm:text-center">
+                <span className="font-display font-semibold text-2xl md:text-3xl text-gold sm:text-center tracking-tight">
                   {h.time}
                 </span>
                 <span className="text-stone text-sm sm:text-right self-center">

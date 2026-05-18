@@ -19,15 +19,15 @@ const cards = [
 
 export default function DishesSection() {
   return (
-    <section className="bg-obsidian section-pad">
+    <section className="bg-obsidian section-pad !pt-10 md:!pt-14">
       <div className="container-max">
         <FadeIn>
           <div className="text-center mb-12">
             <p className="eyebrow justify-center mb-5">Vores menu</p>
             <h2 className="display-section text-5xl md:text-6xl lg:text-7xl text-ivory">
-              Retter der{" "}
+              Hvad vi{" "}
               <span className="italic-display text-gold font-[400] normal-case">
-                bringer dig tilbage
+                laver og skænker
               </span>
             </h2>
           </div>
@@ -36,7 +36,7 @@ export default function DishesSection() {
         <div className="grid md:grid-cols-2 gap-4 md:gap-6">
           {cards.map((c, i) => (
             <FadeIn key={c.label} delay={i * 0.08}>
-              <Link href={c.href} className="group block relative overflow-hidden" style={{ aspectRatio: "9/7" }}>
+              <Link href={c.href} className="group block relative overflow-hidden rounded-2xl md:rounded-3xl" style={{ aspectRatio: "3/5" }}>
                 <Image
                   src={c.image}
                   alt={c.label}
@@ -44,7 +44,7 @@ export default function DishesSection() {
                   sizes="(min-width:768px) 50vw, 100vw"
                   className="object-cover transition-transform duration-[1.6s] group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/95 via-obsidian/50 to-obsidian/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/95 via-obsidian/50 to-obsidian/10" />
                 <div className="absolute bottom-0 inset-x-0 p-7 md:p-10">
                   <h3 className="display-section text-3xl md:text-4xl lg:text-5xl text-ivory leading-none">
                     {c.label}
