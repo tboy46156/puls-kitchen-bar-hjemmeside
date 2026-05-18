@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useScroll } from "@/components/ui/use-scroll";
 import { MenuToggleIcon } from "@/components/ui/menu-toggle-icon";
 import { cn } from "@/lib/utils";
@@ -9,14 +10,15 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Menu",      href: "/menu" },
-  { label: "Selskaber", href: "/selskaber" },
-  { label: "Om Os",     href: "/kontakt" },
+  { label: "Gavekort",  href: "/gavekort" },
   { label: "Kontakt",   href: "/kontakt" },
 ];
 
 export default function Navigation() {
   const [open, setOpen] = React.useState(false);
   const scrolled = useScroll(60);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   React.useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -36,8 +38,8 @@ export default function Navigation() {
               borderRadius: 0,
               borderWidth: 0,
               boxShadow: "none",
-              backgroundColor: "rgba(10,9,8,0)",
-              backdropFilter: "blur(0px)",
+              backgroundColor: isHome ? "rgba(10,9,8,0)" : "rgba(10,9,8,0.97)",
+              backdropFilter: isHome ? "blur(0px)" : "blur(20px)",
             },
             island: {
               width: "700px",
@@ -108,7 +110,7 @@ export default function Navigation() {
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 lg:hidden transition-all duration-500",
-          scrolled
+          scrolled || !isHome
             ? "bg-obsidian backdrop-blur-xl border-b border-border-col shadow-[0_4px_32px_rgba(0,0,0,0.5)]"
             : "bg-transparent"
         )}

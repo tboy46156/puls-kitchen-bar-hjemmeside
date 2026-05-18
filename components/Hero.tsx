@@ -73,21 +73,20 @@ export default function Hero() {
           PULS
         </h1>
 
-        {/* Tagline — Playfair Display to complement the wordmark, lighter weight */}
+        {/* Tagline */}
         <p
-          className="mt-5 font-brand font-normal text-gold tracking-[0.18em] uppercase animate-fadein"
-          style={{ fontSize: "clamp(0.85rem,2vw,1.35rem)", animationDelay: "0.3s", textShadow: "0 2px 20px rgba(0,0,0,0.9)" }}
+          className="mt-5 font-brand font-normal text-ivory tracking-[0.12em] animate-fadein"
+          style={{ fontSize: "clamp(1rem,2.2vw,1.6rem)", animationDelay: "0.3s", textShadow: "0 2px 20px rgba(0,0,0,0.9)" }}
         >
-          Smag på pulsen
+          The feeling of New Yorker rawness and Parisian elegance
         </p>
 
         {/* Description */}
         <p
-          className="mt-8 max-w-sm md:max-w-lg text-ivory/85 leading-[1.8] text-[1.05rem] md:text-[1.15rem] mx-auto animate-fadein"
-          style={{ textShadow: "0 2px 16px rgba(0,0,0,0.8)", animationDelay: "0.55s" }}
+          className="mt-6 text-ivory/70 leading-[1.8] mx-auto animate-fadein"
+          style={{ fontSize: "clamp(0.8rem,1.2vw,0.95rem)", letterSpacing: "0.12em", textShadow: "0 2px 16px rgba(0,0,0,0.8)", animationDelay: "0.5s" }}
         >
-          Mad og bar i ét rum på Arne Jacobsens Allé.
-          Fra brunch til sent — ingen gardin foran køkkenet.
+          Restaurant i Ørestad med fransk, italiensk og nordisk mad
         </p>
 
         {/* CTAs */}

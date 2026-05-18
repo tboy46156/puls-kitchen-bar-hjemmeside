@@ -19,7 +19,7 @@ interface MenuTabsProps {
 
 export function MenuTabs({ tabs, selected, setSelected }: MenuTabsProps) {
   return (
-    <div className="flex flex-wrap gap-1.5 md:gap-2" role="tablist">
+    <div className="flex flex-wrap gap-2 md:gap-3" role="tablist">
       {tabs.map((tab) => {
         const Icon = tab.icon;
         const isActive = selected === tab.value;
@@ -30,9 +30,11 @@ export function MenuTabs({ tabs, selected, setSelected }: MenuTabsProps) {
             aria-selected={isActive}
             onClick={() => setSelected(tab.value)}
             className={clsx(
-              "relative group flex items-center gap-2.5 px-5 py-3 md:px-6 md:py-3.5",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold transition-colors",
-              isActive ? "text-obsidian" : "text-ivory/50 hover:text-ivory/80"
+              "relative group flex items-center gap-2.5 px-6 py-3.5 md:px-8 md:py-4",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold transition-all duration-200",
+              isActive
+                ? "text-obsidian"
+                : "text-obsidian/60 border border-obsidian/20 hover:border-obsidian/50 hover:text-obsidian"
             )}
           >
             {isActive && (
@@ -42,16 +44,16 @@ export function MenuTabs({ tabs, selected, setSelected }: MenuTabsProps) {
                 transition={{ type: "spring", stiffness: 420, damping: 38 }}
               />
             )}
-            <span className="relative z-10 flex items-center gap-2">
+            <span className="relative z-10 flex items-center gap-2.5">
               <Icon
-                size={16}
+                size={17}
                 strokeWidth={1.75}
                 className={clsx(
                   "transition-colors",
-                  isActive ? "text-obsidian" : "text-ivory/45 group-hover:text-ivory/70"
+                  isActive ? "text-obsidian" : "text-obsidian/50 group-hover:text-obsidian"
                 )}
               />
-              <span className="font-sans font-semibold uppercase tracking-[0.2em] text-[11px]">
+              <span className="font-sans font-bold uppercase tracking-[0.18em] text-[12px]">
                 {tab.label}
               </span>
             </span>

@@ -70,7 +70,7 @@ export default function Footer() {
         <div className="mt-20 pt-8 border-t border-border-col flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[11px] text-stone">
           <p>© {new Date().getFullYear()} PULS Kitchen & Bar. All rights reserved.</p>
           <div className="flex gap-6">
-            {[["Menu","/menu"],["Brunch","/brunch"],["Selskaber","/selskaber"],["Kontakt","/kontakt"]].map(([l,h]) => (
+            {[["Menu","/menu"],["Gavekort","/gavekort"],["Kontakt","/kontakt"]].map(([l,h]) => (
               <Link key={h} href={h} className="hover:text-gold">{l}</Link>
             ))}
           </div>

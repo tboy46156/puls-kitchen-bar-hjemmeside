@@ -23,7 +23,7 @@ export default function DishesSection() {
       <div className="container-max">
         <FadeIn>
           <div className="text-center mb-12">
-            <p className="eyebrow justify-center mb-5 [&::before]:hidden">Hvad vi laver</p>
+            <p className="eyebrow justify-center mb-5 [&::before]:hidden !text-ivory">Hvad vi tilbyder</p>
             <h2 className="display-section text-5xl md:text-6xl lg:text-7xl text-ivory">
               Hvad vi{" "}
               <span className="italic-display text-gold font-[400] normal-case">
