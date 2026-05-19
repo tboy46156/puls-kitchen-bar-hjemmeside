@@ -19,7 +19,7 @@ const cards = [
 
 export default function DishesSection() {
   return (
-    <section className="bg-bone px-4 md:px-6 pb-2 md:pb-3">
+    <section className="bg-bone px-4 md:px-6 pb-1.5 md:pb-2">
       <div className="bg-sand rounded-2xl md:rounded-3xl py-5 md:py-6">
       <div className="container-max">
         <FadeIn>
@@ -62,8 +62,8 @@ export default function DishesSection() {
         </div>
 
         <FadeIn delay={0.2}>
-          <div className="mt-8 text-center">
-            <Link href="/menu" className="btn-ghost">Se hele menuen →</Link>
+          <div className="mt-5 text-center">
+            <Link href="/menu" className="btn-dark">Se hele menuen →</Link>
           </div>
         </FadeIn>
       </div>

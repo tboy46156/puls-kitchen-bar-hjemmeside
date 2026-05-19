@@ -3,7 +3,6 @@ import AboutSection from "@/components/AboutSection";
 import DishesSection from "@/components/DishesSection";
 import EventsTeaserSection from "@/components/EventsTeaserSection";
 import BrunchSection from "@/components/BrunchSection";
-import BarSection from "@/components/BarSection";
 import Testimonials from "@/components/Testimonials";
 import HoursSection from "@/components/HoursSection";
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
       <DishesSection />
       <Testimonials />
       <EventsTeaserSection />
-      <BarSection />
       <HoursSection />
     </>
   );

@@ -9,7 +9,7 @@ const hours = [
 
 export default function HoursSection() {
   return (
-    <section id="hours" className="bg-bone px-4 md:px-6 pb-2 md:pb-3">
+    <section id="hours" className="bg-bone px-4 md:px-6 pb-1.5 md:pb-2">
       <div className="bg-sand text-obsidian rounded-2xl md:rounded-3xl py-7 md:py-10">
       <div className="container-max">
 

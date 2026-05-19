@@ -23,7 +23,7 @@ const cards = [
 
 export default function BrunchSection() {
   return (
-    <section id="brunch" className="bg-bone px-4 md:px-6 pb-2 md:pb-3">
+    <section id="brunch" className="bg-bone px-4 md:px-6 pb-1.5 md:pb-2">
       <div className="bg-ivory text-obsidian rounded-2xl md:rounded-3xl py-6 md:py-8">
       <div className="container-max">
         <div className="text-center mb-8">
