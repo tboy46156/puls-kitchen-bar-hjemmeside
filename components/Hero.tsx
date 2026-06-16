@@ -89,7 +89,13 @@ export default function Hero() {
             target="_blank" rel="noopener"
             className="btn-gold"
           >
-            Reservér dit bord
+            Bestil bord
+          </Link>
+          <Link href="/menu" className="btn-ghost">
+            Se menukort
+          </Link>
+          <Link href="#" className="btn-ghost">
+            Se koncert menu
           </Link>
         </div>
       </div>
