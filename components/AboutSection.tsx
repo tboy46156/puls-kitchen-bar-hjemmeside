@@ -12,34 +12,7 @@ export default function AboutSection() {
         </FadeIn>
         <FadeIn delay={0.05}>
           <h2 className="display-section text-4xl md:text-6xl lg:text-7xl text-obsidian mx-auto">
-            Restaurant og bar i Ørestad med{" "}
-            <span className="inline-flex items-center gap-1.5">
-              <span className="inline-block align-middle relative mx-1">
-                <span className="relative overflow-hidden w-[1.1em] h-[0.72em] rounded-full border-2 border-white shadow-md inline-block">
-                  <img src="/images/flag-fr.png" alt="Frankrig" className="object-cover w-full h-full" />
-                </span>
-              </span>
-              fransk
-            </span>
-            ,{" "}
-            <span className="inline-flex items-center gap-1.5">
-              <span className="inline-block align-middle relative mx-1">
-                <span className="relative overflow-hidden w-[1.1em] h-[0.72em] rounded-full border-2 border-white shadow-md inline-block">
-                  <img src="/images/flag-it.png" alt="Italien" className="object-cover w-full h-full" />
-                </span>
-              </span>
-              italiensk
-            </span>
-            {" "}og{" "}
-            <span className="inline-flex items-center gap-1.5">
-              <span className="inline-block align-middle relative mx-1">
-                <span className="relative overflow-hidden w-[1.1em] h-[0.72em] rounded-full border-2 border-white shadow-md inline-block">
-                  <img src="/images/flag-dk.png" alt="Danmark" className="object-cover w-full h-full" />
-                </span>
-              </span>
-              nordisk
-            </span>
-            {" "}mad
+            Restaurant og bar i Ørestad med fransk, italiensk og nordisk mad
           </h2>
         </FadeIn>
         <FadeIn delay={0.12}>
