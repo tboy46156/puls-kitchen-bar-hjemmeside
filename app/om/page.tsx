@@ -17,13 +17,13 @@ export default function OmPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-obsidian text-ivory pt-32 md:pt-40 pb-0">
+      <section className="bg-bone text-forest pt-32 md:pt-40 pb-0">
         <div className="container-max">
           <FadeIn>
             <p className="eyebrow mb-6">Om Os</p>
           </FadeIn>
           <FadeIn delay={0.05}>
-            <h1 className="display-section text-5xl md:text-7xl lg:text-8xl max-w-[18ch] text-ivory leading-[0.92]">
+            <h1 className="display-section text-5xl md:text-7xl lg:text-8xl max-w-[18ch] text-forest leading-[0.92]">
               The feeling of New Yorker rawness{" "}
               <span className="italic-display text-gold font-[400] normal-case">
                 and Parisian elegance
@@ -31,7 +31,7 @@ export default function OmPage() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="mt-6 text-ivory/55 text-sm tracking-[0.18em] uppercase font-semibold">
+            <p className="mt-6 text-forest/55 text-sm tracking-[0.18em] uppercase font-semibold">
               Restaurant i Ørestad med fransk, italiensk og nordisk mad
             </p>
           </FadeIn>
@@ -98,7 +98,7 @@ export default function OmPage() {
               >
                 Book bord →
               </Link>
-              <Link href="/menu" className="btn-outline text-obsidian border-obsidian/25 hover:bg-obsidian hover:text-ivory">
+              <Link href="/menu" className="btn-outline text-obsidian border-obsidian/25 hover:bg-forest hover:text-ivory">
                 Se menuen
               </Link>
             </div>
@@ -107,7 +107,7 @@ export default function OmPage() {
       </section>
 
       {/* Facts strip */}
-      <section className="bg-obsidian text-ivory py-14 border-t border-border-col">
+      <section className="bg-sand text-forest py-14 border-t border-border-col">
         <div className="container-max">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -117,7 +117,7 @@ export default function OmPage() {
               { label: "Royal Arena", sub: "Få minutters gang" },
             ].map((f) => (
               <div key={f.label} className="border-t border-border-col pt-6">
-                <p className="font-semibold text-ivory text-base">{f.label}</p>
+                <p className="font-semibold text-forest text-base">{f.label}</p>
                 <p className="text-stone text-sm mt-1">{f.sub}</p>
               </div>
             ))}
@@ -144,7 +144,7 @@ export default function OmPage() {
               <a href="mailto:info@pulskitchen.dk" className="btn-dark">
                 info@pulskitchen.dk
               </a>
-              <a href="tel:+4532626030" className="inline-flex items-center gap-2 border border-obsidian/25 px-7 py-4 text-[11px] tracking-[0.22em] uppercase font-semibold hover:bg-obsidian hover:text-ivory transition-colors">
+              <a href="tel:+4532626030" className="inline-flex items-center gap-2 border border-obsidian/25 px-7 py-4 text-[11px] tracking-[0.22em] uppercase font-semibold hover:bg-forest hover:text-ivory transition-colors">
                 +45 3262 6030
               </a>
             </div>

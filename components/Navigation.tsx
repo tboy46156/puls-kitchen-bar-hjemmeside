@@ -39,7 +39,7 @@ export default function Navigation() {
               borderRadius: 0,
               borderWidth: 0,
               boxShadow: "none",
-              backgroundColor: isHome ? "rgba(10,9,8,0)" : "rgba(10,9,8,0.97)",
+              backgroundColor: isHome ? "rgba(245,247,242,0)" : "rgba(245,247,242,0.97)",
               backdropFilter: isHome ? "blur(0px)" : "blur(20px)",
             },
             island: {
@@ -47,14 +47,14 @@ export default function Navigation() {
               marginTop: 16,
               borderRadius: 10,
               borderWidth: 1,
-              boxShadow: "0 12px 48px rgba(0,0,0,0.6)",
-              backgroundColor: "rgba(10,9,8,0.93)",
+              boxShadow: "0 8px 32px rgba(42,53,37,0.12)",
+              backgroundColor: "rgba(255,255,255,0.96)",
               backdropFilter: "blur(20px)",
             },
           }}
           transition={{ type: "spring", stiffness: 320, damping: 38 }}
           className="border border-transparent overflow-hidden pointer-events-auto"
-          style={{ borderColor: scrolled ? "rgba(184,147,90,0.22)" : "transparent" }}
+          style={{ borderColor: scrolled ? "rgba(216,221,209,0.8)" : "transparent" }}
         >
           <motion.nav
             animate={{ height: scrolled ? 52 : 88 }}
@@ -66,7 +66,7 @@ export default function Navigation() {
               <motion.span
                 animate={{ fontSize: scrolled ? "20px" : "28px" }}
                 transition={{ type: "spring", stiffness: 320, damping: 38 }}
-                className="font-brand font-bold tracking-[0.1em] text-ivory group-hover:text-gold transition-colors duration-300 block leading-none"
+                className={`font-brand font-bold tracking-[0.1em] transition-colors duration-300 block leading-none group-hover:text-gold ${scrolled || !isHome ? "text-forest" : "text-ivory"}`}
               >
                 PULS
               </motion.span>
@@ -81,7 +81,7 @@ export default function Navigation() {
                 <Link
                   key={l.label}
                   href={l.href}
-                  className="text-[11px] font-medium tracking-[0.2em] uppercase text-ivory/70 hover:text-gold transition-colors whitespace-nowrap"
+                  className={`text-[11px] font-medium tracking-[0.2em] uppercase hover:text-gold transition-colors whitespace-nowrap ${scrolled || !isHome ? "text-forest/70" : "text-ivory/70"}`}
                 >
                   {l.label}
                 </Link>
@@ -112,20 +112,20 @@ export default function Navigation() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 lg:hidden transition-all duration-500",
           scrolled || !isHome
-            ? "bg-obsidian backdrop-blur-xl border-b border-border-col shadow-[0_4px_32px_rgba(0,0,0,0.5)]"
+            ? "bg-white/95 backdrop-blur-xl border-b border-border-col shadow-[0_4px_20px_rgba(42,53,37,0.08)]"
             : "bg-transparent"
         )}
       >
         <div className="container-max flex items-center justify-between h-[68px]">
           <Link href="/">
-            <span className="font-brand font-bold text-[24px] tracking-[0.1em] text-ivory hover:text-gold transition-colors">
+            <span className={`font-brand font-bold text-[24px] tracking-[0.1em] hover:text-gold transition-colors ${scrolled || !isHome ? "text-forest" : "text-ivory"}`}>
               PULS
             </span>
           </Link>
           <button
             aria-label={open ? "Luk menu" : "Åbn menu"}
             onClick={() => setOpen((v) => !v)}
-            className="h-10 w-10 grid place-items-center border border-border-col text-ivory hover:text-gold hover:border-gold transition-colors rounded-sm"
+            className={`h-10 w-10 grid place-items-center border border-border-col hover:text-gold hover:border-gold transition-colors rounded-sm ${scrolled || !isHome ? "text-forest" : "text-ivory"}`}
           >
             <MenuToggleIcon open={open} className="size-5" duration={350} />
           </button>
@@ -140,7 +140,7 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.3, ease: [0.2, 0.65, 0.2, 1] }}
-            className="fixed inset-0 top-[68px] z-40 bg-obsidian/98 backdrop-blur-2xl lg:hidden overflow-y-auto"
+            className="fixed inset-0 top-[68px] z-40 bg-white backdrop-blur-2xl lg:hidden overflow-y-auto"
           >
             <div className="container-max py-12 flex flex-col">
               {navLinks.map((l, i) => (
@@ -153,7 +153,7 @@ export default function Navigation() {
                   <Link
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="block py-5 border-b border-border-col font-editorial italic text-4xl text-ivory hover:text-gold transition-colors"
+                    className="block py-5 border-b border-border-col font-editorial italic text-4xl text-forest hover:text-gold transition-colors"
                   >
                     {l.label}
                   </Link>

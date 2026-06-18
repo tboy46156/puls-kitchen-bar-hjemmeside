@@ -38,7 +38,7 @@ export default function SignatureGrid() {
           <div className="lg:col-span-8 grid grid-cols-2 gap-5 md:gap-7">
             {dishes.map((d, i) => (
               <FadeIn key={d.name} delay={i * 0.07}>
-                <div className="group bg-charcoal overflow-hidden border border-border-col">
+                <div className="group bg-white overflow-hidden border border-border-col">
                   <div className="relative aspect-[5/4]">
                     <Image
                       src={d.img}
@@ -49,7 +49,7 @@ export default function SignatureGrid() {
                     />
                   </div>
                   <div className="flex items-center justify-between px-4 py-3.5 md:px-5">
-                    <h3 className="text-[11px] tracking-[0.14em] uppercase font-semibold text-ivory">
+                    <h3 className="text-[11px] tracking-[0.14em] uppercase font-semibold text-forest">
                       {d.name}
                     </h3>
                     <span className="font-display font-semibold text-lg text-gold ml-2 shrink-0 tracking-tight">

@@ -39,7 +39,7 @@ export default function EventsSection() {
         <div className="grid md:grid-cols-2 gap-5">
           {rooms.map((r, i) => (
             <FadeIn key={r.title} delay={i * 0.1}>
-              <article className="relative h-full p-10 md:p-12 border border-obsidian/12 bg-bone group hover:bg-charcoal hover:text-ivory transition-colors duration-500">
+              <article className="relative h-full p-10 md:p-12 border border-obsidian/12 bg-bone group hover:bg-forest hover:text-ivory transition-colors duration-500">
                 <span className="block font-editorial italic text-7xl md:text-8xl text-gold leading-none">
                   {r.capacity}
                 </span>
@@ -57,7 +57,7 @@ export default function EventsSection() {
         </div>
 
         <FadeIn delay={0.2}>
-          <div className="mt-8 bg-obsidian text-ivory p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-8">
+          <div className="mt-8 bg-forest text-ivory p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-8">
             <div>
               <p className="text-[9px] tracking-[0.38em] uppercase text-gold mb-3">Forespørgsel</p>
               <h3 className="display-section text-3xl md:text-4xl mb-2">Selskab med 10+ gæster?</h3>

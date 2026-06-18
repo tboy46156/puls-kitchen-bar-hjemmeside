@@ -52,7 +52,7 @@ export default function MenuPageClient() {
   const content = menuContent[selected];
 
   return (
-    <div className="bg-obsidian pt-24 md:pt-32 space-y-4 md:space-y-6 pb-4 md:pb-6">
+    <div className="bg-bone pt-24 md:pt-32 space-y-4 md:space-y-6 pb-4 md:pb-6">
 
       {/* Header */}
       <section className="px-4 md:px-6">
@@ -123,7 +123,7 @@ export default function MenuPageClient() {
 
       {/* CTA */}
       <section className="px-4 md:px-6">
-        <div className="bg-charcoal rounded-2xl md:rounded-3xl">
+        <div className="bg-forest rounded-2xl md:rounded-3xl">
           <div className="container-max py-10 md:py-12 flex flex-col md:flex-row md:items-center justify-between gap-6 text-center md:text-left">
             <div>
               <p className="text-xs tracking-[0.22em] uppercase text-gold mb-2">Klar til at smage?</p>

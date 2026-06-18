@@ -118,7 +118,7 @@ export default function VideoRow() {
 
   return (
     <section className="bg-ivory pt-4 pb-0">
-      <div className="bg-obsidian rounded-t-[2rem] md:rounded-t-[3rem] pt-8 md:pt-10 pb-10 md:pb-14">
+      <div className="bg-forest rounded-t-[2rem] md:rounded-t-[3rem] pt-8 md:pt-10 pb-10 md:pb-14">
         <div className="container-max">
           <div
             className="overflow-hidden cursor-grab active:cursor-grabbing select-none"

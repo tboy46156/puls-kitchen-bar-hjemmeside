@@ -9,31 +9,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        /* Core luxury palette */
+        /* Core palette */
         obsidian:    "#0A0908",
         charcoal:    "#161310",
         gold:        "#B8935A",
         "gold-light":"#D4AC6E",
-        ivory:       "#F2EBE0",
-        bone:        "#E8DFD1",
-        sand:        "#D4C9B8",
-        stone:       "#7A6D5E",
-        "border-col":"#2A221A",
+        ivory:       "#FFFFFF",
+        bone:        "#F5F7F2",
+        sand:        "#ECF0E8",
+        stone:       "#6B7A62",
+        "border-col":"#D8DDD1",
+        sage:        "#7A9467",
+        forest:      "#2A3525",
 
-        /* Semantic aliases kept for backward-compat */
-        bg:          "#0A0908",
-        surface:     "#161310",
-        cream:       "#F2EBE0",
-        "cream-soft":"#E8DFD1",
-        "ink2":      "#0A0908",
-        muted:       "#7A6D5E",
+        /* Semantic aliases */
+        bg:          "#F5F7F2",
+        surface:     "#FFFFFF",
+        cream:       "#F5F7F2",
+        "cream-soft":"#ECF0E8",
+        "ink2":      "#2A3525",
+        muted:       "#6B7A62",
         accent:      "#B8935A",
-        border:      "#2A221A",
-        text:        "#F2EBE0",
+        border:      "#D8DDD1",
+        text:        "#2A3525",
 
-        /* Pastel accents (for event/testimonial cards) */
+        /* Pastel accents */
         pink:  "#E8D4C8",
-        sage:  "#C8D8C0",
         sky:   "#C8D4DC",
       },
       fontFamily: {

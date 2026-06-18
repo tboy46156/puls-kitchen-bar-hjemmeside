@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function GavekortPage() {
   return (
-    <div className="bg-obsidian pt-24 md:pt-32 space-y-4 md:space-y-6 pb-4 md:pb-6">
+    <div className="bg-bone pt-24 md:pt-32 space-y-4 md:space-y-6 pb-4 md:pb-6">
 
       {/* Hero */}
       <section className="px-4 md:px-6">
@@ -52,7 +52,7 @@ export default function GavekortPage() {
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
 
               <FadeIn className="lg:col-span-5">
-                <div className="bg-charcoal text-ivory p-8 md:p-10 rounded-2xl">
+                <div className="bg-forest text-ivory p-8 md:p-10 rounded-2xl">
                   <p className="text-xs tracking-[0.22em] uppercase text-gold mb-4">Køb gavekort</p>
                   <h2 className="display-section text-3xl md:text-4xl text-ivory mb-5">
                     Vælg selv beløbet
@@ -117,7 +117,7 @@ export default function GavekortPage() {
 
       {/* CTA */}
       <section className="px-4 md:px-6">
-        <div className="bg-charcoal rounded-2xl md:rounded-3xl">
+        <div className="bg-forest rounded-2xl md:rounded-3xl">
           <div className="container-max py-10 md:py-12 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div>
               <h2 className="display-section text-3xl md:text-4xl text-ivory">

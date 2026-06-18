@@ -137,7 +137,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantSchema) }}
         />
       </head>
-      <body className="font-sans bg-obsidian text-ivory">
+      <body className="font-sans bg-bone text-forest">
         <Navigation />
         <main>{children}</main>
         <Footer />

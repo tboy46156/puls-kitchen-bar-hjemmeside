@@ -2,23 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Luxury palette ─────────────────────────────────────────────────────── */
+/* ── Palette ─────────────────────────────────────────────────────────────── */
 :root {
-  --obsidian:   #0A0908;   /* near-black, warm */
-  --charcoal:   #161310;   /* card surfaces */
-  --gold:       #B8935A;   /* antique gold — matches the copper lamps */
-  --gold-light: #D4AC6E;   /* hover / highlight */
-  --ivory:      #F2EBE0;   /* warm white text */
-  --bone:       #E8DFD1;   /* secondary cream */
-  --stone:      #7A6D5E;   /* muted copy */
-  --border-col: #2A221A;   /* subtle border */
+  --obsidian:   #0A0908;
+  --charcoal:   #161310;
+  --gold:       #B8935A;
+  --gold-light: #D4AC6E;
+  --ivory:      #FFFFFF;
+  --bone:       #F5F7F2;
+  --stone:      #6B7A62;
+  --border-col: #D8DDD1;
+  --sage:       #7A9467;
+  --forest:     #2A3525;
 }
 
-html { scroll-behavior: smooth; background: var(--obsidian); }
+html { scroll-behavior: smooth; background: #F5F7F2; }
 
 body {
-  background: var(--obsidian);
-  color: var(--ivory);
+  background: #F5F7F2;
+  color: #2A3525;
   font-family: var(--font-body), "Outfit", system-ui, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.75;
@@ -26,7 +28,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-::selection { background: var(--gold); color: var(--obsidian); }
+::selection { background: var(--gold); color: #2A3525; }
 
 /* ── Typography ─────────────────────────────────────────────────────────── */
 

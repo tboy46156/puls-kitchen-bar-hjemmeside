@@ -53,7 +53,7 @@ export function SocialCard() {
           href={l.href}
           target="_blank"
           rel="noopener"
-          className={`group flex items-center gap-4 px-5 py-3.5 bg-charcoal border border-border-col transition-colors duration-300 ${l.bg} hover:border-transparent`}
+          className={`group flex items-center gap-4 px-5 py-3.5 bg-white/8 border border-white/10 transition-colors duration-300 ${l.bg} hover:border-transparent`}
         >
           <span className="text-gold group-hover:text-white transition-colors duration-300 shrink-0">
             {l.icon}

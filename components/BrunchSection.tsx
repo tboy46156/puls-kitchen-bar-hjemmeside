@@ -49,7 +49,7 @@ export default function BrunchSection() {
             <FadeIn key={c.title} delay={i * 0.1}>
               <article className={`relative h-full p-8 md:p-11 border text-center ${
                 c.dark
-                  ? "bg-charcoal text-ivory border-border-col"
+                  ? "bg-forest text-ivory border-white/10"
                   : "bg-bone text-obsidian border-obsidian/10"
               }`}>
                 {c.badge && (

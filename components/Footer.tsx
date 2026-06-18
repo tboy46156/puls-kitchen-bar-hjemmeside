@@ -10,7 +10,7 @@ const hours = [
 
 export default function Footer() {
   return (
-    <footer className="bg-obsidian text-ivory border-t border-border-col">
+    <footer className="bg-forest text-ivory border-t border-white/10">
       <div className="container-max py-20 md:py-28">
         <div className="grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
@@ -67,7 +67,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-20 pt-8 border-t border-border-col flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-stone">
+        <div className="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-stone">
           <p>© {new Date().getFullYear()} PULS Kitchen & Bar. All rights reserved.</p>
           <div className="flex gap-6">
             {[["Menu","/menu"],["Gavekort","/gavekort"],["Kontakt","/kontakt"]].map(([l,h]) => (
