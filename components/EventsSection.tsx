@@ -22,10 +22,7 @@ export default function EventsSection() {
           <FadeIn className="lg:col-span-7">
             <p className="eyebrow !text-obsidian/55 [&::before]:bg-obsidian/35 mb-5">Selskaber</p>
             <h2 className="display-section text-5xl md:text-6xl lg:text-7xl max-w-[14ch]">
-              Skal vi stå for{" "}
-              <span className="italic-display font-[400] normal-case text-obsidian/75">
-                jeres næste fest?
-              </span>
+              Skal vi stå for jeres næste fest?
             </h2>
           </FadeIn>
           <FadeIn className="lg:col-span-5" delay={0.1}>

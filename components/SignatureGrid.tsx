@@ -19,7 +19,7 @@ export default function SignatureGrid() {
               <p className="eyebrow !text-obsidian [&::before]:bg-obsidian mb-6">Signaturretter</p>
               <h2 className="display-section text-5xl md:text-6xl text-obsidian max-w-[14ch]">
                 Dem vi{" "}
-                <span className="italic-display font-[400] normal-case text-obsidian/75">altid laver</span>
+                altid laver
               </h2>
             </FadeIn>
             <FadeIn delay={0.1}>

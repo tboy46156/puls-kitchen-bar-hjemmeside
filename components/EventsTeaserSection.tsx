@@ -59,7 +59,7 @@ export default function EventsTeaserSection() {
               </p>
               <div className="flex items-center justify-between">
                 <Link
-                  href="https://www.pulskitchen.dk/booking"
+                  href="https://book.easytable.com/book/?id=1214a&lang=auto"
                   target="_blank"
                   rel="noopener"
                   className="btn-gold !py-2.5"

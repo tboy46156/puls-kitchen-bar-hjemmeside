@@ -1,58 +1,30 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Fraunces, Outfit, Cormorant_Garamond } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-// Playfair Display — PULS brand wordmark only
-const brand = Playfair_Display({
+const font = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-brand",
-  weight: ["700", "800", "900"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-// Fraunces — display headings / section titles
-const display = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-// Cormorant Garamond — italic editorial accents and price typography
-const editorial = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-editorial",
-  weight: ["300", "400", "500", "600"],
-  style: ["italic", "normal"],
-  display: "swap",
-});
-
-// Outfit — body copy
-const body = Outfit({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["300", "400", "500", "600"],
+  variable: "--font-sans",
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "PULS Kitchen & Bar — Gastrobar i Ørestaden, København",
+    default: "PULS Kitchen & Bar — Gastrobar i Ørestad, København",
     template: "%s | PULS Kitchen & Bar",
   },
   description:
-    "Moderne gastrobar i hjertet af Ørestaden. Oplev vores brunch, frokost, aftensmad og cocktails i elegante omgivelser. Åben alle ugens dage. Book bord online.",
+    "Moderne gastrobar i hjertet af Ørestad. Oplev vores brunch, frokost, aftensmad og cocktails i elegante omgivelser. Åben alle ugens dage. Book bord online.",
   metadataBase: new URL("https://www.pulskitchen.dk"),
   alternates: {
     canonical: "https://www.pulskitchen.dk",
   },
   keywords: [
     "gastrobar København",
-    "restaurant Ørestaden",
+    "restaurant Ørestad",
     "brunch København",
     "PULS Kitchen Bar",
     "middag København S",
@@ -60,7 +32,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "PULS Kitchen & Bar" }],
   openGraph: {
-    title: "PULS Kitchen & Bar — Gastrobar i Ørestaden, København",
+    title: "PULS Kitchen & Bar — Gastrobar i Ørestad, København",
     description:
       "The feeling of New Yorker rawness and Parisian elegance. Brunch, frokost, aftensmad og cocktails — Arne Jacobsens Allé 9, 2300 København S.",
     type: "website",
@@ -78,9 +50,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PULS Kitchen & Bar — Gastrobar i Ørestaden",
+    title: "PULS Kitchen & Bar — Gastrobar i Ørestad",
     description:
-      "Moderne gastrobar i hjertet af Ørestaden. Brunch, frokost, aftensmad & cocktails.",
+      "Moderne gastrobar i hjertet af Ørestad. Brunch, frokost, aftensmad & cocktails.",
     images: ["/images/interior.jpeg"],
   },
   robots: {
@@ -129,7 +101,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="da"
-      className={`${brand.variable} ${display.variable} ${editorial.variable} ${body.variable}`}
+      className={font.variable}
     >
       <head>
         <script

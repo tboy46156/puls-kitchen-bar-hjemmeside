@@ -33,7 +33,7 @@ export default function BrunchSection() {
           <FadeIn delay={0.05}>
             <h2 className="display-section text-5xl md:text-6xl lg:text-7xl text-obsidian mx-auto max-w-[14ch]">
               Weekendens{" "}
-              <span className="italic-display font-[400] normal-case text-obsidian/80">slow start</span>
+              slow start
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>

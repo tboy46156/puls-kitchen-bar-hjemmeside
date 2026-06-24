@@ -3,7 +3,7 @@ import FadeIn from "@/components/FadeIn";
 
 export const metadata = {
   title: "Kontakt — PULS Kitchen & Bar",
-  description: "Find os på Arne Jacobsens Allé 9 i Ørestaden. Åbningstider, kontakt og mere om PULS Kitchen & Bar.",
+  description: "Find os på Arne Jacobsens Allé 9 i Ørestad. Åbningstider, kontakt og mere om PULS Kitchen & Bar.",
 };
 
 const hours = [
@@ -50,7 +50,7 @@ export default function KontaktPage() {
                   </div>
 
                   <div className="flex gap-3 mt-5">
-                    <Link href="https://www.pulskitchen.dk/booking" target="_blank" rel="noopener" className="btn-gold">
+                    <Link href="https://book.easytable.com/book/?id=1214a&lang=auto" target="_blank" rel="noopener" className="btn-gold">
                       Book bord →
                     </Link>
                     <a

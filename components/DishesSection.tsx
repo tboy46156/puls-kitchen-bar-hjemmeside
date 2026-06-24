@@ -4,16 +4,36 @@ import FadeIn from "./FadeIn";
 
 const cards = [
   {
-    label: "Spisekort",
-    description: "Sæsonretter, brunch og signaturanretninger fra vores køkken.",
+    line1: "Brunch",
+    line2: "",
+    alt: "Brunch hos PULS Kitchen & Bar i Ørestad, København",
+    description: "Weekend brunch fra kl. 10 — og frokost alle ugens dage fra 11.",
+    image: "/images/gallery-1.jpeg",
+    href: "/brunch",
+  },
+  {
+    line1: "Frokost",
+    line2: "menu",
+    alt: "Frokostmenu hos PULS Kitchen & Bar i Ørestad, København",
+    description: "Smørrebrød, burgere, salater og klassikere — serveret til kl. 16.",
     image: "/images/food.jpg",
+    href: "/brunch",
+  },
+  {
+    line1: "Aften",
+    line2: "menu",
+    alt: "Aftensmad og sæsonretter hos PULS Kitchen & Bar, Arne Jacobsens Allé 9",
+    description: "Sæsonretter fra køkkenet — serveret til du er mæt og tilfreds.",
+    image: "/images/tasting.jpg",
     href: "/menu",
   },
   {
-    label: "Drikkekort",
-    description: "Cocktails, naturvin og fadøl sammensat af vores bar manager.",
-    image: "/images/drinks.jpg",
-    href: "/menu",
+    line1: "Koncert",
+    line2: "menu",
+    alt: "Koncertmenu inden Royal Arena — PULS Kitchen & Bar, 5 minutters gang fra arenaen",
+    description: "Spis inden showet. Vi ligger få minutters gang fra Royal Arena.",
+    image: "/images/royal-arena.jpg",
+    href: "/koncertmenu",
   },
 ];
 
@@ -26,33 +46,32 @@ export default function DishesSection() {
           <div className="text-center mb-6">
             <h2 className="display-section text-5xl md:text-6xl lg:text-7xl text-obsidian">
               Hvad vi{" "}
-              <span className="italic-display text-gold font-[400] normal-case">
-                tilbyder
-              </span>
+              tilbyder
             </h2>
           </div>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
           {cards.map((c, i) => (
-            <FadeIn key={c.label} delay={i * 0.08}>
+            <FadeIn key={c.line1} delay={i * 0.08}>
               <Link href={c.href} className="group block relative overflow-hidden rounded-2xl md:rounded-3xl" style={{ aspectRatio: "3/4" }}>
                 <Image
                   src={c.image}
-                  alt={c.label}
+                  alt={c.alt}
                   fill
                   sizes="(min-width:768px) 50vw, 100vw"
                   className="object-cover transition-transform duration-[1.6s] group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian/95 via-obsidian/50 to-obsidian/10" />
-                <div className="absolute bottom-0 inset-x-0 p-7 md:p-10">
-                  <h3 className="display-section text-3xl md:text-4xl lg:text-5xl text-ivory leading-none">
-                    {c.label}
+                <div className="absolute bottom-0 inset-x-0 p-5 md:p-7">
+                  <h3 className="display-section text-3xl md:text-4xl text-ivory leading-[0.92]">
+                    {c.line1}
+                    {c.line2 && <span className="block text-ivory/60">{c.line2}</span>}
                   </h3>
-                  <p className="mt-3 text-ivory/70 text-sm leading-relaxed max-w-xs">
+                  <p className="mt-2.5 text-ivory/65 text-xs leading-relaxed">
                     {c.description}
                   </p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase font-semibold text-gold">
+                  <span className="mt-4 inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase font-semibold text-gold">
                     Se mere <span>→</span>
                   </span>
                 </div>

@@ -49,10 +49,7 @@ export default function ClosingCTA() {
           transition={{ duration: 1.1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="display-section text-ivory text-5xl md:text-7xl lg:text-[7rem] leading-[0.93] max-w-[14ch]"
         >
-          Kom forbi.{" "}
-          <span className="italic-display text-gold font-[400] normal-case">
-            Vi er der.
-          </span>
+          Kom forbi. Vi er der.
         </motion.h2>
 
         <motion.p
@@ -83,7 +80,7 @@ export default function ClosingCTA() {
           className="flex flex-col sm:flex-row items-center gap-4"
         >
           <Link
-            href="https://www.pulskitchen.dk/booking"
+            href="https://book.easytable.com/book/?id=1214a&lang=auto"
             target="_blank"
             rel="noopener"
             className="btn-gold"

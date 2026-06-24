@@ -15,19 +15,19 @@ export default function Footer() {
         <div className="grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
             <h2 className="mt-2 mb-6 leading-none">
-              <span className="font-brand font-bold text-6xl md:text-7xl lg:text-8xl tracking-[0.06em] text-ivory block">
+              <span className="font-display font-bold text-6xl md:text-7xl lg:text-8xl tracking-[0.06em] text-ivory block">
                 PULS
               </span>
-              <span className="font-editorial italic text-xl md:text-2xl text-gold font-light tracking-wide">
+              <span className="font-display italic text-xl md:text-2xl text-ivory/70 font-light tracking-wide">
                 Kitchen & Bar
               </span>
             </h2>
             <p className="text-stone max-w-xs leading-relaxed text-sm">
               The feeling of New Yorker rawness and Parisian elegance — en
-              moderne gastrobar i Ørestaden, København.
+              moderne gastrobar i Ørestad, København.
             </p>
             <Link
-              href="https://www.pulskitchen.dk/booking"
+              href="https://book.easytable.com/book/?id=1214a&lang=auto"
               target="_blank"
               rel="noopener"
               className="btn-gold mt-8"

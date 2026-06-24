@@ -121,7 +121,7 @@ export default function BrunchPage() {
               ))}
             </ul>
             <Link
-              href="https://www.pulskitchen.dk/booking"
+              href="https://book.easytable.com/book/?id=1214a&lang=auto"
               target="_blank"
               rel="noopener"
               className="btn-accent mt-10"
@@ -141,6 +141,201 @@ export default function BrunchPage() {
               />
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* ── Frokost / Lunch menu ─────────────────────────────────── */}
+      <section className="bg-bone px-4 md:px-6 pb-4 md:pb-6 pt-4 md:pt-5">
+        <div className="bg-ivory rounded-2xl md:rounded-3xl">
+          <div className="container-max py-14 md:py-20 max-w-3xl">
+
+            <FadeIn>
+              <div className="border-b border-border-col pb-8 mb-12">
+                <p className="text-xs tracking-[0.28em] uppercase text-stone font-semibold mb-3">Frokost / Lunch</p>
+                <h2 className="display-section text-4xl md:text-5xl text-forest mb-4">Frokostkortet</h2>
+                <p className="text-forest/55 text-sm">Fra kl. 11.00–16.00 · From 11 AM–4 PM</p>
+                <p className="text-forest/55 text-sm">Lørdag &amp; søndag kl. 10.00–16.00 · Saturday &amp; Sunday 10 AM–4 PM</p>
+              </div>
+            </FadeIn>
+
+            {/* Smørrebrød */}
+            <FadeIn>
+              <div className="mb-12">
+                <div className="flex items-baseline justify-between mb-1">
+                  <h3 className="font-sans font-semibold text-xs tracking-[0.22em] uppercase text-forest">Smørrebrød <span className="text-stone font-normal normal-case tracking-normal">· Open Sandwiches</span></h3>
+                </div>
+                <p className="text-xs text-stone mb-1">Frem til kl. 15.00 · Until 3 PM</p>
+                <p className="text-xs text-forest/60 mb-6">1 stk. — 85,- &nbsp; 2 stk. — 160,-</p>
+                <div className="divide-y divide-border-col">
+                  {[
+                    { da: "Rødspætte", en: "Plaice Fillet", desc: "Grov remoulade · Fennikel · Friterede kapers · Caviart · Radiser · Grønt · Grillet citron", descEn: "Coarse remoulade · Fennel · Fried capers · Caviart · Radishes · Greens · Grilled lemon", addon: "+ Håndpillede fjordrejer 25,-" },
+                    { da: "Avocado", desc: "Hytteost · Radiser · Soltørret tomat · Sésamfrø · Grønt", descEn: "Cottage cheese · Radishes · Sundried tomatoes · Sesame seeds · Greens", addon: "+ Håndpillede fjordrejer 25,-" },
+                    { da: "Lakse Rilette", en: "Salmon", desc: "Varmrøget laks · Creme fraiche · Citron · Dild", descEn: "Smoked salmon · Creme fraiche · Lemon · Dill" },
+                    { da: "Hønsesalat", en: "Chicken Salad", desc: "Svampe · Asparges · Friterede kapers · Bacon · Grønt", descEn: "Mushrooms · Asparagus · Fried capers · Bacon · Greens" },
+                    { da: "Roast Beef", desc: "Salat · Peberrod · Syltede agurk · Remoulade · Friterede løg · Svampe · Grønt", descEn: "Salad · Horseradish · Pickled cucumber · Remoulade · Fried onions · Mushrooms · Greens" },
+                    { da: "Kartoffelmad", en: "Potato", desc: "Nye kartofler · Bacon · Mayo · Friterede løg · Syltede løg · Grønt", descEn: "Potatoes · Bacon · Mayo · Fried onions · Greens · Pickled onions" },
+                    { da: "Æg & Rejer", en: "Egg & Shrimp", desc: "Æg · Håndpillede rejer · Hjertesalat · Caviart · Mayo · Grønt", descEn: "Eggs · Hand-peeled shrimps · Salad · Caviart · Mayo · Greens" },
+                  ].map((item) => (
+                    <div key={item.da} className="py-5">
+                      <div className="flex items-baseline justify-between">
+                        <p className="font-semibold text-forest text-sm">{item.da}{item.en && <span className="font-normal text-stone"> · {item.en}</span>}</p>
+                      </div>
+                      <p className="text-xs text-forest/55 mt-1">{item.desc}</p>
+                      <p className="text-xs text-stone mt-0.5">{item.descEn}</p>
+                      {item.addon && <p className="text-xs text-gold mt-1">{item.addon}</p>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Klassikere */}
+            <FadeIn>
+              <div className="mb-12">
+                <h3 className="font-sans font-semibold text-xs tracking-[0.22em] uppercase text-forest mb-6">Klassikere <span className="text-stone font-normal normal-case tracking-normal">· Classics</span></h3>
+                <div className="divide-y divide-border-col">
+                  {[
+                    { da: "Ribeye", price: "275,-", desc: "Kornfodret kødkvæg fra Uruguay · Sprøde fritter · Bearnaise sauce", descEn: "Grain-fed beef from Uruguay · Crispy fries · Bearnaise sauce" },
+                    { da: "Ravioli", price: "155,-", desc: "Ravioli · Ricotta · Spinat · Salvie · Frisk parmesan", descEn: "Ravioli · Ricotta · Spinach · Sage · Fresh parmesan" },
+                    { da: "Club Sandwich", price: "145,-", desc: "Grillet kyllingebryst · Spæd salat · Tomat · Rødløg · Bacon · Karry · Ovnbagte timiankartofler · Dijonnaise", descEn: "Grilled chicken breast · Baby salad · Tomato · Red onion · Bacon · Curry · Oven baked thyme potatoes · Dijonnaise" },
+                    { da: "Pasta Trøffel", en: "Pasta Truffle", price: "135,-", desc: "Linguine · Svampe · Trøffel · Cremet sauce", descEn: "Linguine · Mushrooms · Truffle · Creamy sauce", addon: "+ Grillet kyllingebryst 30,-" },
+                    { da: "Snack Nachos", price: "95,-", desc: "Cheddarost · Jalapeños · Chimichurri · Guacamole · Creme fraiche", descEn: "Cheddar cheese · Jalapeños · Chimichurri · Guacamole · Sour cream", addon: "+ Grillet kyllingebryst 30,-" },
+                  ].map((item) => (
+                    <div key={item.da} className="py-5 flex gap-4 justify-between">
+                      <div className="flex-1">
+                        <p className="font-semibold text-forest text-sm">{item.da}{item.en && <span className="font-normal text-stone"> · {item.en}</span>}</p>
+                        <p className="text-xs text-forest/55 mt-1">{item.desc}</p>
+                        <p className="text-xs text-stone mt-0.5">{item.descEn}</p>
+                        {item.addon && <p className="text-xs text-gold mt-1">{item.addon}</p>}
+                      </div>
+                      <p className="font-semibold text-forest text-sm shrink-0">{item.price}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Salater */}
+            <FadeIn>
+              <div className="mb-12">
+                <h3 className="font-sans font-semibold text-xs tracking-[0.22em] uppercase text-forest mb-6">Salater <span className="text-stone font-normal normal-case tracking-normal">· Salads</span></h3>
+                <div className="divide-y divide-border-col">
+                  {[
+                    { da: "Chèvre Chaud", price: "145,-", desc: "Gedeost · Grillet brød · Syltede græskar · Salat · Balsamico glace · Honning ristede valnødder · Blåbær", descEn: "Goat cheese · Grilled bread · Pickled pumpkin · Salad · Balsamic glace · Honey roasted walnuts · Blueberries" },
+                    { da: "Cæsar", en: "Caesar", price: "145,-", desc: "Klassisk cæsar · Grillet kyllingebryst · Papadums", descEn: "Classic Caesar · Grilled Chicken Breast · Papadums" },
+                  ].map((item) => (
+                    <div key={item.da} className="py-5 flex gap-4 justify-between">
+                      <div className="flex-1">
+                        <p className="font-semibold text-forest text-sm">{item.da}{item.en && <span className="font-normal text-stone"> · {item.en}</span>}</p>
+                        <p className="text-xs text-forest/55 mt-1">{item.desc}</p>
+                        <p className="text-xs text-stone mt-0.5">{item.descEn}</p>
+                      </div>
+                      <p className="font-semibold text-forest text-sm shrink-0">{item.price}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Burger */}
+            <FadeIn>
+              <div className="mb-12">
+                <h3 className="font-sans font-semibold text-xs tracking-[0.22em] uppercase text-forest mb-2">Burger</h3>
+                <p className="text-xs text-stone mb-1">Alle burgere serveres med ovnbagte timiankartofler. Ønskes grove fritter i stedet +10,-</p>
+                <p className="text-xs text-stone mb-6">All burgers are served with oven baked thyme potatoes. Want coarse fries instead +10,-</p>
+                <div className="divide-y divide-border-col">
+                  {[
+                    { da: "Puls Burger", price: "145,-", desc: "Flammegrillet oksekød · Brioche bolle · Spæd salat · Cheddar · Løg · Tomat · Agurk · Dijonnaise", descEn: "Flame grilled beef · Brioche bun · Baby salad · Cheddar · Onions · Tomato · Cucumber · Dijonnaise", addon: "+ Bacon 15,-" },
+                    { da: "Spicy Burger", price: "145,-", desc: "Flammegrillet oksekød · Brioche bolle · Spæd salat · Cheddar · Syltede jalapeños · Spicy salsa · Chilimayo", descEn: "Flame grilled beef · Brioche bun · Baby salad · Cheddar · Pickled jalapeños · Spicy salsa · Chili mayo", addon: "+ Bacon 15,-" },
+                    { da: "Kylling Burger", en: "Chicken Burger", price: "145,-", desc: "Grillet kyllingebryst · Brioche bolle · Spæd salat · Cheddar · Løg · Agurk · Dijonnaise", descEn: "Grilled chicken breast · Brioche bun · Baby salad · Cheddar · Onions · Cucumber · Dijonnaise", addon: "+ Bacon 15,-" },
+                    { da: "Veggie Burger", price: "145,-", desc: "Kikærtebøf · Brioche bolle · Spæd salat · Tomat · Agurk · Dijonnaise", descEn: "Chickpea steak · Brioche bun · Baby salad · Tomato · Cucumber · Dijonnaise" },
+                  ].map((item) => (
+                    <div key={item.da} className="py-5 flex gap-4 justify-between">
+                      <div className="flex-1">
+                        <p className="font-semibold text-forest text-sm">{item.da}{item.en && <span className="font-normal text-stone"> · {item.en}</span>}</p>
+                        <p className="text-xs text-forest/55 mt-1">{item.desc}</p>
+                        <p className="text-xs text-stone mt-0.5">{item.descEn}</p>
+                        {item.addon && <p className="text-xs text-gold mt-1">{item.addon}</p>}
+                      </div>
+                      <p className="font-semibold text-forest text-sm shrink-0">{item.price}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Fra Havet */}
+            <FadeIn>
+              <div className="mb-12">
+                <h3 className="font-sans font-semibold text-xs tracking-[0.22em] uppercase text-forest mb-6">Fra Havet <span className="text-stone font-normal normal-case tracking-normal">· From the Sea</span></h3>
+                <div className="divide-y divide-border-col">
+                  {[
+                    { da: "Moules Frites", price: "155,-", desc: "Hvidvinsdampede blåmuslinger · Cremet sauce · Grove fritter · Aioli", descEn: "White wine steamed mussels · Creamy sauce · Coarse fries · Aioli" },
+                    { da: "Fish N' Chips", price: "155,-", desc: "Torsk · Grove fritter · Sauce tartar", descEn: "Cod · Coarse fritters · Tartar sauce" },
+                    { da: "Calamari Fritti", price: "105,-", desc: "Blæksprutteringe · Grillet citron · Urt · Aioli · Sauce tatar", descEn: "Octopus rings · Grilled lemon · Herb · Aioli · Tartar sauce" },
+                  ].map((item) => (
+                    <div key={item.da} className="py-5 flex gap-4 justify-between">
+                      <div className="flex-1">
+                        <p className="font-semibold text-forest text-sm">{item.da}</p>
+                        <p className="text-xs text-forest/55 mt-1">{item.desc}</p>
+                        <p className="text-xs text-stone mt-0.5">{item.descEn}</p>
+                      </div>
+                      <p className="font-semibold text-forest text-sm shrink-0">{item.price}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Ekstra */}
+            <FadeIn>
+              <div className="mb-12">
+                <h3 className="font-sans font-semibold text-xs tracking-[0.22em] uppercase text-forest mb-6">Ekstra <span className="text-stone font-normal normal-case tracking-normal">· Extra</span></h3>
+                <div className="divide-y divide-border-col">
+                  {[
+                    { da: "Sprød Fritter", en: "Fries", price: "55,-", desc: "Med dip · With dip" },
+                    { da: "Chicken Hotwings", price: "55,-", desc: "Med dip · With dip" },
+                    { da: "Ovnbagte Timiankartofler", en: "Oven Baked Thyme Potatoes", price: "45,-", desc: "Med dip · With dip" },
+                    { da: "Sides & Snacks", price: "35,-", desc: "Grøn salat · Peber · Saltede mandler · Middelhavsolver", descEn: "Green Salad · Almonds salted · Olive Mediterranean mix" },
+                    { da: "Dip & Sauce", price: "10,-", desc: "Ketchup · Mayo · Chili mayo · Estragon mayo · Dijonnaise · Aioli · Trøffelmayo · Bearnaise · Svampesauce", descEn: "Ketchup · Mayo · Chilli Mayo · Tarragon mayo · Dijonnaise · Aioli · Truffle mayo · Bearnaise · Mushrooms sauce" },
+                  ].map((item) => (
+                    <div key={item.da} className="py-5 flex gap-4 justify-between">
+                      <div className="flex-1">
+                        <p className="font-semibold text-forest text-sm">{item.da}{item.en && <span className="font-normal text-stone"> · {item.en}</span>}</p>
+                        <p className="text-xs text-forest/55 mt-1">{item.desc}</p>
+                        {item.descEn && <p className="text-xs text-stone mt-0.5">{item.descEn}</p>}
+                      </div>
+                      <p className="font-semibold text-forest text-sm shrink-0">{item.price}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Dessert */}
+            <FadeIn>
+              <div>
+                <h3 className="font-sans font-semibold text-xs tracking-[0.22em] uppercase text-forest mb-6">Dessert</h3>
+                <div className="divide-y divide-border-col">
+                  {[
+                    { da: "Crepe Suzette", price: "95,-", desc: "Pandekager m. karamel · Appelsinsauce · Vaniljeis · Ristede mandler", descEn: "Pancakes w. caramel · Orange sauce · Vanilla ice cream · Roasted almonds" },
+                    { da: "Crème Brûlée", price: "75,-", desc: "Fløjlsblød vaniljecreme · Sprød sukkerskorpe · Friske bær", descEn: "Soft vanilla cream · Crispy sugar crust · Fresh berries" },
+                    { da: "Hvid Chokolade", en: "White Chocolate", price: "75,-", desc: "Hvid chokolade · Cream cheese · Digestive · Friske bær", descEn: "White chocolate · Cream cheese · Digestive · Fresh berries" },
+                  ].map((item) => (
+                    <div key={item.da} className="py-5 flex gap-4 justify-between">
+                      <div className="flex-1">
+                        <p className="font-semibold text-forest text-sm">{item.da}{item.en && <span className="font-normal text-stone"> · {item.en}</span>}</p>
+                        <p className="text-xs text-forest/55 mt-1">{item.desc}</p>
+                        <p className="text-xs text-stone mt-0.5">{item.descEn}</p>
+                      </div>
+                      <p className="font-semibold text-forest text-sm shrink-0">{item.price}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+          </div>
         </div>
       </section>
     </>

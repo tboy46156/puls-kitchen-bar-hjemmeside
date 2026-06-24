@@ -4,7 +4,7 @@ import FadeIn from "@/components/FadeIn";
 
 export const metadata = {
   title: "Om Os — PULS Kitchen & Bar",
-  description: "Oplev følelsen af New Yorker råhed og pariser-elegance hos PULS Kitchen & Bar i Ørestaden. Restaurant med fransk, italiensk og nordisk mad.",
+  description: "Oplev følelsen af New Yorker råhed og pariser-elegance hos PULS Kitchen & Bar i Ørestad. Restaurant med fransk, italiensk og nordisk mad.",
 };
 
 const facts = [
@@ -74,7 +74,7 @@ export default function OmPage() {
             <div className="space-y-7 text-obsidian/70 leading-relaxed text-base md:text-lg max-w-2xl">
               <p>
                 Oplev følelsen af New Yorker råhed og pariser-elegance hos PULS Kitchen & Bar —
-                din moderne restaurant i Ørestaden. Her serverer vi brunch, frokost og middag
+                din moderne restaurant i Ørestad. Her serverer vi brunch, frokost og middag
                 med fokus på friske råvarer, god stemning og enkle smage inspireret af det
                 franske, italienske og nordiske køkken.
               </p>
@@ -91,7 +91,7 @@ export default function OmPage() {
 
             <div className="mt-12 flex flex-wrap gap-4">
               <Link
-                href="https://www.pulskitchen.dk/booking"
+                href="https://book.easytable.com/book/?id=1214a&lang=auto"
                 target="_blank"
                 rel="noopener"
                 className="btn-dark"

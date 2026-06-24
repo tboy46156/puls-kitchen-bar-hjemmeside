@@ -85,7 +85,7 @@ export default function MenuSection() {
               </p>
             </div>
             <Link
-              href="https://www.pulskitchen.dk/booking"
+              href="https://book.easytable.com/book/?id=1214a&lang=auto"
               target="_blank"
               rel="noopener"
               className="btn-accent shrink-0"

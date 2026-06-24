@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Utensils, Moon, Wine, GlassWater } from "lucide-react";
 import { MenuTabs, IMenuTab } from "@/components/ui/tabs-1";
 import FadeIn from "@/components/FadeIn";
+import FrokostMenuContent from "@/components/FrokostMenuContent";
 
 const tabs: IMenuTab[] = [
   { label: "Frokost", value: "frokost", icon: Utensils },
@@ -15,13 +16,9 @@ const tabs: IMenuTab[] = [
   { label: "Vin",     value: "vin",     icon: Wine },
 ];
 
-const menuContent: Record<string, { images: { src: string; title: string }[]; info: string }> = {
+const menuContent: Record<string, { images?: { src: string; title: string }[]; info: string }> = {
   frokost: {
     info: "Serveres man–fre fra 11.00, lør–søn fra 10.00 — alle dage til 16.00.",
-    images: [
-      { src: "/images/menu-1.png", title: "Frokostmenu" },
-      { src: "/images/menu-2.png", title: "Frokostmenu — fortsat" },
-    ],
   },
   aften: {
     info: "Aftenkortet gælder fra 17.00 alle dage. Køkkenet lukker 22.00 (søn 21.00).",
@@ -80,7 +77,7 @@ export default function MenuPageClient() {
                 >
                   <p className="text-obsidian/70 text-sm tracking-wide">{content.info}</p>
                   <Link
-                    href="https://www.pulskitchen.dk/booking"
+                    href="https://book.easytable.com/book/?id=1214a&lang=auto"
                     target="_blank"
                     rel="noopener"
                     className="btn-dark shrink-0 !py-2.5"
@@ -89,32 +86,38 @@ export default function MenuPageClient() {
                   </Link>
                 </motion.div>
 
-                <div className={`grid gap-5 ${content.images.length === 1 ? "max-w-2xl" : "md:grid-cols-2"}`}>
-                  {content.images.map((m) => (
-                    <motion.figure key={m.src} variants={fadeItem} className="group">
-                      <a
-                        href={m.src}
-                        target="_blank"
-                        rel="noopener"
-                        className="relative block aspect-[3/4] border border-obsidian/12 overflow-hidden bg-white rounded-xl"
-                      >
-                        <Image
-                          src={m.src}
-                          alt={m.title}
-                          fill
-                          sizes="(min-width:768px) 50vw, 100vw"
-                          className="object-contain p-3 transition-transform duration-700 group-hover:scale-[1.015]"
-                        />
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                          <span className="bg-gold text-obsidian text-xs tracking-[0.22em] uppercase font-semibold px-4 py-2">
-                            Åbn i fuld størrelse ↗
-                          </span>
-                        </div>
-                      </a>
-                      <figcaption className="mt-3 text-sm font-semibold text-obsidian">{m.title}</figcaption>
-                    </motion.figure>
-                  ))}
-                </div>
+                {selected === "frokost" ? (
+                  <motion.div variants={fadeItem}>
+                    <FrokostMenuContent />
+                  </motion.div>
+                ) : content.images && (
+                  <div className={`grid gap-5 ${content.images.length === 1 ? "max-w-2xl" : "md:grid-cols-2"}`}>
+                    {content.images.map((m) => (
+                      <motion.figure key={m.src} variants={fadeItem} className="group">
+                        <a
+                          href={m.src}
+                          target="_blank"
+                          rel="noopener"
+                          className="relative block aspect-[3/4] border border-obsidian/12 overflow-hidden bg-white rounded-xl"
+                        >
+                          <Image
+                            src={m.src}
+                            alt={m.title}
+                            fill
+                            sizes="(min-width:768px) 50vw, 100vw"
+                            className="object-contain p-3 transition-transform duration-700 group-hover:scale-[1.015]"
+                          />
+                          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span className="bg-gold text-obsidian text-xs tracking-[0.22em] uppercase font-semibold px-4 py-2">
+                              Åbn i fuld størrelse ↗
+                            </span>
+                          </div>
+                        </a>
+                        <figcaption className="mt-3 text-sm font-semibold text-obsidian">{m.title}</figcaption>
+                      </motion.figure>
+                    ))}
+                  </div>
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
@@ -132,7 +135,7 @@ export default function MenuPageClient() {
               </h3>
             </div>
             <div className="flex flex-wrap justify-center md:justify-start gap-3">
-              <Link href="https://www.pulskitchen.dk/booking" target="_blank" rel="noopener" className="btn-gold">
+              <Link href="https://book.easytable.com/book/?id=1214a&lang=auto" target="_blank" rel="noopener" className="btn-gold">
                 Book bord
               </Link>
               <Link href="https://www.pulskitchen.dk/takeaway" target="_blank" rel="noopener" className="btn-ghost">

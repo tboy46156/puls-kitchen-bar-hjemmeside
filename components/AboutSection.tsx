@@ -12,14 +12,12 @@ export default function AboutSection() {
         </FadeIn>
         <FadeIn delay={0.05}>
           <h2 className="display-section text-4xl md:text-6xl lg:text-7xl text-obsidian mx-auto">
-            Restaurant og bar i Ørestad med fransk, italiensk og nordisk mad
+            I hjertet af Ørestad
           </h2>
         </FadeIn>
         <FadeIn delay={0.12}>
           <p className="mt-10 mx-auto max-w-2xl text-obsidian/65 leading-relaxed text-base md:text-lg">
-            Vi laver mad af det der er i sæson og blander drinks vi selv
-            gider drikke. Ingen gardin foran køkkenet, ingen lang liste af
-            allergener på kridt. Bare et sted du har lyst til at sidde.
+            PULS Kitchen & Bar er Ørestads restaurant og bar — med brunch, aftensmad og stærke cocktails til alle slags aftener. Vi ligger tæt på Royal Arena.
           </p>
         </FadeIn>
       </div>

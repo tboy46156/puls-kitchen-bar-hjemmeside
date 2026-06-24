@@ -31,7 +31,7 @@ export default function HoursSection() {
                   <span className="text-base md:text-lg font-semibold text-obsidian">
                     {h.day}
                   </span>
-                  <span className="font-display font-semibold text-2xl md:text-3xl text-obsidian tracking-tight">
+                  <span className="font-sans font-semibold text-2xl md:text-3xl text-obsidian tracking-tight">
                     {h.time}
                   </span>
                   <span className="col-span-2 sm:col-span-1 text-sm md:text-base text-obsidian/60 sm:text-right">
@@ -47,7 +47,7 @@ export default function HoursSection() {
               <div>
                 <p className="text-xs tracking-[0.22em] uppercase text-gold mb-6">Adresse</p>
                 <address className="not-italic">
-                  <p className="font-display font-bold text-3xl md:text-4xl text-obsidian leading-tight">
+                  <p className="font-sans font-bold text-3xl md:text-4xl text-obsidian leading-tight">
                     Arne Jacobsens Allé 9
                   </p>
                   <p className="mt-4 text-obsidian/60 text-sm tracking-wide">2300 København S</p>

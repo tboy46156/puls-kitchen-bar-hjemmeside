@@ -4,7 +4,7 @@ import FadeIn from "@/components/FadeIn";
 
 export const metadata = {
   title: "Gavekort — PULS Kitchen & Bar",
-  description: "Giv oplevelsen som gave. Køb gavekort til PULS Kitchen & Bar i Ørestaden.",
+  description: "Giv oplevelsen som gave. Køb gavekort til PULS Kitchen & Bar i Ørestad.",
 };
 
 export default function GavekortPage() {
@@ -126,7 +126,7 @@ export default function GavekortPage() {
               </h2>
               <p className="mt-2 text-ivory/70 text-sm">Åbent alle ugens dage fra kl. 10–11.</p>
             </div>
-            <Link href="https://www.pulskitchen.dk/booking" target="_blank" rel="noopener" className="btn-gold shrink-0">
+            <Link href="https://book.easytable.com/book/?id=1214a&lang=auto" target="_blank" rel="noopener" className="btn-gold shrink-0">
               Book bord →
             </Link>
           </div>
