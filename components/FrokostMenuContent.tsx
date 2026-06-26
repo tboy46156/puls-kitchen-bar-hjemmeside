@@ -92,7 +92,7 @@ function CategoryBlock({ cat }: { cat: Category }) {
     <div className="mb-10">
       {/* Kategori-header */}
       <div className="border-t-2 border-sage pt-3 mb-4">
-        <h3 className="font-bold text-xl text-obsidian leading-tight">
+        <h3 className="font-bold text-2xl text-obsidian leading-tight">
           {cat.da}
         </h3>
         {cat.en && (
@@ -112,20 +112,20 @@ function CategoryBlock({ cat }: { cat: Category }) {
           <div key={item.da} className="py-3.5">
             <div className="flex items-baseline justify-between gap-3">
               <div>
-                <span className="font-semibold text-obsidian text-sm">{item.da}</span>
+                <span className="font-semibold text-obsidian text-base">{item.da}</span>
                 {item.en && (
-                  <span className="text-obsidian/35 text-[11px] font-normal ml-1.5">{item.en}</span>
+                  <span className="text-obsidian/35 text-xs font-normal ml-1.5">{item.en}</span>
                 )}
               </div>
               {item.price && (
-                <span className="font-semibold text-forest text-sm shrink-0 tabular-nums">
+                <span className="font-semibold text-forest text-base shrink-0 tabular-nums">
                   {item.price}
                 </span>
               )}
             </div>
-            <p className="text-[11px] text-obsidian/45 mt-1 leading-relaxed">{item.desc}</p>
+            <p className="text-xs text-obsidian/45 mt-1 leading-relaxed">{item.desc}</p>
             {item.addon && (
-              <p className="text-[11px] text-gold mt-1">{item.addon}</p>
+              <p className="text-xs text-gold mt-1">{item.addon}</p>
             )}
           </div>
         ))}

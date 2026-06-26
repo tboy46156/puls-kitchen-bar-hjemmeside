@@ -5,10 +5,10 @@ import FadeIn from "./FadeIn";
 const cards = [
   {
     line1: "Brunch",
-    line2: "",
+    line2: "menu",
     alt: "Brunch hos PULS Kitchen & Bar i Ørestad, København",
     description: "Weekend brunch fra kl. 10 — og frokost alle ugens dage fra 11.",
-    image: "/images/gallery-1.jpeg",
+    image: "/images/brunch-dish.jpg",
     href: "/brunch",
   },
   {
@@ -24,7 +24,7 @@ const cards = [
     line2: "menu",
     alt: "Aftensmad og sæsonretter hos PULS Kitchen & Bar, Arne Jacobsens Allé 9",
     description: "Sæsonretter fra køkkenet — serveret til du er mæt og tilfreds.",
-    image: "/images/tasting.jpg",
+    image: "/images/aften-dish.jpg",
     href: "/menu",
   },
   {
@@ -39,54 +39,52 @@ const cards = [
 
 export default function DishesSection() {
   return (
-    <section className="bg-bone px-4 md:px-6 pb-1.5 md:pb-2">
-      <div className="bg-sand rounded-2xl md:rounded-3xl py-5 md:py-6">
-      <div className="container-max">
-        <FadeIn>
-          <div className="text-center mb-6">
-            <h2 className="display-section text-5xl md:text-6xl lg:text-7xl text-obsidian">
-              Hvad vi{" "}
-              tilbyder
-            </h2>
-          </div>
-        </FadeIn>
+    <section className="bg-sand py-12 md:py-16">
+        <div className="container-max">
+          <FadeIn>
+            <div className="text-center mb-6">
+              <h2 className="display-section text-5xl md:text-6xl lg:text-7xl text-obsidian">
+                Hvad vi{" "}
+                tilbyder
+              </h2>
+            </div>
+          </FadeIn>
 
-        <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
-          {cards.map((c, i) => (
-            <FadeIn key={c.line1} delay={i * 0.08}>
-              <Link href={c.href} className="group block relative overflow-hidden rounded-2xl md:rounded-3xl" style={{ aspectRatio: "3/4" }}>
-                <Image
-                  src={c.image}
-                  alt={c.alt}
-                  fill
-                  sizes="(min-width:768px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-[1.6s] group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/95 via-obsidian/50 to-obsidian/10" />
-                <div className="absolute bottom-0 inset-x-0 p-5 md:p-7">
-                  <h3 className="display-section text-3xl md:text-4xl text-ivory leading-[0.92]">
-                    {c.line1}
-                    {c.line2 && <span className="block text-ivory/60">{c.line2}</span>}
-                  </h3>
-                  <p className="mt-2.5 text-ivory/65 text-xs leading-relaxed">
-                    {c.description}
-                  </p>
-                  <span className="mt-4 inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase font-semibold text-gold">
-                    Se mere <span>→</span>
-                  </span>
-                </div>
-              </Link>
-            </FadeIn>
-          ))}
+          <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
+            {cards.map((c, i) => (
+              <FadeIn key={c.line1} delay={i * 0.08}>
+                <Link href={c.href} className="group block relative overflow-hidden rounded-2xl md:rounded-3xl" style={{ aspectRatio: "3/4" }}>
+                  <Image
+                    src={c.image}
+                    alt={c.alt}
+                    fill
+                    sizes="(min-width:768px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-[1.6s] group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian/95 via-obsidian/50 to-obsidian/10" />
+                  <div className="absolute bottom-0 inset-x-0 p-5 md:p-7">
+                    <h3 className="display-section text-3xl md:text-4xl text-ivory leading-[0.92]">
+                      {c.line1}
+                      {c.line2 && <span className="block text-ivory/60">{c.line2}</span>}
+                    </h3>
+                    <p className="mt-2.5 text-ivory/65 text-xs leading-relaxed">
+                      {c.description}
+                    </p>
+                    <span className="mt-4 inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase font-semibold text-gold">
+                      Se mere <span>→</span>
+                    </span>
+                  </div>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={0.2}>
+            <div className="mt-5 text-center">
+              <Link href="/menu" className="btn-dark">Se hele menuen →</Link>
+            </div>
+          </FadeIn>
         </div>
-
-        <FadeIn delay={0.2}>
-          <div className="mt-5 text-center">
-            <Link href="/menu" className="btn-dark">Se hele menuen →</Link>
-          </div>
-        </FadeIn>
-      </div>
-      </div>
     </section>
   );
 }

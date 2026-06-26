@@ -4,28 +4,35 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Utensils, Moon, Wine, GlassWater } from "lucide-react";
+import { Utensils, Moon, Wine, GlassWater, Coffee, Music } from "lucide-react";
 import { MenuTabs, IMenuTab } from "@/components/ui/tabs-1";
 import FadeIn from "@/components/FadeIn";
 import FrokostMenuContent from "@/components/FrokostMenuContent";
+import AftenMenuContent from "@/components/AftenMenuContent";
+import BrunchMenuContent from "@/components/BrunchMenuContent";
+import KoncertMenuContent from "@/components/KoncertMenuContent";
 
 const tabs: IMenuTab[] = [
-  { label: "Frokost", value: "frokost", icon: Utensils },
-  { label: "Aften",   value: "aften",   icon: Moon },
-  { label: "Drinks",  value: "drinks",  icon: GlassWater },
-  { label: "Vin",     value: "vin",     icon: Wine },
+  { label: "Brunch",   value: "brunch",   icon: Coffee },
+  { label: "Frokost",  value: "frokost",  icon: Utensils },
+  { label: "Aften",    value: "aften",    icon: Moon },
+  { label: "Koncert",  value: "koncert",  icon: Music },
+  { label: "Drinks",   value: "drinks",   icon: GlassWater },
+  { label: "Vin",      value: "vin",      icon: Wine },
 ];
 
 const menuContent: Record<string, { images?: { src: string; title: string }[]; info: string }> = {
+  brunch: {
+    info: "Byg-Selv-Brunch hverdage fra 11.00 · Ad libitum i weekenden fra 10.00 — begge til 14.00.",
+  },
+  koncert: {
+    info: "Serveres fra 16.00 på koncertdage — få minutters gang fra Royal Arena.",
+  },
   frokost: {
     info: "Serveres man–fre fra 11.00, lør–søn fra 10.00 — alle dage til 16.00.",
   },
   aften: {
     info: "Aftenkortet gælder fra 17.00 alle dage. Køkkenet lukker 22.00 (søn 21.00).",
-    images: [
-      { src: "/images/menu-5.png", title: "Aftensmenu" },
-      { src: "/images/menu-3.png", title: "Aftensmenu — fortsat" },
-    ],
   },
   drinks: {
     info: "Klassiske cocktails og signaturdrinks — bar åben 11.00–22.00.",
@@ -45,29 +52,26 @@ const fadeItem = {
 };
 
 export default function MenuPageClient() {
-  const [selected, setSelected] = useState("frokost");
+  const [selected, setSelected] = useState("brunch");
   const content = menuContent[selected];
 
   return (
-    <div className="bg-bone pt-24 md:pt-32 space-y-4 md:space-y-6 pb-4 md:pb-6">
+    <div className="pt-24 md:pt-32">
 
       {/* Header */}
-      <section className="px-4 md:px-6">
-        <div className="bg-ivory rounded-2xl md:rounded-3xl">
-          <div className="container-max py-8 md:py-10">
+      <section className="bg-ivory">
+        <div className="container-max py-8 md:py-10">
             <FadeIn>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <h1 className="display-section text-3xl md:text-4xl text-obsidian">Menukort</h1>
                 <MenuTabs tabs={tabs} selected={selected} setSelected={setSelected} />
               </div>
             </FadeIn>
-          </div>
         </div>
       </section>
 
       {/* Menu content */}
-      <section className="px-4 md:px-6">
-        <div className="bg-bone rounded-2xl md:rounded-3xl overflow-hidden">
+      <section className="bg-sand">
           <div className="container-max py-10 md:py-12">
             <AnimatePresence mode="wait">
               <motion.div key={selected} variants={stagger} initial="hidden" animate="visible" exit="exit">
@@ -86,9 +90,21 @@ export default function MenuPageClient() {
                   </Link>
                 </motion.div>
 
-                {selected === "frokost" ? (
+                {selected === "brunch" ? (
+                  <motion.div variants={fadeItem}>
+                    <BrunchMenuContent />
+                  </motion.div>
+                ) : selected === "frokost" ? (
                   <motion.div variants={fadeItem}>
                     <FrokostMenuContent />
+                  </motion.div>
+                ) : selected === "aften" ? (
+                  <motion.div variants={fadeItem}>
+                    <AftenMenuContent />
+                  </motion.div>
+                ) : selected === "koncert" ? (
+                  <motion.div variants={fadeItem}>
+                    <KoncertMenuContent />
                   </motion.div>
                 ) : content.images && (
                   <div className={`grid gap-5 ${content.images.length === 1 ? "max-w-2xl" : "md:grid-cols-2"}`}>
@@ -121,12 +137,10 @@ export default function MenuPageClient() {
               </motion.div>
             </AnimatePresence>
           </div>
-        </div>
       </section>
 
       {/* CTA */}
-      <section className="px-4 md:px-6">
-        <div className="bg-forest rounded-2xl md:rounded-3xl">
+      <section className="bg-forest">
           <div className="container-max py-10 md:py-12 flex flex-col md:flex-row md:items-center justify-between gap-6 text-center md:text-left">
             <div>
               <p className="text-xs tracking-[0.22em] uppercase text-gold mb-2">Klar til at smage?</p>
@@ -143,7 +157,6 @@ export default function MenuPageClient() {
               </Link>
             </div>
           </div>
-        </div>
       </section>
 
     </div>

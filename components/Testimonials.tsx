@@ -155,8 +155,8 @@ export default function Testimonials() {
   const onTouchEnd = () => { isDragging.current = false; };
 
   return (
-    <section className="bg-bone py-1.5 md:py-2">
-      <div className="mx-4 md:mx-6 bg-bone rounded-2xl md:rounded-3xl overflow-hidden py-6 md:py-8">
+    <section className="bg-bone py-12 md:py-16 overflow-hidden">
+      <div>
 
         {/* Title */}
         <FadeIn>

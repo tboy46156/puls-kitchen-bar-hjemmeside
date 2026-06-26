@@ -7,14 +7,30 @@ import { MenuToggleIcon } from "@/components/ui/menu-toggle-icon";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Menu",      href: "/menu" },
-  { label: "Selskaber", href: "/selskaber" },
-  { label: "Gavekort",  href: "/gavekort" },
-  { label: "Kontakt",   href: "/kontakt" },
+  { label: "Menu",         href: "/menu" },
+  { label: "Koncertmenu",  href: "/koncertmenu" },
+  { label: "Selskaber",    href: "/selskaber" },
+  { label: "Gavekort",     href: "/gavekort" },
+  { label: "Kontakt",      href: "/kontakt" },
 ];
+
+const ease = [0.2, 0.65, 0.2, 1] as const;
+const navTransition = { duration: 0.4, ease };
 
 export default function Navigation() {
   const [open, setOpen] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
+  const [atTop, setAtTop] = React.useState(true);
+
+  React.useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+      setAtTop(window.scrollY < 40);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   React.useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -24,81 +40,121 @@ export default function Navigation() {
   return (
     <>
       {/* ── Desktop ──────────────────────────────────────────────── */}
-      <header className="fixed top-0 left-0 right-0 z-50 hidden lg:block bg-white border-b border-border-col">
-        <nav className="container-max flex items-center h-[72px] gap-0">
-          {/* Spacer */}
-          <div className="flex-1" />
+      <motion.header
+        className="fixed inset-x-0 z-50 hidden lg:block"
+        animate={scrolled
+          ? { paddingTop: 12, paddingLeft: 120, paddingRight: 120, top: 0 }
+          : { paddingTop: 0,  paddingLeft: 0,   paddingRight: 0,   top: atTop ? 40 : 0 }}
+        transition={navTransition}
+      >
+        <motion.div
+          className="border border-border-col backdrop-blur-md overflow-hidden"
+          animate={scrolled ? {
+            borderRadius: 14,
+            backgroundColor: "rgba(245,247,242,0.97)",
+            boxShadow: "0 4px 32px rgba(0,0,0,0.08)",
+          } : {
+            borderRadius: 0,
+            backgroundColor: "rgba(245,247,242,0.80)",
+            boxShadow: "0 0px 0px rgba(0,0,0,0)",
+          }}
+          transition={navTransition}
+        >
+          <nav className="container-max relative flex items-center h-[72px]">
 
-          {/* Logo + Nav links centered together */}
-          <div className="flex items-center gap-8">
-            <Link href="/" className="flex-shrink-0">
+            {/* Left — nav links */}
+            <div className="flex items-center gap-6">
+              {navLinks.map((l) => (
+                <Link
+                  key={l.label}
+                  href={l.href}
+                  className="text-[12px] font-semibold tracking-[0.18em] uppercase text-obsidian hover:text-gold transition-colors whitespace-nowrap"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+
+            {/* Center — Logo (absolutely centered) */}
+            <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex-shrink-0">
               <Image
-                src="/images/PULS_logo.png"
+                src="/images/PULS_logo_nav.svg"
                 alt="PULS Kitchen & Bar"
                 width={80}
-                height={56}
-                className="h-14 w-auto object-contain"
+                height={49}
+                className="h-10 w-auto object-contain"
+                unoptimized
                 priority
               />
             </Link>
-            {navLinks.map((l) => (
-              <Link
-                key={l.label}
-                href={l.href}
-                className="text-[11px] font-medium tracking-[0.2em] uppercase text-forest hover:text-gold transition-colors whitespace-nowrap"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </div>
 
-          {/* Spacer */}
-          <div className="flex-1" />
-
-          {/* CTA */}
-          <Link
-            href="https://book.easytable.com/book/?id=1214a&lang=auto"
-            target="_blank"
-            rel="noopener"
-            className="flex-shrink-0 btn-sage-solid !py-2 !px-6 !text-[11px]"
-          >
-            Book bord
-          </Link>
-        </nav>
-      </header>
-
-      {/* ── Mobile header ────────────────────────────────────────── */}
-      <header className="fixed top-0 left-0 right-0 z-50 lg:hidden bg-white border-b border-border-col">
-        <div className="container-max flex items-center justify-between h-[64px]">
-          <Link href="/">
-            <Image
-              src="/images/PULS_logo.png"
-              alt="PULS Kitchen & Bar"
-              width={64}
-              height={44}
-              className="h-11 w-auto object-contain"
-              priority
-            />
-          </Link>
-          <div className="flex items-center gap-3">
+            {/* Right — Book bord far right */}
             <Link
               href="https://book.easytable.com/book/?id=1214a&lang=auto"
               target="_blank"
               rel="noopener"
-              className="text-[10px] font-semibold tracking-[0.18em] uppercase px-4 py-2 bg-sage text-white border border-sage transition-colors hover:bg-forest hover:border-forest"
+              className="ml-auto flex-shrink-0 btn-sage-solid !py-2 !px-6 !text-[12px]"
             >
               Book bord
             </Link>
-            <button
-              aria-label={open ? "Luk menu" : "Åbn menu"}
-              onClick={() => setOpen((v) => !v)}
-              className="h-10 w-10 grid place-items-center border border-border-col text-forest hover:text-gold hover:border-gold transition-colors rounded-sm"
-            >
-              <MenuToggleIcon open={open} className="size-5" duration={350} />
-            </button>
+
+          </nav>
+        </motion.div>
+      </motion.header>
+
+      {/* ── Mobile header ────────────────────────────────────────── */}
+      <motion.header
+        className="fixed top-0 inset-x-0 z-50 lg:hidden"
+        animate={scrolled
+          ? { paddingTop: 10, paddingLeft: 24, paddingRight: 24 }
+          : { paddingTop: 0,  paddingLeft: 0,  paddingRight: 0  }}
+        transition={navTransition}
+      >
+        <motion.div
+          className="border border-border-col backdrop-blur-md overflow-hidden"
+          animate={scrolled ? {
+            borderRadius: 12,
+            backgroundColor: "rgba(245,247,242,0.97)",
+            boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
+          } : {
+            borderRadius: 0,
+            backgroundColor: "rgba(245,247,242,0.80)",
+            boxShadow: "0 0px 0px rgba(0,0,0,0)",
+          }}
+          transition={navTransition}
+        >
+          <div className="px-4 flex items-center justify-between h-[64px]">
+            <Link href="/">
+              <Image
+                src="/images/PULS_logo_nav.svg"
+                alt="PULS Kitchen & Bar"
+                width={64}
+                height={39}
+                className="h-8 w-auto object-contain"
+                unoptimized
+                priority
+              />
+            </Link>
+            <div className="flex items-center gap-3">
+              <Link
+                href="https://book.easytable.com/book/?id=1214a&lang=auto"
+                target="_blank"
+                rel="noopener"
+                className="text-[10px] font-semibold tracking-[0.18em] uppercase px-4 py-2 bg-sage text-white border border-sage transition-colors hover:bg-forest hover:border-forest"
+              >
+                Book bord
+              </Link>
+              <button
+                aria-label={open ? "Luk menu" : "Åbn menu"}
+                onClick={() => setOpen((v) => !v)}
+                className="h-10 w-10 grid place-items-center border border-border-col text-forest hover:text-gold hover:border-gold transition-colors rounded-sm"
+              >
+                <MenuToggleIcon open={open} className="size-5" duration={350} />
+              </button>
+            </div>
           </div>
-        </div>
-      </header>
+        </motion.div>
+      </motion.header>
 
       {/* ── Mobile overlay ───────────────────────────────────────── */}
       <AnimatePresence>
@@ -107,10 +163,11 @@ export default function Navigation() {
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.3, ease: [0.2, 0.65, 0.2, 1] }}
-            className="fixed inset-0 top-[64px] z-40 bg-white lg:hidden overflow-y-auto"
+            transition={{ duration: 0.3, ease }}
+            className="fixed inset-0 z-40 bg-white lg:hidden overflow-y-auto"
+            style={{ top: scrolled ? 84 : 64 }}
           >
-            <div className="container-max py-12 flex flex-col">
+            <div className="px-6 py-12 flex flex-col">
               {navLinks.map((l, i) => (
                 <motion.div
                   key={l.label}

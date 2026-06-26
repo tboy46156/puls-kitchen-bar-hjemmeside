@@ -9,9 +9,8 @@ const hours = [
 
 export default function HoursSection() {
   return (
-    <section id="hours" className="bg-bone px-4 md:px-6 pb-1.5 md:pb-2">
-      <div className="bg-sand text-obsidian rounded-2xl md:rounded-3xl py-7 md:py-10">
-      <div className="container-max">
+    <section id="hours" className="bg-sand text-obsidian">
+      <div className="container-max py-12 md:py-16">
 
         <FadeIn>
           <div className="text-center mb-8 border-b border-obsidian/10 pb-6">
@@ -90,7 +89,6 @@ export default function HoursSection() {
           </div>
         </FadeIn>
 
-      </div>
       </div>
     </section>
   );

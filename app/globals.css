@@ -170,8 +170,8 @@ body {
   gap: 0.5rem;
   padding: 0.62rem 1.6rem;
   background: var(--sage);
-  color: #fff;
-  font-weight: 600;
+  color: #0A0908;
+  font-weight: 800;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   font-size: 0.7rem;
@@ -181,6 +181,7 @@ body {
 .btn-sage-solid:hover {
   background: var(--forest);
   border-color: var(--forest);
+  color: #fff;
   transform: translateY(-1px);
 }
 

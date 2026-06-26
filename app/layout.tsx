@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import Navigation from "@/components/Navigation";
+import TopBar from "@/components/TopBar";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
@@ -110,6 +111,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="font-sans bg-bone text-forest">
+        <TopBar />
         <Navigation />
         <main>{children}</main>
         <Footer />

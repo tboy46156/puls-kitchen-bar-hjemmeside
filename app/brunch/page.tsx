@@ -145,8 +145,7 @@ export default function BrunchPage() {
       </section>
 
       {/* ── Frokost / Lunch menu ─────────────────────────────────── */}
-      <section className="bg-bone px-4 md:px-6 pb-4 md:pb-6 pt-4 md:pt-5">
-        <div className="bg-ivory rounded-2xl md:rounded-3xl">
+      <section className="bg-ivory">
           <div className="container-max py-14 md:py-20 max-w-3xl">
 
             <FadeIn>
@@ -336,7 +335,6 @@ export default function BrunchPage() {
             </FadeIn>
 
           </div>
-        </div>
       </section>
     </>
   );

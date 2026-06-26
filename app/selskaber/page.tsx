@@ -42,49 +42,42 @@ const lokaler = [
 
 export default function SelskaberPage() {
   return (
-    <div className="bg-bone pt-24 md:pt-28 space-y-4 md:space-y-5 pb-4 md:pb-5">
+    <div className="pt-24 md:pt-28">
 
       {/* Intro */}
-      <section className="px-4 md:px-6">
-        <div className="bg-ivory rounded-2xl md:rounded-3xl">
-          <div className="container-max py-12 md:py-16 max-w-4xl text-center">
-            <FadeIn>
-              <p className="text-xs tracking-[0.28em] uppercase text-stone font-semibold mb-5">Selskaber & private arrangementer</p>
-              <h1 className="display-section text-4xl md:text-6xl text-forest leading-[0.95] mb-6 max-w-[12ch] mx-auto">
-                Selskabslokaler til alle anledninger
-              </h1>
-              <p className="text-forest/65 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-                Hos PULS Kitchen &amp; Bar i Ørestad finder du tre selskabslokaler — fra intime rum til 30 gæster til hele restauranten med plads til 150. Perfekte til konfirmationer, fødselsdage, firmaarrangementer og meget mere. Vi tager os af maden, drikkevarerne og servicen.
-              </p>
-            </FadeIn>
-          </div>
+      <section className="bg-ivory">
+        <div className="container-max py-12 md:py-16 max-w-4xl text-center">
+          <FadeIn>
+            <p className="text-xs tracking-[0.28em] uppercase text-stone font-semibold mb-5">Selskaber & private arrangementer</p>
+            <h1 className="display-section text-4xl md:text-6xl text-forest leading-[0.95] mb-6 max-w-[12ch] mx-auto">
+              Selskabslokaler til alle anledninger
+            </h1>
+            <p className="text-forest/65 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+              Hos PULS Kitchen &amp; Bar i Ørestad finder du tre selskabslokaler — fra intime rum til 30 gæster til hele restauranten med plads til 150. Perfekte til konfirmationer, fødselsdage, firmaarrangementer og meget mere. Vi tager os af maden, drikkevarerne og servicen.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
       {/* Lokalerne */}
-      <section className="px-6 md:px-16 lg:px-24">
+      <section className="bg-sand py-12 md:py-16 px-6 md:px-16 lg:px-24">
         <div className="grid md:grid-cols-3 gap-4 md:gap-5">
           {lokaler.map((l, i) => (
             <FadeIn key={l.nr} delay={i * 0.08}>
-              <div className="bg-ivory rounded-2xl md:rounded-3xl overflow-hidden flex flex-col h-full">
-                {/* Billede */}
+              <div className="bg-ivory overflow-hidden flex flex-col h-full">
                 <div className="relative aspect-[16/9] overflow-hidden">
                   <Image
                     src={l.image}
                     alt={`${l.navn} — selskabslokale hos PULS Kitchen & Bar i Ørestad`}
                     fill
-                    sizes="(min-width:768px) 50vw, 100vw"
+                    sizes="(min-width:768px) 33vw, 100vw"
                     className="object-cover"
                   />
                 </div>
-
-                {/* Indhold */}
                 <div className="p-8 md:p-10 flex flex-col flex-1">
                   <p className="text-xs tracking-[0.28em] uppercase text-stone font-semibold mb-3">{l.kapacitet}</p>
                   <h2 className="display-section text-3xl md:text-4xl text-forest mb-4">{l.navn}</h2>
                   <p className="text-forest/65 text-sm leading-relaxed mb-8 flex-1">{l.beskrivelse}</p>
-
-                  {/* Specs */}
                   <div className="grid grid-cols-2 gap-3 border-t border-border-col pt-6 mb-8 text-sm">
                     <div>
                       <p className="text-xs uppercase tracking-[0.18em] text-stone mb-1">Kapacitet</p>
@@ -95,11 +88,7 @@ export default function SelskaberPage() {
                       <p className="font-semibold text-forest">Fuldt AV-udstyr</p>
                     </div>
                   </div>
-
-                  <a
-                    href="mailto:info@pulskitchen.dk"
-                    className="btn-sage-solid text-center"
-                  >
+                  <a href="mailto:info@pulskitchen.dk" className="btn-sage-solid text-center">
                     Lej {l.navn}
                   </a>
                 </div>
@@ -110,94 +99,71 @@ export default function SelskaberPage() {
       </section>
 
       {/* Hvad er inkluderet */}
-      <section className="px-4 md:px-6">
-        <div className="bg-ivory rounded-2xl md:rounded-3xl">
-          <div className="container-max py-12 md:py-16">
-            <FadeIn>
-              <div className="max-w-3xl mb-10">
-                <p className="text-xs tracking-[0.28em] uppercase text-stone font-semibold mb-4">Hvad er inkluderet</p>
-                <h2 className="display-section text-3xl md:text-4xl text-forest">Alt er klar når I ankommer</h2>
-                <p className="mt-4 text-forest/60 text-sm leading-relaxed">
-                  Vi sørger for at lokalet er sat op, teknikken virker og personalet er klar. Jeres eneste opgave er at møde op og fejre det, der skal fejres.
-                </p>
-              </div>
-
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-7">
-                {features.map((f) => (
-                  <div key={f.title} className="border-t border-border-col pt-5">
-                    <p className="font-semibold text-forest text-sm mb-1">{f.title}</p>
-                    <p className="text-forest/55 text-sm leading-relaxed">{f.body}</p>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
+      <section className="bg-ivory">
+        <div className="container-max py-12 md:py-16">
+          <FadeIn>
+            <div className="max-w-3xl mb-10">
+              <p className="text-xs tracking-[0.28em] uppercase text-stone font-semibold mb-4">Hvad er inkluderet</p>
+              <h2 className="display-section text-3xl md:text-4xl text-forest">Alt er klar når I ankommer</h2>
+              <p className="mt-4 text-forest/60 text-sm leading-relaxed">
+                Vi sørger for at lokalet er sat op, teknikken virker og personalet er klar. Jeres eneste opgave er at møde op og fejre det, der skal fejres.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-7">
+              {features.map((f) => (
+                <div key={f.title} className="border-t border-border-col pt-5">
+                  <p className="font-semibold text-forest text-sm mb-1">{f.title}</p>
+                  <p className="text-forest/55 text-sm leading-relaxed">{f.body}</p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* Event-typer */}
-      <section className="px-4 md:px-6">
-        <div className="bg-sand rounded-2xl md:rounded-3xl">
-          <div className="container-max py-12 md:py-16">
-            <FadeIn>
-              <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-                <div>
-                  <p className="text-xs tracking-[0.28em] uppercase text-stone font-semibold mb-4">Vi har prøvet det mange gange</p>
-                  <h2 className="display-section text-3xl md:text-4xl text-forest mb-6">
-                    Fra konfirmation til firmafest
-                  </h2>
-                  <p className="text-forest/65 text-sm leading-relaxed mb-8">
-                    Uanset anledning ved vi, hvad der skal til for at en aften lykkes. Vi har arrangeret selskaber for familier, vennegrupper og virksomheder — og vi behandler alle arrangementer med samme omhu og nærvær.
-                  </p>
-                  <a href="mailto:info@pulskitchen.dk" className="btn-sage-solid inline-flex">
-                    Send en forespørgsel
-                  </a>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    "Konfirmationer",
-                    "Fødselsdage",
-                    "Firmaarrangementer",
-                    "Barnedåb",
-                    "Mindehøjtider",
-                    "Julefrokost",
-                    "Teambuilding",
-                    "Private middage",
-                  ].map((tag) => (
-                    <div key={tag} className="bg-ivory rounded-xl px-4 py-4">
-                      <p className="font-semibold text-forest text-sm">{tag}</p>
-                    </div>
-                  ))}
-                </div>
+      <section className="bg-sand">
+        <div className="container-max py-12 md:py-16">
+          <FadeIn>
+            <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+              <div>
+                <p className="text-xs tracking-[0.28em] uppercase text-stone font-semibold mb-4">Vi har prøvet det mange gange</p>
+                <h2 className="display-section text-3xl md:text-4xl text-forest mb-6">Fra konfirmation til firmafest</h2>
+                <p className="text-forest/65 text-sm leading-relaxed mb-8">
+                  Uanset anledning ved vi, hvad der skal til for at en aften lykkes. Vi har arrangeret selskaber for familier, vennegrupper og virksomheder — og vi behandler alle arrangementer med samme omhu og nærvær.
+                </p>
+                <a href="mailto:info@pulskitchen.dk" className="btn-sage-solid inline-flex">
+                  Send en forespørgsel
+                </a>
               </div>
-            </FadeIn>
-          </div>
+              <div className="grid grid-cols-2 gap-3">
+                {["Konfirmationer","Fødselsdage","Firmaarrangementer","Barnedåb","Mindehøjtider","Julefrokost","Teambuilding","Private middage"].map((tag) => (
+                  <div key={tag} className="bg-ivory px-4 py-4">
+                    <p className="font-semibold text-forest text-sm">{tag}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* Bottom CTA */}
-      <section className="px-4 md:px-6 pb-0">
-        <div className="bg-forest rounded-2xl md:rounded-3xl">
-          <div className="container-max py-16 md:py-24 text-center">
-            <FadeIn>
-              <p className="text-xs tracking-[0.35em] uppercase text-ivory/50 mb-5">Klar til at booke?</p>
-              <h2 className="display-section text-ivory text-4xl md:text-5xl lg:text-6xl max-w-[18ch] mx-auto leading-none mb-6">
-                Lej PULS til jeres næste arrangement
-              </h2>
-              <p className="text-ivory/60 text-sm max-w-sm mx-auto leading-relaxed mb-10">
-                Kontakt os med dato, antal gæster og anledning — så vender vi tilbage inden for 24 timer med et tilbud.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <a href="mailto:info@pulskitchen.dk" className="btn-gold">
-                  info@pulskitchen.dk
-                </a>
-                <a href="tel:+4532626030" className="btn-ghost">
-                  +45 3262 6030
-                </a>
-              </div>
-            </FadeIn>
-          </div>
+      <section className="bg-forest">
+        <div className="container-max py-16 md:py-24 text-center">
+          <FadeIn>
+            <p className="text-xs tracking-[0.35em] uppercase text-ivory/50 mb-5">Klar til at booke?</p>
+            <h2 className="display-section text-ivory text-4xl md:text-5xl lg:text-6xl max-w-[18ch] mx-auto leading-none mb-6">
+              Lej PULS til jeres næste arrangement
+            </h2>
+            <p className="text-ivory/60 text-sm max-w-sm mx-auto leading-relaxed mb-10">
+              Kontakt os med dato, antal gæster og anledning — så vender vi tilbage inden for 24 timer med et tilbud.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="mailto:info@pulskitchen.dk" className="btn-gold">info@pulskitchen.dk</a>
+              <a href="tel:+4532626030" className="btn-ghost">+45 3262 6030</a>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
