@@ -7,7 +7,7 @@ const cards = [
     line1: "Brunch",
     line2: "menu",
     alt: "Brunch hos PULS Kitchen & Bar i Ørestad, København",
-    description: "Weekend brunch fra kl. 10 — og frokost alle ugens dage fra 11.",
+    description: "",
     image: "/images/brunch-dish.jpg",
     href: "/brunch",
   },
@@ -15,7 +15,7 @@ const cards = [
     line1: "Frokost",
     line2: "menu",
     alt: "Frokostmenu hos PULS Kitchen & Bar i Ørestad, København",
-    description: "Smørrebrød, burgere, salater og klassikere — serveret til kl. 16.",
+    description: "Serveret til kl. 16",
     image: "/images/food.jpg",
     href: "/brunch",
   },
@@ -23,7 +23,7 @@ const cards = [
     line1: "Aften",
     line2: "menu",
     alt: "Aftensmad og sæsonretter hos PULS Kitchen & Bar, Arne Jacobsens Allé 9",
-    description: "Sæsonretter fra køkkenet — serveret til du er mæt og tilfreds.",
+    description: "",
     image: "/images/aften-dish.jpg",
     href: "/menu",
   },
@@ -31,7 +31,7 @@ const cards = [
     line1: "Koncert",
     line2: "menu",
     alt: "Koncertmenu inden Royal Arena — PULS Kitchen & Bar, 5 minutters gang fra arenaen",
-    description: "Spis inden showet. Vi ligger få minutters gang fra Royal Arena.",
+    description: "Få min. gang fra Royal Arena",
     image: "/images/royal-arena.jpg",
     href: "/koncertmenu",
   },
@@ -39,7 +39,7 @@ const cards = [
 
 export default function DishesSection() {
   return (
-    <section className="bg-sand py-12 md:py-16">
+    <section className="bg-sand py-8 md:py-12">
         <div className="container-max">
           <FadeIn>
             <div className="text-center mb-6">
@@ -62,16 +62,18 @@ export default function DishesSection() {
                     className="object-cover transition-transform duration-[1.6s] group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian/95 via-obsidian/50 to-obsidian/10" />
-                  <div className="absolute bottom-0 inset-x-0 p-5 md:p-7">
-                    <h3 className="display-section text-3xl md:text-4xl text-ivory leading-[0.92]">
+                  <div className="absolute bottom-0 inset-x-0 p-4 md:p-7">
+                    <h3 className="display-section text-2xl md:text-4xl text-ivory leading-[0.92]">
                       {c.line1}
                       {c.line2 && <span className="block text-ivory/60">{c.line2}</span>}
                     </h3>
-                    <p className="mt-2.5 text-ivory/65 text-xs leading-relaxed">
-                      {c.description}
-                    </p>
-                    <span className="mt-4 inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase font-semibold text-gold">
-                      Se mere <span>→</span>
+                    {c.description && (
+                      <p className="mt-2 text-ivory/70 text-[11px] md:text-xs leading-snug">
+                        {c.description}
+                      </p>
+                    )}
+                    <span className="mt-3 inline-block text-[10px] tracking-[0.28em] uppercase font-semibold text-gold">
+                      Se mere
                     </span>
                   </div>
                 </Link>
