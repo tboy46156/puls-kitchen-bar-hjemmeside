@@ -62,11 +62,11 @@ export default function MenuPageClient({ initialTab }: { initialTab?: string }) 
   const content = menuContent[selected];
 
   return (
-    <div className="pt-24 md:pt-32">
+    <div className="pt-20 md:pt-28">
 
       {/* Header */}
       <section id="menu-section" className="bg-ivory">
-        <div className="container-max py-8 md:py-10">
+        <div className="container-max py-5 md:py-10">
             <FadeIn>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <h1 className="display-section text-3xl md:text-4xl text-obsidian">Menukort</h1>

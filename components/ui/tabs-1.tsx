@@ -19,7 +19,7 @@ interface MenuTabsProps {
 
 export function MenuTabs({ tabs, selected, setSelected }: MenuTabsProps) {
   return (
-    <div className="grid grid-cols-1 gap-2 md:flex md:flex-wrap md:gap-3 w-full md:w-auto" role="tablist">
+    <div className="grid grid-cols-1 gap-1.5 md:flex md:flex-wrap md:gap-3 w-full md:w-auto" role="tablist">
       {tabs.map((tab) => {
         const Icon = tab.icon;
         const isActive = selected === tab.value;
@@ -30,7 +30,7 @@ export function MenuTabs({ tabs, selected, setSelected }: MenuTabsProps) {
             aria-selected={isActive}
             onClick={() => setSelected(tab.value)}
             className={clsx(
-              "relative group flex items-center justify-center gap-2.5 px-6 py-3.5 md:px-8 md:py-4 w-full md:w-auto",
+              "relative group flex items-center justify-center gap-2.5 px-6 py-2.5 md:px-8 md:py-4 w-full md:w-auto",
               "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold transition-all duration-200",
               isActive
                 ? "text-obsidian"
