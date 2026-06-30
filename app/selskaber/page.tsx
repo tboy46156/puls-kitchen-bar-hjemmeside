@@ -20,6 +20,7 @@ const lokaler = [
   {
     nr: "01",
     navn: "Lille lokale",
+    btn: "Lej det lille lokale",
     kapacitet: "Op til 30 gæster",
     beskrivelse: "Et intimt og afskærmet lokale — ideelt til barnedåb, runde fødselsdage, mindehøjtider og mindre firmaarrangementer. Fuldt AV-udstyr og dedikeret personale.",
     image: "/images/selskaber.jpg",
@@ -27,6 +28,7 @@ const lokaler = [
   {
     nr: "02",
     navn: "Stort lokale",
+    btn: "Lej det store lokale",
     kapacitet: "Op til 50 gæster",
     beskrivelse: "Vores næststørste lokale med plads til konfirmationer, firmafester og større private selskaber. Fleksibel indretning, fuldt AV-udstyr og eget serveringsteam.",
     image: "/images/selskaber.jpg",
@@ -34,6 +36,7 @@ const lokaler = [
   {
     nr: "03",
     navn: "Hele restauranten",
+    btn: "Lej hele restauranten",
     kapacitet: "Op til 150 gæster",
     beskrivelse: "Lej hele PULS eksklusivt til jeres arrangement. Perfekt til store firmafester, gallamiddage og jubilæer — fuldt AV-udstyr, dedikeret personale og skræddersyet menu.",
     image: "/images/selskaber.jpg",
@@ -105,7 +108,7 @@ export default function SelskaberPage() {
                     </div>
                   </div>
                   <a href="mailto:info@pulskitchen.dk" className="btn-sage-solid text-center">
-                    Lej {l.navn}
+                    {l.btn}
                   </a>
                 </div>
               </div>
