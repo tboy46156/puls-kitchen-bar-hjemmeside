@@ -36,29 +36,29 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: [0.2, 0.65, 0.2, 1], delay: 0.2 }}
-        className="absolute inset-x-0 -bottom-24 md:-bottom-28 flex justify-center px-4"
+        className="absolute inset-x-0 -bottom-20 md:-bottom-24 flex justify-center px-4"
       >
-      <div className="w-full max-w-[500px] bg-[#F5F7F2]/95 backdrop-blur-md rounded-2xl shadow-2xl px-8 py-8 text-center">
+      <div className="w-full max-w-[500px] bg-[#F5F7F2]/95 backdrop-blur-md rounded-2xl shadow-2xl px-6 py-5 text-center">
         <h1 className="flex justify-center">
           <Image
             src="/images/PULS_logo.svg"
             alt="PULS Kitchen & Bar"
             width={200}
             height={123}
-            className="w-[140px] md:w-[180px] h-auto object-contain"
+            className="w-[120px] md:w-[150px] h-auto object-contain"
             unoptimized
             priority
           />
         </h1>
 
         <p
-          className="mt-5 font-sans text-forest/65 max-w-xs mx-auto leading-relaxed"
-          style={{ fontSize: "clamp(0.875rem,1.2vw,0.95rem)" }}
+          className="mt-3 font-sans text-forest/65 max-w-xs mx-auto leading-relaxed"
+          style={{ fontSize: "clamp(0.8rem,1.1vw,0.875rem)" }}
         >
           New Yorker råhed. Pariser-elegance. Midt i Ørestad — få minutter fra Royal Arena.
         </p>
 
-        <div className="mt-6 flex flex-col sm:flex-row flex-wrap justify-center gap-2.5">
+        <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-2">
           <Link href="/menu" className="btn-sage-solid justify-center whitespace-nowrap">
             Se menukort
           </Link>
