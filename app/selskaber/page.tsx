@@ -42,16 +42,32 @@ const lokaler = [
 
 export default function SelskaberPage() {
   return (
-    <div className="pt-24 md:pt-28">
+    <div>
+
+      {/* Video hero */}
+      <section className="relative w-full overflow-hidden" style={{ height: "70vh", minHeight: 400 }}>
+        <video
+          src="/Videos/selskaber-hero.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-obsidian/30 via-obsidian/20 to-obsidian/60" />
+        <div className="absolute inset-0 flex flex-col items-center justify-end pb-12 text-center px-6">
+          <p className="text-xs tracking-[0.28em] uppercase text-ivory/70 font-semibold mb-3">Selskaber & private arrangementer</p>
+          <h1 className="display-section text-4xl md:text-6xl text-ivory leading-[0.95]">
+            Selskabslokaler til<br />alle anledninger
+          </h1>
+        </div>
+      </section>
 
       {/* Intro */}
       <section className="bg-ivory">
         <div className="container-max py-12 md:py-16 max-w-4xl text-center">
           <FadeIn>
-            <p className="text-xs tracking-[0.28em] uppercase text-stone font-semibold mb-5">Selskaber & private arrangementer</p>
-            <h1 className="display-section text-4xl md:text-6xl text-forest leading-[0.95] mb-6 max-w-[12ch] mx-auto">
-              Selskabslokaler til alle anledninger
-            </h1>
             <p className="text-forest/65 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
               Hos PULS Kitchen &amp; Bar i Ørestad finder du tre selskabslokaler — fra intime rum til 30 gæster til hele restauranten med plads til 150. Perfekte til konfirmationer, fødselsdage, firmaarrangementer og meget mere. Vi tager os af maden, drikkevarerne og servicen.
             </p>
