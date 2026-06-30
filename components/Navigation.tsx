@@ -3,7 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { MenuToggleIcon } from "@/components/ui/menu-toggle-icon";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -60,7 +59,7 @@ export default function Navigation() {
           }}
           transition={navTransition}
         >
-          <nav className="container-max relative flex items-center h-[72px]">
+          <nav className="container-max !pl-4 xl:!pl-6 relative flex items-center h-[72px]">
 
             {/* Left — nav links */}
             <div className="flex items-center gap-6">
@@ -82,7 +81,7 @@ export default function Navigation() {
                 alt="PULS Kitchen & Bar"
                 width={80}
                 height={49}
-                className="h-10 w-auto object-contain"
+                className="h-12 w-auto object-contain"
                 unoptimized
                 priority
               />
@@ -93,7 +92,7 @@ export default function Navigation() {
               href="https://book.easytable.com/book/?id=1214a&lang=auto"
               target="_blank"
               rel="noopener"
-              className="ml-auto flex-shrink-0 btn-sage-solid !py-2 !px-6 !text-[12px]"
+              className="ml-auto flex-shrink-0 btn-sage-solid !py-0 !px-5 !text-[13px] self-stretch rounded-none"
             >
               Book bord
             </Link>
@@ -140,16 +139,27 @@ export default function Navigation() {
                 href="https://book.easytable.com/book/?id=1214a&lang=auto"
                 target="_blank"
                 rel="noopener"
-                className="text-[10px] font-semibold tracking-[0.18em] uppercase px-4 py-2 bg-sage text-white border border-sage transition-colors hover:bg-forest hover:border-forest"
+                className="text-[12px] font-semibold tracking-[0.18em] uppercase px-5 py-3 bg-sage text-white border border-sage transition-colors hover:bg-forest hover:border-forest"
               >
                 Book bord
               </Link>
               <button
                 aria-label={open ? "Luk menu" : "Åbn menu"}
                 onClick={() => setOpen((v) => !v)}
-                className="h-10 w-10 grid place-items-center border border-border-col text-forest hover:text-gold hover:border-gold transition-colors rounded-sm"
+                className="h-12 w-12 grid place-items-center border border-border-col text-forest hover:text-gold hover:border-gold transition-colors rounded-sm"
               >
-                <MenuToggleIcon open={open} className="size-5" duration={350} />
+                {open ? (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
+                    <line x1="5" y1="5" x2="19" y2="19" />
+                    <line x1="19" y1="5" x2="5" y2="19" />
+                  </svg>
+                ) : (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
+                    <line x1="3" y1="7" x2="21" y2="7" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="17" x2="21" y2="17" />
+                  </svg>
+                )}
               </button>
             </div>
           </div>

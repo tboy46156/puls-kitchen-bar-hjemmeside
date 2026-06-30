@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Utensils, Moon, Wine, GlassWater, Coffee, Music } from "lucide-react";
+import { Utensils, Moon, GlassWater, Coffee, Music } from "lucide-react";
 import { MenuTabs, IMenuTab } from "@/components/ui/tabs-1";
 import FadeIn from "@/components/FadeIn";
 import FrokostMenuContent from "@/components/FrokostMenuContent";
@@ -18,7 +18,6 @@ const tabs: IMenuTab[] = [
   { label: "Aften",    value: "aften",    icon: Moon },
   { label: "Koncert",  value: "koncert",  icon: Music },
   { label: "Drinks",   value: "drinks",   icon: GlassWater },
-  { label: "Vin",      value: "vin",      icon: Wine },
 ];
 
 const menuContent: Record<string, { images?: { src: string; title: string }[]; info: string }> = {
@@ -37,10 +36,6 @@ const menuContent: Record<string, { images?: { src: string; title: string }[]; i
   drinks: {
     info: "Klassiske cocktails og signaturdrinks — bar åben 11.00–22.00.",
     images: [{ src: "/images/menu-4.png", title: "Drinks & cocktails" }],
-  },
-  vin: {
-    info: "Omfangsrigt vinkort fra Frankrig, Italien og oversøisk.",
-    images: [{ src: "/images/menu-6.png", title: "Vinkort" }],
   },
 };
 

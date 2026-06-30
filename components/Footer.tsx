@@ -1,3 +1,6 @@
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
 
 const hours = [
@@ -38,17 +41,17 @@ export default function Footer() {
           {/* Col 1 — Info */}
           <div>
             <p className="font-display font-bold text-2xl tracking-[0.06em] text-ivory mb-1">PULS</p>
-            <p className="font-display italic text-sm text-ivory/50 font-light tracking-wide mb-6">Kitchen & Bar</p>
+            <p className="font-display italic text-sm text-ivory/70 font-light tracking-wide mb-6">Kitchen & Bar</p>
 
-            <address className="not-italic space-y-1.5 text-sm text-ivory/75 leading-relaxed">
+            <address className="not-italic space-y-1.5 text-sm text-ivory leading-relaxed">
               <p>Arne Jacobsens Allé 9</p>
               <p>2300 København S</p>
             </address>
             <div className="mt-4 space-y-1.5 text-sm">
-              <a href="tel:+4532626030" className="block text-ivory/75 hover:text-ivory transition-colors">
+              <a href="tel:+4532626030" className="block text-ivory hover:text-ivory/70 transition-colors">
                 +45 3262 6030
               </a>
-              <a href="mailto:info@pulskitchen.dk" className="block text-ivory/75 hover:text-ivory transition-colors">
+              <a href="mailto:info@pulskitchen.dk" className="block text-ivory hover:text-ivory/70 transition-colors">
                 info@pulskitchen.dk
               </a>
             </div>
@@ -56,55 +59,55 @@ export default function Footer() {
 
           {/* Col 2 — Åbningstider */}
           <div>
-            <p className="text-xs tracking-[0.24em] uppercase text-ivory/50 font-semibold mb-6">Åbningstider</p>
+            <p className="text-xs tracking-[0.24em] uppercase text-ivory/70 font-semibold mb-6">Åbningstider</p>
             <ul className="space-y-3 text-sm">
               {hours.map(([day, time]) => (
-                <li key={day} className="flex justify-between gap-4">
-                  <span className="text-ivory/75">{day}</span>
-                  <span className="text-ivory/55">{time}</span>
+                <li key={day} className="flex gap-4">
+                  <span className="text-ivory w-28 shrink-0">{day}</span>
+                  <span className="text-ivory/80">{time}</span>
                 </li>
               ))}
             </ul>
-            <p className="mt-5 text-xs text-ivory/40 leading-relaxed">
+            <p className="mt-5 text-xs text-ivory/60 leading-relaxed">
               Køkkenet lukker 30 min. før lukketid.
             </p>
           </div>
 
           {/* Col 3 — Følg os */}
           <div>
-            <p className="text-xs tracking-[0.24em] uppercase text-ivory/50 font-semibold mb-6">Følg os</p>
+            <p className="text-xs tracking-[0.24em] uppercase text-ivory/70 font-semibold mb-6">Følg os</p>
 
             <div className="space-y-3">
               <a
                 href="https://www.instagram.com/pulskitchenbar/"
                 target="_blank"
                 rel="noopener"
-                className="group flex items-center gap-4 px-5 py-3.5 border border-white/20 hover:border-white/50 hover:bg-white/5 transition-all duration-300"
+                className="group flex items-center gap-4 px-5 py-3.5 border border-white/30 hover:border-white/60 hover:bg-white/5 transition-all duration-300"
               >
-                <span className="text-ivory/70 group-hover:text-ivory transition-colors">
+                <span className="text-ivory group-hover:text-ivory transition-colors">
                   <InstagramIcon />
                 </span>
                 <span className="flex-1">
                   <span className="block text-sm font-semibold text-ivory">Instagram</span>
-                  <span className="block text-xs text-ivory/50 mt-0.5">@pulskitchenbar</span>
+                  <span className="block text-xs text-ivory/70 mt-0.5">@pulskitchenbar</span>
                 </span>
-                <span className="text-ivory/30 group-hover:text-ivory/60 transition-colors">↗</span>
+                <span className="text-ivory/50 group-hover:text-ivory transition-colors">↗</span>
               </a>
 
               <a
                 href="https://www.facebook.com/pulskitchenbar"
                 target="_blank"
                 rel="noopener"
-                className="group flex items-center gap-4 px-5 py-3.5 border border-white/20 hover:border-white/50 hover:bg-white/5 transition-all duration-300"
+                className="group flex items-center gap-4 px-5 py-3.5 border border-white/30 hover:border-white/60 hover:bg-white/5 transition-all duration-300"
               >
-                <span className="text-ivory/70 group-hover:text-ivory transition-colors">
+                <span className="text-ivory group-hover:text-ivory transition-colors">
                   <FacebookIcon />
                 </span>
                 <span className="flex-1">
                   <span className="block text-sm font-semibold text-ivory">Facebook</span>
-                  <span className="block text-xs text-ivory/50 mt-0.5">PULS Kitchen & Bar</span>
+                  <span className="block text-xs text-ivory/70 mt-0.5">PULS Kitchen & Bar</span>
                 </span>
-                <span className="text-ivory/30 group-hover:text-ivory/60 transition-colors">↗</span>
+                <span className="text-ivory/50 group-hover:text-ivory transition-colors">↗</span>
               </a>
             </div>
 
@@ -128,22 +131,46 @@ export default function Footer() {
               <Link
                 key={href}
                 href={href}
-                className="text-[11px] tracking-[0.18em] uppercase text-ivory/45 hover:text-ivory transition-colors"
+                className="text-[11px] tracking-[0.18em] uppercase text-ivory/75 hover:text-ivory transition-colors"
               >
                 {label}
               </Link>
             ))}
           </nav>
 
-          <div className="flex items-center gap-4 text-xs text-ivory/40">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-ivory/65">
+            <Link href="/handelsbetingelser" className="hover:text-ivory transition-colors">
+              Handelsbetingelser
+            </Link>
+            <span className="text-ivory/20">·</span>
+            <Link href="/privatlivspolitik" className="hover:text-ivory transition-colors">
+              Privatlivspolitik
+            </Link>
+            <span className="text-ivory/20">·</span>
+            <button
+              onClick={() => {
+                const w = window as Window & { Cookiebot?: { renew: () => void } };
+                w.Cookiebot?.renew();
+              }}
+              className="hover:text-ivory transition-colors cursor-pointer"
+            >
+              Cookie-indstillinger
+            </button>
+            <span className="text-ivory/20">·</span>
             <a
               href="https://www.findsmiley.dk/1013484"
               target="_blank"
               rel="noopener"
-              className="flex items-center gap-1.5 hover:text-ivory/65 transition-colors"
+              className="opacity-90 hover:opacity-100 transition-opacity"
             >
-              <span className="text-sm leading-none">😊</span>
-              <span>Fødevarekontrolrapport</span>
+              <Image
+                src="/images/smiley-banner.gif"
+                alt="Se kontrolrapport — Fødevarestyrelsen"
+                width={847}
+                height={274}
+                className="h-8 w-auto"
+                unoptimized
+              />
             </a>
             <span className="text-ivory/20">·</span>
             <span>© {new Date().getFullYear()} PULS Kitchen & Bar</span>

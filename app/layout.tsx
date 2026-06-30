@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
+import Script from "next/script";
 import Navigation from "@/components/Navigation";
 import TopBar from "@/components/TopBar";
 import Footer from "@/components/Footer";
 import "./globals.css";
+
+const GA_ID = "G-CEGD8S818T";
 
 const font = DM_Sans({
   subsets: ["latin"],
@@ -109,8 +112,42 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantSchema) }}
         />
+        {/* 1. Cookiebot — allerførst i head, blokerer alt inden siden bygges */}
+        <script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="a682fe63-7528-4862-ba7d-4fbe040af689"
+          data-blockingmode="auto"
+          async
+        />
+        {/* 2. GA4 Consent Mode v2 default — SKAL stå her i head, før GA4 loader */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied',
+                'wait_for_update': 500
+              });
+            `,
+          }}
+        />
       </head>
       <body className="font-sans bg-bone text-forest">
+        {/* 3. GA4 — loader efter siden, Cookiebot + Consent Mode v2 beskytter */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}', { anonymize_ip: true });
+          `}
+        </Script>
+
         <TopBar />
         <Navigation />
         <main>{children}</main>
