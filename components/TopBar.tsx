@@ -35,10 +35,9 @@ export default function TopBar() {
           +45 3262 6030
         </a>
         <span className="text-ivory/25">·</span>
-        <span>
-          <span className="text-ivory/45 mr-1">Åbent:</span>
-          Man–Tor 11–22 &nbsp;·&nbsp; Fre 11–24 &nbsp;·&nbsp; Lør 10–24 &nbsp;·&nbsp; Søn 10–22
-        </span>
+        <a href="/kontakt" className="hover:text-ivory transition-colors">
+          Åbningstider
+        </a>
       </div>
     </motion.div>
   );
