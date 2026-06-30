@@ -1,7 +1,7 @@
 import FadeIn from "./FadeIn";
 
 const hours = [
-  { day: "Man – Tors", time: "11.00 – 22.00", kitchen: "Køkken til 21.30" },
+  { day: "Man – Tors", time: "11.00 – 22.00", kitchen: "Køkken til 22.00" },
   { day: "Fredag",     time: "11.00 – 24.00", kitchen: "Køkken til 22.00" },
   { day: "Lørdag",     time: "10.00 – 24.00", kitchen: "Køkken til 22.00" },
   { day: "Søndag",     time: "10.00 – 22.00", kitchen: "Køkken til 21.00" },
@@ -10,7 +10,7 @@ const hours = [
 export default function HoursSection() {
   return (
     <section id="hours" className="bg-sand text-obsidian">
-      <div className="container-max py-12 md:py-16">
+      <div className="container-max py-8 md:py-12">
 
         <FadeIn>
           <div className="text-center mb-8 border-b border-obsidian/10 pb-6">

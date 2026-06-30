@@ -68,9 +68,11 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <p className="mt-5 text-xs text-ivory/60 leading-relaxed">
-              Køkkenet lukker 30 min. før lukketid.
-            </p>
+            <div className="mt-5 text-xs text-ivory/60 leading-relaxed space-y-0.5">
+              <p>Køkkenet lukker:</p>
+              <p>Man – Lør kl. 22.00</p>
+              <p>Søndag kl. 21.00</p>
+            </div>
           </div>
 
           {/* Col 3 — Følg os */}
