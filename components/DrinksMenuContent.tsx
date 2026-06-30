@@ -172,7 +172,10 @@ export default function DrinksMenuContent() {
         {/* Øl */}
         <div className="mb-10">
           <SectionHeader da="Øl" en="Beer" />
-          <p className="text-sm text-obsidian/60 mb-3">0,33L · 0,5L · 1,5L</p>
+          <div className="flex items-baseline justify-between gap-3 mb-1">
+            <span />
+            <span className="text-xs text-obsidian/50 tabular-nums shrink-0">0,33L · 0,5L · 1,5L</span>
+          </div>
           {beer.map((item) => (
             <div key={item.name} className="py-2.5 border-b border-obsidian/[0.07] flex items-baseline justify-between gap-3">
               <span className="font-semibold text-base text-obsidian">{item.name}</span>
