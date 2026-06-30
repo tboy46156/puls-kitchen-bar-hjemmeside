@@ -55,7 +55,7 @@ export default function Hero() {
           className="mt-3 font-sans text-forest/65 max-w-xs mx-auto leading-relaxed"
           style={{ fontSize: "clamp(0.8rem,1.1vw,0.875rem)" }}
         >
-          New Yorker råhed. Pariser-elegance. Midt i Ørestad — få minutter fra Royal Arena.
+          New Yorker Rawness with Parisian elegance. Midt i Ørestad — få minutter fra Royal Arena.
         </p>
 
         <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-2">
