@@ -15,7 +15,7 @@ const cards = [
     line1: "Frokost",
     line2: "menu",
     alt: "Frokostmenu hos PULS Kitchen & Bar i Ørestad, København",
-    description: "Serveret til kl. 16",
+    description: "",
     image: "/images/food.jpg",
     href: "/menu?tab=frokost",
   },

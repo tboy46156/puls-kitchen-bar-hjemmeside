@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -52,13 +52,20 @@ export default function MenuPageClient({ initialTab }: { initialTab?: string }) 
   const [selected, setSelected] = useState(
     validTabs.includes(initialTab ?? "") ? initialTab! : "brunch"
   );
+
+  useEffect(() => {
+    if (initialTab && validTabs.includes(initialTab)) {
+      const el = document.getElementById("menu-section");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [initialTab]);
   const content = menuContent[selected];
 
   return (
     <div className="pt-24 md:pt-32">
 
       {/* Header */}
-      <section className="bg-ivory">
+      <section id="menu-section" className="bg-ivory">
         <div className="container-max py-8 md:py-10">
             <FadeIn>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
