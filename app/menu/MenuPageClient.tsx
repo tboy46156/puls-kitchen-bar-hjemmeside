@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Utensils, Moon, GlassWater, Coffee, Music } from "lucide-react";
+import { Utensils, GlassWater, Coffee, Music } from "lucide-react";
 import { MenuTabs, IMenuTab } from "@/components/ui/tabs-1";
 import FadeIn from "@/components/FadeIn";
 import FrokostMenuContent from "@/components/FrokostMenuContent";
@@ -16,7 +16,7 @@ import DrinksMenuContent from "@/components/DrinksMenuContent";
 const tabs: IMenuTab[] = [
   { label: "Brunch",   value: "brunch",   icon: Coffee },
   { label: "Frokost",  value: "frokost",  icon: Utensils },
-  { label: "Aften",    value: "aften",    icon: Moon },
+  { label: "Aften",    value: "aften",    icon: Utensils },
   { label: "Koncert",  value: "koncert",  icon: Music },
   { label: "Drinks",   value: "drinks",   icon: GlassWater },
 ];
