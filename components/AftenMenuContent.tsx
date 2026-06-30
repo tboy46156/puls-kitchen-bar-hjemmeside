@@ -115,10 +115,10 @@ function CategoryBlock({ cat }: { cat: Category }) {
       <div className="border-t-2 border-sage pt-3 mb-4">
         <h3 className="font-bold text-2xl text-obsidian leading-tight">{cat.da}</h3>
         {cat.en && (
-          <p className="text-[11px] tracking-[0.18em] uppercase text-sage/80 mt-0.5">{cat.en}</p>
+          <p className="text-[11px] tracking-[0.18em] uppercase text-sage mt-0.5">{cat.en}</p>
         )}
         {cat.note && (
-          <p className="text-xs text-obsidian/40 mt-0.5">{cat.note}</p>
+          <p className="text-sm text-obsidian/60 mt-1">{cat.note}</p>
         )}
       </div>
 
@@ -141,7 +141,7 @@ function CategoryBlock({ cat }: { cat: Category }) {
                 <div>
                   <span className="font-semibold text-obsidian text-base">{item.da}</span>
                   {item.en && (
-                    <span className="text-obsidian/35 text-xs font-normal ml-1.5">{item.en}</span>
+                    <span className="text-obsidian/50 text-xs font-normal ml-1.5">{item.en}</span>
                   )}
                 </div>
                 {item.price && (
@@ -149,7 +149,7 @@ function CategoryBlock({ cat }: { cat: Category }) {
                 )}
               </div>
               {item.desc && (
-                <p className="text-xs text-obsidian/45 mt-1 leading-relaxed">{item.desc}</p>
+                <p className="text-sm text-obsidian/65 mt-1 leading-relaxed">{item.desc}</p>
               )}
               {item.addon && (
                 <p className="text-xs text-gold mt-1">{item.addon}</p>

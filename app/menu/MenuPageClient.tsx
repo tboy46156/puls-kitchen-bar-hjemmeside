@@ -74,7 +74,7 @@ export default function MenuPageClient() {
                   variants={fadeItem}
                   className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-obsidian/10 pb-6"
                 >
-                  <p className="text-obsidian/70 text-sm tracking-wide">{content.info}</p>
+                  <p className="text-obsidian text-base font-medium">{content.info}</p>
                   <Link
                     href="https://book.easytable.com/book/?id=1214a&lang=auto"
                     target="_blank"
