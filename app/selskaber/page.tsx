@@ -19,14 +19,14 @@ const features = [
 const lokaler = [
   {
     nr: "01",
-    navn: "Lokale 1",
+    navn: "Lille lokale",
     kapacitet: "Op til 30 gæster",
     beskrivelse: "Et intimt og afskærmet lokale — ideelt til barnedåb, runde fødselsdage, mindehøjtider og mindre firmaarrangementer. Fuldt AV-udstyr og dedikeret personale.",
     image: "/images/selskaber.jpg",
   },
   {
     nr: "02",
-    navn: "Lokale 2",
+    navn: "Stort lokale",
     kapacitet: "Op til 50 gæster",
     beskrivelse: "Vores næststørste lokale med plads til konfirmationer, firmafester og større private selskaber. Fleksibel indretning, fuldt AV-udstyr og eget serveringsteam.",
     image: "/images/selskaber.jpg",
