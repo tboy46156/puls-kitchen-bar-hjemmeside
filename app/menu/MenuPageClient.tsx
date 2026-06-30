@@ -46,8 +46,12 @@ const fadeItem = {
   exit:    { opacity: 0, y: -14, transition: { duration: 0.28 } },
 };
 
-export default function MenuPageClient() {
-  const [selected, setSelected] = useState("brunch");
+const validTabs = ["brunch", "frokost", "aften", "koncert", "drinks"];
+
+export default function MenuPageClient({ initialTab }: { initialTab?: string }) {
+  const [selected, setSelected] = useState(
+    validTabs.includes(initialTab ?? "") ? initialTab! : "brunch"
+  );
   const content = menuContent[selected];
 
   return (

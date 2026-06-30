@@ -6,6 +6,6 @@ export const metadata = {
     "Vores frokost-, aften-, drinks- og vinkort. Fransk, italiensk og nordisk køkken i Ørestad.",
 };
 
-export default function MenuPage() {
-  return <MenuPageClient />;
+export default function MenuPage({ searchParams }: { searchParams: { tab?: string } }) {
+  return <MenuPageClient initialTab={searchParams.tab} />;
 }

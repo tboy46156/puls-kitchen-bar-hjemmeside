@@ -9,7 +9,7 @@ const cards = [
     alt: "Brunch hos PULS Kitchen & Bar i Ørestad, København",
     description: "",
     image: "/images/brunch-dish.jpg",
-    href: "/brunch",
+    href: "/menu?tab=brunch",
   },
   {
     line1: "Frokost",
@@ -17,7 +17,7 @@ const cards = [
     alt: "Frokostmenu hos PULS Kitchen & Bar i Ørestad, København",
     description: "Serveret til kl. 16",
     image: "/images/food.jpg",
-    href: "/brunch",
+    href: "/menu?tab=frokost",
   },
   {
     line1: "Aften",
@@ -25,7 +25,7 @@ const cards = [
     alt: "Aftensmad og sæsonretter hos PULS Kitchen & Bar, Arne Jacobsens Allé 9",
     description: "",
     image: "/images/aften-dish.jpg",
-    href: "/menu",
+    href: "/menu?tab=aften",
   },
   {
     line1: "Koncert",
