@@ -63,16 +63,14 @@ export default function DishesSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian/95 via-obsidian/50 to-obsidian/10" />
                   <div className="absolute bottom-0 inset-x-0 p-4 md:p-7">
-                    <h3 className="display-section text-2xl md:text-4xl text-ivory leading-[0.92]">
+                    <h3 className="display-section text-xl md:text-4xl text-ivory leading-[0.92]">
                       {c.line1}
                       {c.line2 && <span className="block text-ivory/60">{c.line2}</span>}
                     </h3>
-                    {c.description && (
-                      <p className="mt-2 text-ivory/70 text-[11px] md:text-xs leading-snug">
-                        {c.description}
-                      </p>
-                    )}
-                    <span className="mt-3 inline-block text-[10px] tracking-[0.28em] uppercase font-semibold text-gold">
+                    <p className="mt-2 text-ivory/70 text-[11px] md:text-xs leading-snug line-clamp-1 md:line-clamp-none min-h-[1rem]">
+                      {c.description}
+                    </p>
+                    <span className="mt-2 md:mt-3 inline-block text-[10px] tracking-[0.28em] uppercase font-semibold text-gold">
                       Se mere
                     </span>
                   </div>
