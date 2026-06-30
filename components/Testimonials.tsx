@@ -52,7 +52,6 @@ const videos = [
   "/Videos/AQOWPkPE_XJ5h_ijlaF2PKJe929CZPBFFUhHGzXQN7tnSYoioHNqUXeG7rnbPdhlPcbGcuuHZq6__YFeG5_phBR2.mp4",
   "/Videos/AQP0gPoS1ADKNIjgqm1gSwXQtGdgCikfXSU1YDmZhWbZ1IPc7L9rbiCjCLHDhirdfv2010rTFeCEeurGRq65Wz6q.mp4",
   "/Videos/AQOIfyuagYyuY7nTC05h0JTcWnMaWXXNxl6_D175z6Fa29mwEiCD_FIBSjHSE9z1fHzwbsxOxjYEV8YttuhHsqpe2KZ3o39N3E4.mp4",
-  "/Videos/AQMhCEWVrrAexQw6KM0v_GCf-Sr1LJEO9redmRUp1Y5MVW0257bhIU2n0ytBUyahikswdnoZUnO3CfzEgOndKni_.mp4",
 ];
 
 const doubled = [...videos, ...videos];

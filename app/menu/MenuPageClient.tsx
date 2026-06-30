@@ -11,6 +11,7 @@ import FrokostMenuContent from "@/components/FrokostMenuContent";
 import AftenMenuContent from "@/components/AftenMenuContent";
 import BrunchMenuContent from "@/components/BrunchMenuContent";
 import KoncertMenuContent from "@/components/KoncertMenuContent";
+import DrinksMenuContent from "@/components/DrinksMenuContent";
 
 const tabs: IMenuTab[] = [
   { label: "Brunch",   value: "brunch",   icon: Coffee },
@@ -35,7 +36,6 @@ const menuContent: Record<string, { images?: { src: string; title: string }[]; i
   },
   drinks: {
     info: "Klassiske cocktails og signaturdrinks — bar åben 11.00–22.00.",
-    images: [{ src: "/images/menu-4.png", title: "Drinks & cocktails" }],
   },
 };
 
@@ -100,6 +100,10 @@ export default function MenuPageClient() {
                 ) : selected === "koncert" ? (
                   <motion.div variants={fadeItem}>
                     <KoncertMenuContent />
+                  </motion.div>
+                ) : selected === "drinks" ? (
+                  <motion.div variants={fadeItem}>
+                    <DrinksMenuContent />
                   </motion.div>
                 ) : content.images && (
                   <div className={`grid gap-5 ${content.images.length === 1 ? "max-w-2xl" : "md:grid-cols-2"}`}>
