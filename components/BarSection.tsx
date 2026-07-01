@@ -5,18 +5,18 @@ import FadeIn from "./FadeIn";
 export default function BarSection() {
   return (
     <section className="bg-forest">
-      <div className="container-max py-14 md:py-20">
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+      <div className="container-max py-10 md:py-14">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
 
-          {/* Billede — mindre, med runde hjørner */}
+          {/* Billede — beskåret til højre side */}
           <FadeIn>
-            <div className="relative aspect-[4/3] rounded-2xl md:rounded-3xl overflow-hidden max-w-md mx-auto md:mx-0">
+            <div className="relative aspect-[3/2] rounded-2xl md:rounded-3xl overflow-hidden max-w-sm mx-auto md:mx-0">
               <Image
                 src="/images/drinks.jpg"
                 alt="PULS Bar — cocktails og drinks i Ørestad"
                 fill
-                sizes="(min-width:768px) 40vw, 100vw"
-                className="object-cover"
+                sizes="(min-width:768px) 35vw, 100vw"
+                className="object-cover object-right"
               />
             </div>
           </FadeIn>
