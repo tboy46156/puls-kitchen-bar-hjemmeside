@@ -1,63 +1,53 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 import FadeIn from "./FadeIn";
 
 export default function BarSection() {
   return (
-    <section id="bar" className="bg-bone px-4 md:px-6 pb-2 md:pb-3">
-      <div className="relative overflow-hidden rounded-2xl md:rounded-3xl">
-        <div className="absolute inset-0">
+    <section className="bg-obsidian overflow-hidden">
+      <div className="grid md:grid-cols-2">
+
+        {/* Billede */}
+        <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[520px]">
           <Image
-            src="/images/interior.jpeg"
-            alt="PULS bar"
+            src="/images/drinks.jpg"
+            alt="PULS Bar — cocktails og drinks i Ørestad"
             fill
-            sizes="100vw"
-            className="object-cover opacity-25 mix-blend-luminosity"
+            sizes="(min-width:768px) 50vw, 100vw"
+            className="object-cover"
           />
-          <div className="absolute inset-0 bg-obsidian/80" />
+          <div className="absolute inset-0 bg-obsidian/20" />
         </div>
 
-        <div className="relative container-max py-8 md:py-10">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center max-w-4xl mx-auto">
-
-            <div className="text-center">
-              <FadeIn>
-                <p className="eyebrow justify-center mb-5">Bar & Cocktails</p>
-              </FadeIn>
-              <FadeIn delay={0.05}>
-                <h2 className="display-section text-3xl md:text-5xl text-ivory">
-                  Baren er åben{" "}
-                  <span className="italic-display text-gold font-[400] normal-case">
-                    til vi lukker
-                  </span>
-                </h2>
-              </FadeIn>
-              <FadeIn delay={0.12}>
-                <p className="mt-5 text-ivory/80 leading-[1.75] text-base mx-auto max-w-md">
-                  Vores cocktailmenu er personligt udarbejdet af vores bar manager.
-                  Vi serverer kolde øl — både fadøl og på flaske — og har et
-                  omfattende vinkort fra Frankrig, Italien og oversøisk.
-                </p>
-              </FadeIn>
-            </div>
-
-            <FadeIn delay={0.18}>
-              <div className="mx-auto overflow-hidden rounded-2xl md:rounded-3xl border border-gold/20 shadow-[0_8px_48px_rgba(0,0,0,0.6)]"
-                style={{ maxWidth: "300px" }}
-              >
-                <video
-                  src="/Videos/AQPg_2M_qSaGiw_wRMAgeUtlRYa11KjvH8Z9iSXnSO2h1Tr45aKDQ5TySAU3HqMwNoku5NxokJmfC6W6JebljkJNGxuMDASRBn529ZI.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="none"
-                  className="w-full object-cover aspect-[9/16]"
-                />
-              </div>
-            </FadeIn>
-
-          </div>
+        {/* Tekst */}
+        <div className="flex flex-col justify-center px-8 py-14 md:px-14 md:py-20">
+          <FadeIn>
+            <p className="text-xs tracking-[0.28em] uppercase text-gold font-semibold mb-5">
+              PULS Bar
+            </p>
+            <h2 className="display-section text-4xl md:text-5xl text-ivory leading-[0.95]">
+              Signature cocktails.<br />Klassiske drinks.
+            </h2>
+            <p className="mt-6 text-ivory/70 text-base leading-relaxed max-w-sm">
+              Vores bar byder på håndlavede cocktails, et bredt udvalg af vine og kolde øl — nydt ved baren eller ved bordet.
+            </p>
+            <p className="mt-4 text-ivory/70 text-base leading-relaxed max-w-sm">
+              Med få minutters gang til Royal Arena er PULS det naturlige stopover — kom tidligt og nyd stemningen inden showet.
+            </p>
+            <p className="mt-5 text-sm text-gold/80">
+              Happy hour tors. kl. 17–20
+            </p>
+            <Link
+              href="/menu?tab=drinks"
+              className="mt-8 btn-gold self-start"
+            >
+              Se drikkekortet
+            </Link>
+          </FadeIn>
         </div>
+
       </div>
     </section>
   );
