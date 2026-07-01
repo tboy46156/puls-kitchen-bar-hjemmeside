@@ -10,13 +10,13 @@ export default function BarSection() {
 
           {/* Billede — beskåret til højre side */}
           <FadeIn>
-            <div className="relative aspect-[3/2] rounded-2xl md:rounded-3xl overflow-hidden max-w-sm mx-auto md:mx-0">
+            <div className="relative aspect-[3/4] rounded-2xl md:rounded-3xl overflow-hidden max-w-xs mx-auto md:mx-0">
               <Image
                 src="/images/drinks.jpg"
                 alt="PULS Bar — cocktails og drinks i Ørestad"
                 fill
-                sizes="(min-width:768px) 35vw, 100vw"
-                className="object-cover object-right"
+                sizes="(min-width:768px) 30vw, 100vw"
+                className="object-cover object-[68%_30%]"
               />
             </div>
           </FadeIn>
