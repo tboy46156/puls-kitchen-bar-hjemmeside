@@ -12,32 +12,8 @@ import AftenMenuContent from "@/components/AftenMenuContent";
 import BrunchMenuContent from "@/components/BrunchMenuContent";
 import KoncertMenuContent from "@/components/KoncertMenuContent";
 import DrinksMenuContent from "@/components/DrinksMenuContent";
-
-const tabs: IMenuTab[] = [
-  { label: "Brunch",   value: "brunch",   icon: Coffee },
-  { label: "Frokost",  value: "frokost",  icon: Utensils },
-  { label: "Aften",    value: "aften",    icon: Utensils },
-  { label: "Koncert",  value: "koncert",  icon: Music },
-  { label: "Drinks",   value: "drinks",   icon: GlassWater },
-];
-
-const menuContent: Record<string, { images?: { src: string; title: string }[]; info: string }> = {
-  brunch: {
-    info: "Byg-Selv-Brunch hverdage fra 11.00 · Ad libitum i weekenden fra 10.00 — begge til 14.00.",
-  },
-  koncert: {
-    info: "Serveres fra 16.00 på koncertdage — få minutters gang fra Royal Arena.",
-  },
-  frokost: {
-    info: "Serveres man–fre fra 11.00, lør–søn fra 10.00 — alle dage til 16.00.",
-  },
-  aften: {
-    info: "Aftenkortet gælder fra 17.00 alle dage. Køkkenet lukker 22.00 (søn 21.00).",
-  },
-  drinks: {
-    info: "Klassiske cocktails og signaturdrinks — bar åben 11.00–22.00.",
-  },
-};
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/lib/translations";
 
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
 const fadeItem = {
@@ -49,6 +25,9 @@ const fadeItem = {
 const validTabs = ["brunch", "frokost", "aften", "koncert", "drinks"];
 
 export default function MenuPageClient({ initialTab }: { initialTab?: string }) {
+  const { lang } = useLanguage();
+  const t = translations[lang].menuPage;
+
   const [selected, setSelected] = useState(
     validTabs.includes(initialTab ?? "") ? initialTab! : "brunch"
   );
@@ -59,7 +38,22 @@ export default function MenuPageClient({ initialTab }: { initialTab?: string }) 
       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [initialTab]);
-  const content = menuContent[selected];
+
+  const tabs: IMenuTab[] = [
+    { label: t.tabs.brunch,  value: "brunch",  icon: Coffee },
+    { label: t.tabs.frokost, value: "frokost", icon: Utensils },
+    { label: t.tabs.aften,   value: "aften",   icon: Utensils },
+    { label: t.tabs.koncert, value: "koncert", icon: Music },
+    { label: t.tabs.drinks,  value: "drinks",  icon: GlassWater },
+  ];
+
+  const infoMap: Record<string, string> = {
+    brunch:  t.info.brunch,
+    frokost: t.info.frokost,
+    aften:   t.info.aften,
+    koncert: t.info.koncert,
+    drinks:  t.info.drinks,
+  };
 
   return (
     <div className="pt-20 md:pt-28">
@@ -69,7 +63,7 @@ export default function MenuPageClient({ initialTab }: { initialTab?: string }) 
         <div className="container-max py-5 md:py-10">
             <FadeIn>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <h1 className="display-section text-3xl md:text-4xl text-obsidian">Menukort</h1>
+                <h1 className="display-section text-3xl md:text-4xl text-obsidian">{t.heading}</h1>
                 <MenuTabs tabs={tabs} selected={selected} setSelected={setSelected} />
               </div>
             </FadeIn>
@@ -81,69 +75,37 @@ export default function MenuPageClient({ initialTab }: { initialTab?: string }) 
           <div className="container-max py-10 md:py-12">
             <AnimatePresence mode="wait">
               <motion.div key={selected} variants={stagger} initial="hidden" animate="visible" exit="exit">
+                {selected === "koncert" && (
+                  <motion.div variants={fadeItem} className="mb-6 px-5 py-4 border-l-4 border-gold bg-gold/8 rounded-sm">
+                    <p className="font-bold text-sm text-obsidian leading-snug">{t.koncertDisclaimer}</p>
+                  </motion.div>
+                )}
                 <motion.div
                   variants={fadeItem}
                   className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-obsidian/10 pb-6"
                 >
-                  <p className="text-obsidian text-base font-medium">{content.info}</p>
+                  <p className="text-obsidian text-base font-medium">{infoMap[selected]}</p>
                   <Link
                     href="https://book.easytable.com/book/?id=1214a&lang=auto"
                     target="_blank"
                     rel="noopener"
                     className="btn-dark shrink-0 !py-2.5"
                   >
-                    Book bord
+                    {t.bookTable}
                   </Link>
                 </motion.div>
 
                 {selected === "brunch" ? (
-                  <motion.div variants={fadeItem}>
-                    <BrunchMenuContent />
-                  </motion.div>
+                  <motion.div variants={fadeItem}><BrunchMenuContent /></motion.div>
                 ) : selected === "frokost" ? (
-                  <motion.div variants={fadeItem}>
-                    <FrokostMenuContent />
-                  </motion.div>
+                  <motion.div variants={fadeItem}><FrokostMenuContent /></motion.div>
                 ) : selected === "aften" ? (
-                  <motion.div variants={fadeItem}>
-                    <AftenMenuContent />
-                  </motion.div>
+                  <motion.div variants={fadeItem}><AftenMenuContent /></motion.div>
                 ) : selected === "koncert" ? (
-                  <motion.div variants={fadeItem}>
-                    <KoncertMenuContent />
-                  </motion.div>
+                  <motion.div variants={fadeItem}><KoncertMenuContent /></motion.div>
                 ) : selected === "drinks" ? (
-                  <motion.div variants={fadeItem}>
-                    <DrinksMenuContent />
-                  </motion.div>
-                ) : content.images && (
-                  <div className={`grid gap-5 ${content.images.length === 1 ? "max-w-2xl" : "md:grid-cols-2"}`}>
-                    {content.images.map((m) => (
-                      <motion.figure key={m.src} variants={fadeItem} className="group">
-                        <a
-                          href={m.src}
-                          target="_blank"
-                          rel="noopener"
-                          className="relative block aspect-[3/4] border border-obsidian/12 overflow-hidden bg-white rounded-xl"
-                        >
-                          <Image
-                            src={m.src}
-                            alt={m.title}
-                            fill
-                            sizes="(min-width:768px) 50vw, 100vw"
-                            className="object-contain p-3 transition-transform duration-700 group-hover:scale-[1.015]"
-                          />
-                          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <span className="bg-gold text-obsidian text-xs tracking-[0.22em] uppercase font-semibold px-4 py-2">
-                              Åbn i fuld størrelse ↗
-                            </span>
-                          </div>
-                        </a>
-                        <figcaption className="mt-3 text-sm font-semibold text-obsidian">{m.title}</figcaption>
-                      </motion.figure>
-                    ))}
-                  </div>
-                )}
+                  <motion.div variants={fadeItem}><DrinksMenuContent /></motion.div>
+                ) : null}
               </motion.div>
             </AnimatePresence>
           </div>
@@ -153,17 +115,17 @@ export default function MenuPageClient({ initialTab }: { initialTab?: string }) 
       <section className="bg-forest">
           <div className="container-max py-10 md:py-12 flex flex-col md:flex-row md:items-center justify-between gap-6 text-center md:text-left">
             <div>
-              <p className="text-xs tracking-[0.22em] uppercase text-gold mb-2">Klar til at smage?</p>
+              <p className="text-xs tracking-[0.22em] uppercase text-gold mb-2">{t.cta.eyebrow}</p>
               <h3 className="display-section text-3xl md:text-4xl text-ivory">
-                Book bord eller bestil take-away.
+                {t.cta.heading}
               </h3>
             </div>
             <div className="flex flex-wrap justify-center md:justify-start gap-3">
               <Link href="https://book.easytable.com/book/?id=1214a&lang=auto" target="_blank" rel="noopener" className="btn-gold">
-                Book bord
+                {t.cta.bookTable}
               </Link>
               <Link href="https://www.pulskitchen.dk/takeaway" target="_blank" rel="noopener" className="btn-ghost">
-                Take-away
+                {t.cta.takeaway}
               </Link>
             </div>
           </div>

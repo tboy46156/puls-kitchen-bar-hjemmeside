@@ -4,6 +4,7 @@ import Script from "next/script";
 import Navigation from "@/components/Navigation";
 import TopBar from "@/components/TopBar";
 import Footer from "@/components/Footer";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import "./globals.css";
 
 const GA_ID = "G-CEGD8S818T";
@@ -148,10 +149,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `}
         </Script>
 
-        <TopBar />
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <TopBar />
+          <Navigation />
+          <main>{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

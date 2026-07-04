@@ -1,35 +1,40 @@
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/lib/translations";
+
 type Category = {
   name: string;
   sub?: string;
-  items: string[];
+  items: { da: string; en: string }[];
 };
 
 const left: Category[] = [
   {
-    name: "Bagt",
+    name: "Bakt",
     sub: "Bakery",
     items: [
-      "Brødkurv med lys & mørkt samt smør",
-      "Friskbagt smørcroissant",
-      "Ovnbagte timiankartofler",
+      { da: "Brødkurv med lys & mørkt samt smør", en: "Bread basket with light & dark bread and butter" },
+      { da: "Friskbagt smørcroissant", en: "Freshly baked butter croissant" },
+      { da: "Ovnbagte timiankartofler", en: "Oven-baked thyme potatoes" },
     ],
   },
   {
     name: "Kød & Fisk",
     sub: "Meat & Fish",
     items: [
-      "Stegt bacon & grønt",
-      "Ristede oksepølser med syltede rødløg & grøn mayo",
-      "Hjemmelavet hønsesalat med asparges, svampe & purløg",
-      "Laksemousse & urter",
+      { da: "Stegt bacon & grønt", en: "Crispy bacon & greens" },
+      { da: "Ristede oksepølser med syltede rødløg & grøn mayo", en: "Grilled beef sausages with pickled red onions & green mayo" },
+      { da: "Hjemmelavet hønsesalat med asparges, svampe & purløg", en: "Homemade chicken salad with asparagus, mushrooms & chives" },
+      { da: "Laksemousse & urter", en: "Salmon mousse & herbs" },
     ],
   },
   {
     name: "Fry Me",
     items: [
-      "Kyllingelår marineret med mandler, grønt & dip",
-      "Grove fritter med aioli",
-      "Sprøde forårsruller med grøntsager & sauce",
+      { da: "Kyllingelår marineret med mandler, grønt & dip", en: "Marinated chicken legs with almonds, greens & dip" },
+      { da: "Grove fritter med aioli", en: "Chunky fries with aioli" },
+      { da: "Sprøde forårsruller med grøntsager & sauce", en: "Crispy spring rolls with vegetables & sauce" },
     ],
   },
 ];
@@ -39,38 +44,38 @@ const right: Category[] = [
     name: "Frugt & Grønt",
     sub: "Fruit & Greens",
     items: [
-      "Middelhavsoliven",
-      "Klassisk græsk salat",
-      "Avocado med sesam, ristede mandler & urter",
-      "Årstidens frugt",
+      { da: "Middelhavsoliven", en: "Mediterranean olives" },
+      { da: "Klassisk græsk salat", en: "Classic Greek salad" },
+      { da: "Avocado med sesam, ristede mandler & urter", en: "Avocado with sesame, roasted almonds & herbs" },
+      { da: "Årstidens frugt", en: "Seasonal fruit" },
     ],
   },
   {
     name: "Æg",
     sub: "Eggs",
     items: [
-      "Røræg & grønt",
+      { da: "Røræg & grønt", en: "Scrambled eggs & greens" },
     ],
   },
   {
     name: "Fra Mejeriet",
     sub: "Dairy",
     items: [
-      "Skyr med skovbær, granola & sirup",
-      "Brie, emmentaler & feta m. peberfrugt & kompot",
+      { da: "Skyr med skovbær, granola & sirup", en: "Skyr with wild berries, granola & syrup" },
+      { da: "Brie, emmentaler & feta m. peberfrugt & kompot", en: "Brie, emmental & feta with peppers & compote" },
     ],
   },
   {
     name: "Den Søde Tand",
     sub: "Sweet",
     items: [
-      "Pandekager med sirup & syltede skovbær",
-      "Gammeldags æblekage med makroner, flødeskum & friske bær",
+      { da: "Pandekager med sirup & syltede skovbær", en: "Pancakes with syrup & pickled wild berries" },
+      { da: "Gammeldags æblekage med makroner, flødeskum & friske bær", en: "Old-fashioned apple cake with macaroons, whipped cream & fresh berries" },
     ],
   },
 ];
 
-function CategoryBlock({ cat }: { cat: Category }) {
+function CategoryBlock({ cat, lang }: { cat: Category; lang: "da" | "en" }) {
   return (
     <div className="mb-8">
       <div className="border-t-2 border-sage pt-3 mb-3">
@@ -83,7 +88,7 @@ function CategoryBlock({ cat }: { cat: Category }) {
       </div>
       <div className="divide-y divide-obsidian/[0.07]">
         {cat.items.map((item) => (
-          <p key={item} className="py-2.5 text-base text-obsidian/85">{item}</p>
+          <p key={item.da} className="py-2.5 text-base text-obsidian/85">{lang === "en" ? item.en : item.da}</p>
         ))}
       </div>
     </div>
@@ -91,41 +96,36 @@ function CategoryBlock({ cat }: { cat: Category }) {
 }
 
 export default function BrunchMenuContent() {
+  const { lang } = useLanguage();
+  const t = translations[lang].brunch;
+
   return (
     <div>
-
-      {/* Header info */}
       <div className="mb-8 pb-6 border-b border-obsidian/10">
         <div className="grid md:grid-cols-2 gap-4 md:gap-10">
           <div>
-            <p className="text-[11px] tracking-[0.18em] uppercase text-sage font-semibold mb-1">Lørdag & Søndag · 10.00 – 14.00</p>
-            <p className="font-bold text-3xl text-obsidian">195,- <span className="text-base font-normal text-obsidian/70">inkl. kaffe, juice & vand</span></p>
+            <p className="text-[11px] tracking-[0.18em] uppercase text-sage font-semibold mb-1">{t.dayTime}</p>
+            <p className="font-bold text-3xl text-obsidian">{t.price} <span className="text-base font-normal text-obsidian/70">{t.priceNote}</span></p>
             <div className="mt-2 space-y-0.5 text-sm text-obsidian/70">
-              <p>Børn under 12 — halvpris &nbsp;·&nbsp; Børn under 3 — gratis</p>
+              <p>{t.childrenNote}</p>
             </div>
           </div>
           <div className="flex items-center">
             <p className="text-sm text-obsidian/75 leading-relaxed border-l-2 border-sage/60 pl-4">
-              Start med 5 retter — vælg herefter 1 ret af gangen
+              {t.howItWorks}
             </p>
           </div>
         </div>
       </div>
 
-      {/* Categories */}
       <div className="grid md:grid-cols-2 gap-x-14">
-        <div>
-          {left.map((cat) => <CategoryBlock key={cat.name} cat={cat} />)}
-        </div>
-        <div>
-          {right.map((cat) => <CategoryBlock key={cat.name} cat={cat} />)}
-        </div>
+        <div>{left.map((cat) => <CategoryBlock key={cat.name} cat={cat} lang={lang} />)}</div>
+        <div>{right.map((cat) => <CategoryBlock key={cat.name} cat={cat} lang={lang} />)}</div>
       </div>
 
       <p className="mt-4 text-xs text-obsidian/55 border-t border-obsidian/10 pt-4">
-        Spørgsmål vedr. allergener kan rettes til personalet
+        {t.allergenNote}
       </p>
-
     </div>
   );
 }

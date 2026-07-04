@@ -2,20 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
-const hours = [
-  ["Man – Tor", "11.00 – 22.00"],
-  ["Fredag",    "11.00 – 24.00"],
-  ["Lørdag",    "10.00 – 24.00"],
-  ["Søndag",    "10.00 – 22.00"],
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/lib/translations";
 
 const navLinks = [
-  ["Menu", "/menu"],
-  ["Koncertmenu", "/koncertmenu"],
-  ["Selskaber", "/selskaber"],
-  ["Gavekort", "/gavekort"],
-  ["Kontakt", "/kontakt"],
+  { da: "Menu",         en: "Menu",           href: "/menu" },
+  { da: "Koncertmenu",  en: "Concert Menu",   href: "/koncertmenu" },
+  { da: "Selskaber",    en: "Private Events", href: "/selskaber" },
+  { da: "Gavekort",     en: "Gift Cards",     href: "/gavekort" },
+  { da: "Kontakt",      en: "Contact",        href: "/kontakt" },
 ];
 
 const InstagramIcon = () => (
@@ -31,11 +26,13 @@ const FacebookIcon = () => (
 );
 
 export default function Footer() {
+  const { lang } = useLanguage();
+  const t = translations[lang].footer;
+
   return (
     <footer className="bg-forest text-ivory border-t border-white/10">
       <div className="container-max py-14 md:py-16">
 
-        {/* 3-column grid */}
         <div className="grid md:grid-cols-3 gap-10 md:gap-8">
 
           {/* Col 1 — Info */}
@@ -57,11 +54,11 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2 — Åbningstider */}
+          {/* Col 2 — Hours */}
           <div>
-            <p className="text-xs tracking-[0.24em] uppercase text-ivory/70 font-semibold mb-6">Åbningstider</p>
+            <p className="text-xs tracking-[0.24em] uppercase text-ivory/70 font-semibold mb-6">{t.hoursLabel}</p>
             <ul className="space-y-3 text-sm">
-              {hours.map(([day, time]) => (
+              {t.days.map(([day, time]) => (
                 <li key={day} className="flex gap-4">
                   <span className="text-ivory w-28 shrink-0">{day}</span>
                   <span className="text-ivory/80">{time}</span>
@@ -69,15 +66,15 @@ export default function Footer() {
               ))}
             </ul>
             <div className="mt-5 text-xs text-ivory/60 leading-relaxed space-y-0.5">
-              <p>Køkkenet lukker:</p>
-              <p>Man – Lør kl. 22.00</p>
-              <p>Søndag kl. 21.00</p>
+              <p>{t.kitchenCloses}</p>
+              <p>{t.kitchenMonSat}</p>
+              <p>{t.kitchenSun}</p>
             </div>
           </div>
 
-          {/* Col 3 — Følg os */}
+          {/* Col 3 — Follow us */}
           <div>
-            <p className="text-xs tracking-[0.24em] uppercase text-ivory/70 font-semibold mb-6">Følg os</p>
+            <p className="text-xs tracking-[0.24em] uppercase text-ivory/70 font-semibold mb-6">{t.followUs}</p>
 
             <div className="space-y-3">
               <a
@@ -86,9 +83,7 @@ export default function Footer() {
                 rel="noopener"
                 className="group flex items-center gap-4 px-5 py-3.5 border border-white/30 hover:border-white/60 hover:bg-white/5 transition-all duration-300"
               >
-                <span className="text-ivory group-hover:text-ivory transition-colors">
-                  <InstagramIcon />
-                </span>
+                <span className="text-ivory"><InstagramIcon /></span>
                 <span className="flex-1">
                   <span className="block text-sm font-semibold text-ivory">Instagram</span>
                   <span className="block text-xs text-ivory/70 mt-0.5">@pulskitchenbar</span>
@@ -102,9 +97,7 @@ export default function Footer() {
                 rel="noopener"
                 className="group flex items-center gap-4 px-5 py-3.5 border border-white/30 hover:border-white/60 hover:bg-white/5 transition-all duration-300"
               >
-                <span className="text-ivory group-hover:text-ivory transition-colors">
-                  <FacebookIcon />
-                </span>
+                <span className="text-ivory"><FacebookIcon /></span>
                 <span className="flex-1">
                   <span className="block text-sm font-semibold text-ivory">Facebook</span>
                   <span className="block text-xs text-ivory/70 mt-0.5">PULS Kitchen & Bar</span>
@@ -119,7 +112,7 @@ export default function Footer() {
               rel="noopener"
               className="mt-5 btn-sage-solid w-full justify-center"
             >
-              Book bord →
+              {t.bookTable}
             </Link>
           </div>
 
@@ -129,24 +122,24 @@ export default function Footer() {
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
 
           <nav className="flex flex-wrap gap-x-5 gap-y-2">
-            {navLinks.map(([label, href]) => (
+            {navLinks.map((l) => (
               <Link
-                key={href}
-                href={href}
+                key={l.href}
+                href={l.href}
                 className="text-[11px] tracking-[0.18em] uppercase text-ivory/75 hover:text-ivory transition-colors"
               >
-                {label}
+                {lang === "en" ? l.en : l.da}
               </Link>
             ))}
           </nav>
 
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-ivory/65">
             <Link href="/handelsbetingelser" className="hover:text-ivory transition-colors">
-              Handelsbetingelser
+              {t.terms}
             </Link>
             <span className="text-ivory/20">·</span>
             <Link href="/privatlivspolitik" className="hover:text-ivory transition-colors">
-              Privatlivspolitik
+              {t.privacy}
             </Link>
             <span className="text-ivory/20">·</span>
             <button
@@ -156,7 +149,7 @@ export default function Footer() {
               }}
               className="hover:text-ivory transition-colors cursor-pointer"
             >
-              Cookie-indstillinger
+              {t.cookies}
             </button>
             <span className="text-ivory/20">·</span>
             <a

@@ -2,10 +2,14 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/lib/translations";
 
 const ease = [0.2, 0.65, 0.2, 1] as const;
 
 export default function TopBar() {
+  const { lang } = useLanguage();
+  const t = translations[lang];
   const [visible, setVisible] = React.useState(true);
 
   React.useEffect(() => {
@@ -36,7 +40,7 @@ export default function TopBar() {
         </a>
         <span className="text-ivory/25">·</span>
         <a href="/kontakt" className="hover:text-ivory transition-colors">
-          Åbningstider
+          {t.topbar.hours}
         </a>
       </div>
     </motion.div>

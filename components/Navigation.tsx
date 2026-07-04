@@ -4,22 +4,76 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navLinks = [
-  { label: "Menu",         href: "/menu" },
-  { label: "Koncertmenu",  href: "/koncertmenu" },
-  { label: "Selskaber",    href: "/selskaber" },
-  { label: "Gavekort",     href: "/gavekort" },
-  { label: "Kontakt",      href: "/kontakt" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/lib/translations";
 
 const ease = [0.2, 0.65, 0.2, 1] as const;
 const navTransition = { duration: 0.4, ease };
 
+function MobileLangToggle() {
+  const { lang, setLang } = useLanguage();
+  return (
+    <div className="flex items-center gap-0.5">
+      <button
+        onClick={() => setLang("da")}
+        className={`text-[12px] font-semibold tracking-[0.16em] uppercase px-1.5 py-1 transition-colors ${
+          lang === "da" ? "text-obsidian" : "text-obsidian/35 hover:text-obsidian/60"
+        }`}
+      >
+        DA
+      </button>
+      <span className="text-obsidian/20 text-[10px]">/</span>
+      <button
+        onClick={() => setLang("en")}
+        className={`text-[12px] font-semibold tracking-[0.16em] uppercase px-1.5 py-1 transition-colors ${
+          lang === "en" ? "text-obsidian" : "text-obsidian/35 hover:text-obsidian/60"
+        }`}
+      >
+        EN
+      </button>
+    </div>
+  );
+}
+
+function LanguageToggle({ mobile = false }: { mobile?: boolean }) {
+  const { lang, setLang } = useLanguage();
+  return (
+    <div className={`flex items-center gap-1 ${mobile ? "mt-10 border-t border-border-col pt-6" : ""}`}>
+      <button
+        onClick={() => setLang("da")}
+        className={`text-[13px] font-semibold tracking-[0.18em] uppercase px-2 py-1 transition-colors ${
+          lang === "da" ? "text-obsidian" : "text-obsidian/40 hover:text-obsidian/70"
+        }`}
+      >
+        DA
+      </button>
+      <span className="text-obsidian/20 text-sm">|</span>
+      <button
+        onClick={() => setLang("en")}
+        className={`text-[13px] font-semibold tracking-[0.18em] uppercase px-2 py-1 transition-colors ${
+          lang === "en" ? "text-obsidian" : "text-obsidian/40 hover:text-obsidian/70"
+        }`}
+      >
+        EN
+      </button>
+    </div>
+  );
+}
+
 export default function Navigation() {
+  const { lang } = useLanguage();
+  const t = translations[lang].nav;
   const [open, setOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
   const [atTop, setAtTop] = React.useState(true);
+
+  const navLinks = [
+    { label: t.menu,         href: "/menu" },
+    { label: t.concertMenu,  href: "/koncertmenu" },
+    { label: t.privateEvents, href: "/selskaber" },
+    { label: t.giftCards,    href: "/gavekort" },
+    { label: t.contact,      href: "/kontakt" },
+  ];
 
   React.useEffect(() => {
     const onScroll = () => {
@@ -42,7 +96,7 @@ export default function Navigation() {
       <motion.header
         className="fixed inset-x-0 z-50 hidden lg:block"
         animate={scrolled
-          ? { paddingTop: 12, paddingLeft: 120, paddingRight: 120, top: 0 }
+          ? { paddingTop: 12, paddingLeft: lang === "en" ? 60 : 120, paddingRight: lang === "en" ? 60 : 120, top: 0 }
           : { paddingTop: 0,  paddingLeft: 0,   paddingRight: 0,   top: atTop ? 40 : 0 }}
         transition={navTransition}
       >
@@ -65,7 +119,7 @@ export default function Navigation() {
             <div className="flex items-center gap-6">
               {navLinks.map((l) => (
                 <Link
-                  key={l.label}
+                  key={l.href}
                   href={l.href}
                   className="text-[12px] font-semibold tracking-[0.18em] uppercase text-obsidian hover:text-gold transition-colors whitespace-nowrap"
                 >
@@ -74,7 +128,7 @@ export default function Navigation() {
               ))}
             </div>
 
-            {/* Center — Logo (absolutely centered) */}
+            {/* Center — Logo */}
             <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex-shrink-0">
               <Image
                 src="/images/PULS_logo_nav.svg"
@@ -87,15 +141,18 @@ export default function Navigation() {
               />
             </Link>
 
-            {/* Right — Book bord far right */}
-            <Link
-              href="https://book.easytable.com/book/?id=1214a&lang=auto"
-              target="_blank"
-              rel="noopener"
-              className="ml-auto flex-shrink-0 btn-sage-solid !py-0 !px-5 !text-[13px] self-stretch rounded-none"
-            >
-              Book bord
-            </Link>
+            {/* Right — language toggle + book */}
+            <div className="ml-auto self-stretch flex items-center gap-4 flex-shrink-0">
+              <LanguageToggle />
+              <Link
+                href="https://book.easytable.com/book/?id=1214a&lang=auto"
+                target="_blank"
+                rel="noopener"
+                className="btn-sage-solid self-stretch flex items-center !py-0 !px-7 !text-[15px] rounded-none"
+              >
+                {t.bookTable}
+              </Link>
+            </div>
 
           </nav>
         </motion.div>
@@ -105,7 +162,7 @@ export default function Navigation() {
       <motion.header
         className="fixed top-0 inset-x-0 z-50 lg:hidden"
         animate={scrolled
-          ? { paddingTop: 10, paddingLeft: 24, paddingRight: 24 }
+          ? { paddingTop: 10, paddingLeft: 10, paddingRight: 10 }
           : { paddingTop: 0,  paddingLeft: 0,  paddingRight: 0  }}
         transition={navTransition}
       >
@@ -134,17 +191,18 @@ export default function Navigation() {
                 priority
               />
             </Link>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
+              <MobileLangToggle />
               <Link
                 href="https://book.easytable.com/book/?id=1214a&lang=auto"
                 target="_blank"
                 rel="noopener"
-                className="text-[12px] font-semibold tracking-[0.18em] uppercase px-5 py-3 bg-sage text-white border border-sage transition-colors hover:bg-forest hover:border-forest"
+                className="flex-none self-center text-[12px] font-semibold tracking-[0.18em] uppercase px-5 py-2.5 bg-sage text-white rounded-sm transition-colors hover:bg-forest"
               >
-                Book bord
+                {t.bookTable}
               </Link>
               <button
-                aria-label={open ? "Luk menu" : "Åbn menu"}
+                aria-label={open ? t.closeMenu : t.openMenu}
                 onClick={() => setOpen((v) => !v)}
                 className="h-12 w-12 grid place-items-center border border-border-col text-forest hover:text-gold hover:border-gold transition-colors rounded-sm"
               >
@@ -180,7 +238,7 @@ export default function Navigation() {
             <div className="px-6 py-12 flex flex-col">
               {navLinks.map((l, i) => (
                 <motion.div
-                  key={l.label}
+                  key={l.href}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.04 + i * 0.07 }}
@@ -198,11 +256,12 @@ export default function Navigation() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.38 }}
-                className="mt-10 flex flex-col gap-3"
+                className="flex flex-col gap-3"
               >
-                <Link href="https://book.easytable.com/book/?id=1214a&lang=auto" target="_blank" onClick={() => setOpen(false)} className="btn-sage-solid w-full text-center">
-                  Reservér dit bord →
+                <Link href="https://book.easytable.com/book/?id=1214a&lang=auto" target="_blank" onClick={() => setOpen(false)} className="btn-sage-solid w-full text-center mt-10">
+                  {t.reserve}
                 </Link>
+                <LanguageToggle mobile />
               </motion.div>
             </div>
           </motion.div>

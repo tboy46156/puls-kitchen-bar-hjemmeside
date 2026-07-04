@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/lib/translations";
 
 const VIDEO_SRC = "/Videos/pulshero.mp4";
 
@@ -12,6 +14,8 @@ export default function Hero() {
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "15%"]);
+  const { lang } = useLanguage();
+  const t = translations[lang].hero;
 
   return (
     <div ref={ref} className="relative z-10">
@@ -31,7 +35,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Floating card — centered, anchored near bottom of video */}
+      {/* Floating card */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -55,15 +59,15 @@ export default function Hero() {
           className="mt-3 font-sans text-forest/65 max-w-xs mx-auto leading-relaxed"
           style={{ fontSize: "clamp(0.8rem,1.1vw,0.875rem)" }}
         >
-          New Yorker Rawness with Parisian elegance. Midt i Ørestad — få minutter fra Royal Arena.
+          {t.tagline}
         </p>
 
         <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-2">
           <Link href="/menu" className="btn-sage-solid justify-center whitespace-nowrap">
-            Se menukort
+            {t.viewMenu}
           </Link>
           <Link href="/koncertmenu" className="btn-sage-solid justify-center whitespace-nowrap">
-            Se koncertmenu
+            {t.concertMenu}
           </Link>
           <Link
             href="https://book.easytable.com/book/?id=1214a&lang=auto"
@@ -71,7 +75,7 @@ export default function Hero() {
             rel="noopener"
             className="btn-dark justify-center whitespace-nowrap"
           >
-            Book bord
+            {t.bookTable}
           </Link>
         </div>
       </div>

@@ -1,66 +1,67 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "./FadeIn";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/lib/translations";
 
-const cards = [
-  {
-    line1: "Brunch",
-    line2: "menu",
-    alt: "Brunch hos PULS Kitchen & Bar i Ørestad, København",
-    description: "",
-    image: "/images/brunch-dish.jpg",
-    href: "/menu?tab=brunch",
-  },
-  {
-    line1: "Frokost",
-    line2: "menu",
-    alt: "Frokostmenu hos PULS Kitchen & Bar i Ørestad, København",
-    description: "",
-    image: "/images/food.jpg",
-    href: "/menu?tab=frokost",
-  },
-  {
-    line1: "Aften",
-    line2: "menu",
-    alt: "Aftensmad og sæsonretter hos PULS Kitchen & Bar, Arne Jacobsens Allé 9",
-    description: "",
-    image: "/images/aften-dish.jpg",
-    href: "/menu?tab=aften",
-  },
-  {
-    line1: "Koncert",
-    line2: "menu",
-    alt: "Koncertmenu inden Royal Arena — PULS Kitchen & Bar, 5 minutters gang fra arenaen",
-    description: "Få min. gang fra Royal Arena",
-    image: "/images/royal-arena.jpg",
-    href: "/koncertmenu",
-  },
+const cardImages = [
+  { image: "/images/brunch-dish.jpg",  href: "/menu?tab=brunch"  },
+  { image: "/images/food.jpg",         href: "/menu?tab=frokost" },
+  { image: "/images/aften-dish.jpg",   href: "/menu?tab=aften"   },
+  { image: "/images/image.png", image2: "/images/royal-arena.jpg", href: "/koncertmenu" },
 ];
 
 export default function DishesSection() {
+  const { lang } = useLanguage();
+  const t = translations[lang].dishes;
+
   return (
     <section className="bg-sand py-8 md:py-12">
         <div className="container-max">
           <FadeIn>
             <div className="text-center mb-6">
               <h2 className="display-section text-5xl md:text-6xl lg:text-7xl text-obsidian">
-                Hvad vi{" "}
-                tilbyder
+                {t.heading}
               </h2>
             </div>
           </FadeIn>
 
           <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
-            {cards.map((c, i) => (
-              <FadeIn key={c.line1} delay={i * 0.08}>
-                <Link href={c.href} className="group block relative overflow-hidden rounded-2xl md:rounded-3xl" style={{ aspectRatio: "3/4" }}>
-                  <Image
-                    src={c.image}
-                    alt={c.alt}
-                    fill
-                    sizes="(min-width:768px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-[1.6s] group-hover:scale-105"
-                  />
+            {t.cards.map((c, i) => (
+              <FadeIn key={i} delay={i * 0.08}>
+                <Link href={cardImages[i].href} className="group block relative overflow-hidden rounded-2xl md:rounded-3xl" style={{ aspectRatio: "3/4" }}>
+                  {cardImages[i].image2 ? (
+                    <>
+                      <div className="absolute inset-x-0 top-0 h-[50%]">
+                        <Image
+                          src={cardImages[i].image}
+                          alt={`${c.line1} ${c.line2} — PULS Kitchen & Bar`}
+                          fill
+                          sizes="(min-width:768px) 25vw, 50vw"
+                          className="object-cover transition-transform duration-[1.6s] group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="absolute inset-x-0 top-[50%] bottom-0 border-t border-obsidian/40">
+                        <Image
+                          src={cardImages[i].image2}
+                          alt={`Koncertmenu — PULS Kitchen & Bar`}
+                          fill
+                          sizes="(min-width:768px) 25vw, 50vw"
+                          className="object-cover transition-transform duration-[1.6s] group-hover:scale-105"
+                        />
+                      </div>
+                    </>
+                  ) : (
+                    <Image
+                      src={cardImages[i].image}
+                      alt={`${c.line1} ${c.line2} — PULS Kitchen & Bar`}
+                      fill
+                      sizes="(min-width:768px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-[1.6s] group-hover:scale-105"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian/95 via-obsidian/50 to-obsidian/10" />
                   <div className="absolute bottom-0 inset-x-0 p-4 md:p-7">
                     <h3 className="display-section text-xl md:text-4xl text-ivory leading-[0.92]">
@@ -70,8 +71,13 @@ export default function DishesSection() {
                     <p className="mt-2 text-ivory/70 text-[11px] md:text-xs leading-snug line-clamp-1 md:line-clamp-none min-h-[1rem]">
                       {c.description}
                     </p>
+                    {(c as { description: string; note?: string }).note && (
+                      <p className="mt-1.5 text-ivory/45 text-[10px] leading-snug line-clamp-2 md:line-clamp-none">
+                        {(c as { description: string; note?: string }).note}
+                      </p>
+                    )}
                     <span className="mt-2 md:mt-3 inline-block text-[10px] tracking-[0.28em] uppercase font-semibold text-gold">
-                      Se mere
+                      {t.seeMore}
                     </span>
                   </div>
                 </Link>
@@ -81,7 +87,7 @@ export default function DishesSection() {
 
           <FadeIn delay={0.2}>
             <div className="mt-5 text-center">
-              <Link href="/menu" className="btn-dark">Se hele menuen →</Link>
+              <Link href="/menu" className="btn-dark">{t.viewFullMenu}</Link>
             </div>
           </FadeIn>
         </div>

@@ -1,52 +1,42 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
 import FadeIn from "./FadeIn";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/lib/translations";
 
 export default function BarSection() {
+  const { lang } = useLanguage();
+  const t = translations[lang].bar;
+  const [line1, line2] = t.heading.split("\n");
+
   return (
     <section className="bg-forest">
-      <div className="container-max py-10 md:py-14">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
-
-          {/* Billede — beskåret til højre side */}
-          <FadeIn>
-            <div className="relative aspect-[3/4] rounded-2xl md:rounded-3xl overflow-hidden max-w-xs mx-auto md:mx-0">
-              <Image
-                src="/images/drinks.jpg"
-                alt="PULS Bar — cocktails og drinks i Ørestad"
-                fill
-                sizes="(min-width:768px) 30vw, 100vw"
-                className="object-cover object-[68%_30%]"
-              />
-            </div>
-          </FadeIn>
-
-          {/* Tekst */}
-          <FadeIn delay={0.1}>
-            <p className="text-xs tracking-[0.28em] uppercase text-ivory/50 font-semibold mb-5">
-              PULS Bar
+      <div className="container-max py-12 md:py-16">
+        <FadeIn>
+          <div className="max-w-xl mx-auto text-center">
+            <p className="text-3xl md:text-4xl tracking-[0.28em] uppercase text-ivory/50 font-semibold mb-5">
+              {t.eyebrow}
             </p>
             <h2 className="display-section text-4xl md:text-5xl text-ivory leading-[0.95]">
-              Signature cocktails.<br />Klassiske drinks.
+              {line1}<br />{line2}
             </h2>
-            <p className="mt-6 text-ivory/70 text-base leading-relaxed max-w-sm">
-              Vores bar byder på håndlavede cocktails, et bredt udvalg af vine og kolde øl — nydt ved baren eller ved bordet.
+            <p className="mt-6 text-ivory/70 text-base leading-relaxed">
+              {t.p1}
             </p>
-            <p className="mt-4 text-ivory/70 text-base leading-relaxed max-w-sm">
-              Med få minutters gang til Royal Arena er PULS det naturlige stopover — kom tidligt og nyd stemningen inden showet.
+            <p className="mt-4 text-ivory/70 text-base leading-relaxed">
+              {t.p2}
             </p>
             <p className="mt-5 text-sm text-ivory/40">
-              Happy hour tors. kl. 17–20
+              {t.happyHour}
             </p>
-            <Link
-              href="/menu?tab=drinks"
-              className="mt-8 btn-sage-solid self-start inline-flex"
-            >
-              Se drikkekortet
-            </Link>
-          </FadeIn>
-
-        </div>
+            <div className="mt-8 flex justify-center">
+              <Link href="/menu?tab=drinks" className="btn-sage-solid inline-flex">
+                {t.cta}
+              </Link>
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

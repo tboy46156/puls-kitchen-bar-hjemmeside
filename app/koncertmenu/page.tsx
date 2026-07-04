@@ -74,7 +74,7 @@ export default function KoncertmenuPage() {
         <div className="relative z-10 flex flex-col items-center justify-end text-center min-h-screen pb-16 md:pb-24 px-[clamp(1.25rem,4vw,3rem)]">
           <FadeIn>
             <p className="font-sans text-xs tracking-[0.3em] uppercase text-ivory/70 mb-4">
-              Tæt på Royal Arena
+              Tæt på Royal Arena & Bella Centret
             </p>
           </FadeIn>
           <FadeIn delay={0.08}>
@@ -84,7 +84,7 @@ export default function KoncertmenuPage() {
           </FadeIn>
           <FadeIn delay={0.16}>
             <p className="mt-6 font-sans text-ivory/80 max-w-lg mx-auto leading-relaxed text-base md:text-lg">
-              Vi ligger få minutters gang fra Royal Arena. Kom og spis i ro, og start koncerten med høj PULS.
+              Vi ligger få minutters gang fra Royal Arena og 600 m fra Bella Centret. Kom og spis i ro, og start koncerten med høj PULS.
             </p>
           </FadeIn>
           <FadeIn delay={0.24}>
@@ -104,6 +104,11 @@ export default function KoncertmenuPage() {
       <section className="bg-ivory">
         <div className="container-max py-14 md:py-20">
           <FadeIn>
+            <div className="mb-6 px-5 py-4 border-l-4 border-gold bg-gold/8 rounded-sm">
+              <p className="font-bold text-sm text-obsidian leading-snug">Denne menu serveres kun ved udvalgte koncert- og konferencedage.</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.04}>
             <div className="mb-10">
               <p className="text-xs tracking-[0.3em] uppercase text-stone mb-2">Koncert- & Konferencemenu</p>
               <h2 className="display-section text-4xl md:text-5xl text-obsidian">Menukort</h2>

@@ -1,20 +1,20 @@
-import FadeIn from "./FadeIn";
+"use client";
 
-const hours = [
-  { day: "Man – Tors", time: "11.00 – 22.00", kitchen: "Køkken til 22.00" },
-  { day: "Fredag",     time: "11.00 – 24.00", kitchen: "Køkken til 22.00" },
-  { day: "Lørdag",     time: "10.00 – 24.00", kitchen: "Køkken til 22.00" },
-  { day: "Søndag",     time: "10.00 – 22.00", kitchen: "Køkken til 21.00" },
-];
+import FadeIn from "./FadeIn";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/lib/translations";
 
 export default function HoursSection() {
+  const { lang } = useLanguage();
+  const t = translations[lang].hours;
+
   return (
     <section id="hours" className="bg-sand text-obsidian">
       <div className="container-max py-8 md:py-12">
 
         <FadeIn>
           <div className="text-center mb-8 border-b border-obsidian/10 pb-6">
-            <p className="eyebrow justify-center !text-obsidian/60 [&::before]:hidden">Åbningstider & find os</p>
+            <p className="eyebrow justify-center !text-obsidian/60 [&::before]:hidden">{t.eyebrow}</p>
           </div>
         </FadeIn>
 
@@ -22,7 +22,7 @@ export default function HoursSection() {
 
           <FadeIn className="lg:col-span-7" delay={0.08}>
             <ul className="space-y-0">
-              {hours.map((h) => (
+              {t.days.map((h) => (
                 <li
                   key={h.day}
                   className="grid grid-cols-[1fr_auto] sm:grid-cols-[1fr_1fr_auto] items-center gap-x-6 gap-y-1 py-5 border-b border-obsidian/10 first:border-t first:border-obsidian/10"
@@ -44,7 +44,7 @@ export default function HoursSection() {
           <FadeIn className="lg:col-span-5" delay={0.15}>
             <div className="h-full flex flex-col justify-between">
               <div>
-                <p className="text-xs tracking-[0.22em] uppercase text-gold mb-6">Adresse</p>
+                <p className="text-xs tracking-[0.22em] uppercase text-gold mb-6">{t.address}</p>
                 <address className="not-italic">
                   <p className="font-sans font-bold text-3xl md:text-4xl text-obsidian leading-tight">
                     Arne Jacobsens Allé 9
@@ -57,14 +57,14 @@ export default function HoursSection() {
                     href="tel:+4532626030"
                     className="flex items-center gap-3 hover:text-gold transition-colors"
                   >
-                    <span className="text-xs tracking-[0.18em] uppercase text-stone w-12 shrink-0">Tlf.</span>
+                    <span className="text-xs tracking-[0.18em] uppercase text-stone w-12 shrink-0">{t.phone}</span>
                     <span className="text-obsidian font-semibold text-lg tracking-wide">+45 3262 6030</span>
                   </a>
                   <a
                     href="mailto:info@pulskitchen.dk"
                     className="flex items-center gap-3 text-obsidian/60 hover:text-gold transition-colors text-sm"
                   >
-                    <span className="text-xs tracking-[0.18em] uppercase text-stone w-12 shrink-0">Mail</span>
+                    <span className="text-xs tracking-[0.18em] uppercase text-stone w-12 shrink-0">{t.mail}</span>
                     info@pulskitchen.dk
                   </a>
                 </div>
