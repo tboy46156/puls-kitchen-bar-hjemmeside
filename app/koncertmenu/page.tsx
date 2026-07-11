@@ -17,7 +17,11 @@ const faqs = [
   },
   {
     q: "Hvad er gåafstanden til Royal Arena?",
-    a: "Fra PULS Kitchen & Bar til Royal Arena er der ca. 15 minutters gang — god tid til at fordøje maden inden showet starter.",
+    a: "Fra PULS Kitchen & Bar til Royal Arena er der 5–7 minutters gang — god tid til at fordøje maden inden showet starter.",
+  },
+  {
+    q: "Hvad er gåafstanden til Bella Centret?",
+    a: "Fra PULS til Bella Centret er der ca. 10–12 minutters gang.",
   },
   {
     q: "Er der vegetarmuligheder?",
@@ -37,7 +41,7 @@ const faqs = [
   },
   {
     q: "Er der parkering i nærheden?",
-    a: "Ja, der er parkeringsmuligheder i Ørestad tæt på restauranten. Vi anbefaler dog metroen — Ørestad Station er kun få minutters gang fra os.",
+    a: "Ja, der er en stor parkeringsplads på den anden side af gaden. Alternativt er Ørestad Metro Station kun 5 minutters gang fra restauranten.",
   },
 ];
 
