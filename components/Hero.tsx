@@ -29,7 +29,7 @@ export default function Hero() {
             muted
             loop
             playsInline
-            poster="/images/hero-1.jpeg"
+            poster="/images/gallery-1.jpeg"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/35" />
