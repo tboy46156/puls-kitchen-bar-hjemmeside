@@ -21,7 +21,7 @@ export default function Hero() {
     <div ref={ref} className="relative z-10">
 
       {/* Video — 85vh */}
-      <div className="relative h-[85vh] min-h-[580px] overflow-hidden">
+      <div className="relative h-[85vh] min-h-[580px] overflow-hidden bg-obsidian">
         <motion.div style={{ y }} className="absolute inset-0">
           <video
             src={VIDEO_SRC}
@@ -29,6 +29,7 @@ export default function Hero() {
             muted
             loop
             playsInline
+            poster="/images/hero-1.jpeg"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/35" />
