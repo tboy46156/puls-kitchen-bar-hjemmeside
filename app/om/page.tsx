@@ -1,10 +1,27 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 
-export const metadata = {
-  title: "Om Os — PULS Kitchen & Bar",
-  description: "Oplev følelsen af New Yorker råhed og pariser-elegance hos PULS Kitchen & Bar i Ørestad. Restaurant med fransk, italiensk og nordisk mad.",
+export const metadata: Metadata = {
+  title: { absolute: "Om Os — PULS Kitchen & Bar, Ørestad" },
+  description:
+    "Moderne gastrobar i Ørestad med New Yorker råhed og parisisk elegance. Brunch, frokost og aftensmad med plads til 140 indendørs og 150 på terrassen.",
+  alternates: { canonical: "https://www.pulskitchen.dk/om" },
+  openGraph: {
+    title: "Om Os — PULS Kitchen & Bar, Ørestad",
+    description:
+      "Moderne gastrobar i Ørestad. Brunch, frokost og aftensmad med plads til 290 gæster inde og på terrassen.",
+    url: "https://www.pulskitchen.dk/om",
+    images: [
+      {
+        url: "https://www.pulskitchen.dk/images/interior.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "PULS Kitchen & Bar — interiør",
+      },
+    ],
+  },
 };
 
 const facts = [

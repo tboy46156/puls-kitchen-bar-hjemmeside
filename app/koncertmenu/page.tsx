@@ -6,8 +6,24 @@ import FaqAccordion from "@/components/FaqAccordion";
 import KoncertMenuContent from "@/components/KoncertMenuContent";
 
 export const metadata: Metadata = {
-  title: "Koncertmenu — PULS Kitchen & Bar",
-  description: "Spis inden koncerten i Royal Arena — PULS Kitchen & Bar ligger få minutters gang fra arenaen. Se menuen og book dit bord.",
+  title: { absolute: "Restaurant tæt på Royal Arena — PULS Kitchen & Bar" },
+  description:
+    "Spis inden koncerten hos PULS Kitchen & Bar — 5–7 min fra Royal Arena og 600 m fra Bella Centret. Se menukort og book bord online. Åbent alle dage.",
+  alternates: { canonical: "https://www.pulskitchen.dk/koncertmenu" },
+  openGraph: {
+    title: "Restaurant tæt på Royal Arena — PULS Kitchen & Bar",
+    description:
+      "5–7 minutters gang fra Royal Arena og 600 m fra Bella Centret. Se menukort og book bord inden koncerten.",
+    url: "https://www.pulskitchen.dk/koncertmenu",
+    images: [
+      {
+        url: "https://www.pulskitchen.dk/images/royal-arena.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Royal Arena — PULS Kitchen & Bar ligger minutter fra arenaen",
+      },
+    ],
+  },
 };
 
 const faqs = [

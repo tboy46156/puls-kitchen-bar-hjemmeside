@@ -1,10 +1,27 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
-export const metadata = {
-  title: "Gavekort — PULS Kitchen & Bar",
-  description: "Giv oplevelsen som gave. Køb gavekort til PULS Kitchen & Bar i Ørestad — gyldig til brunch, frokost, aftensmad, drinks og vin.",
+export const metadata: Metadata = {
+  title: { absolute: "Gavekort til Restaurant — PULS Kitchen & Bar" },
+  description:
+    "Giv en god oplevelse som gave. Køb gavekort til PULS Kitchen & Bar i Ørestad — gyldig til brunch, frokost, aftensmad og drinks. Ingen udløbsdato.",
+  alternates: { canonical: "https://www.pulskitchen.dk/gavekort" },
+  openGraph: {
+    title: "Gavekort til Restaurant — PULS Kitchen & Bar",
+    description:
+      "Giv oplevelsen som gave. Køb gavekort til PULS Kitchen & Bar — gyldig til brunch, frokost, aftensmad og drinks.",
+    url: "https://www.pulskitchen.dk/gavekort",
+    images: [
+      {
+        url: "https://www.pulskitchen.dk/images/interior.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "PULS Kitchen & Bar — interiør",
+      },
+    ],
+  },
 };
 
 const features = [

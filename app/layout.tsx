@@ -99,7 +99,23 @@ const restaurantSchema = {
     "https://www.facebook.com/pulskitchenbar",
     "https://www.tripadvisor.dk/Restaurant_Review-g189541-d23380540-Reviews-Puls_Kitchen_Bar-Copenhagen_Zealand.html",
   ],
-  image: "https://www.pulskitchen.dk/images/interior.jpeg",
+  image: [
+    "https://www.pulskitchen.dk/images/interior.jpeg",
+    "https://www.pulskitchen.dk/images/food.jpg",
+  ],
+  hasMenu: "https://www.pulskitchen.dk/menu",
+  acceptsReservations: "True",
+  potentialAction: {
+    "@type": "ReserveAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://book.easytable.com/book/?id=1214a&lang=auto",
+    },
+    result: {
+      "@type": "Reservation",
+      name: "Bordreservation hos PULS Kitchen & Bar",
+    },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

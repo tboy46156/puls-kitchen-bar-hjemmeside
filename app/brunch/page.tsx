@@ -1,12 +1,28 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import FadeIn from "@/components/FadeIn";
 
-export const metadata = {
-  title: "Brunch — PULS Kitchen & Bar",
+export const metadata: Metadata = {
+  title: { absolute: "Brunch København — PULS Kitchen & Bar" },
   description:
-    "Byg-Selv-Brunch i hverdage og ad libitum-brunch i weekenden. Inkl. kaffe, te, juice og hjemmelavet lemonade.",
+    "Byg-Selv-Brunch i hverdagene og ad libitum-brunch i weekenden hos PULS i Ørestad. Kaffe, te, juice og hjemmelavet lemonade inkluderet. Book bord online.",
+  alternates: { canonical: "https://www.pulskitchen.dk/brunch" },
+  openGraph: {
+    title: "Brunch København — PULS Kitchen & Bar",
+    description:
+      "Byg-selv brunch i hverdagene og ad libitum-brunch i weekenden. Book bord hos PULS Kitchen & Bar i Ørestad.",
+    url: "https://www.pulskitchen.dk/brunch",
+    images: [
+      {
+        url: "https://www.pulskitchen.dk/images/brunch-dish.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Brunch hos PULS Kitchen & Bar i Ørestad",
+      },
+    ],
+  },
 };
 
 const items = [
