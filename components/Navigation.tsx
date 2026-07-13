@@ -16,18 +16,16 @@ function MobileLangToggle() {
     <div className="flex items-center gap-0.5">
       <button
         onClick={() => setLang("da")}
-        className={`text-[12px] font-semibold tracking-[0.16em] uppercase px-1.5 py-1 transition-colors ${
-          lang === "da" ? "text-obsidian" : "text-obsidian/35 hover:text-obsidian/60"
-        }`}
+        className={`text-[12px] font-semibold tracking-[0.16em] uppercase px-1.5 py-1 transition-colors ${lang === "da" ? "text-obsidian" : "text-obsidian/35 hover:text-obsidian/60"
+          }`}
       >
         DA
       </button>
       <span className="text-obsidian/20 text-[10px]">/</span>
       <button
         onClick={() => setLang("en")}
-        className={`text-[12px] font-semibold tracking-[0.16em] uppercase px-1.5 py-1 transition-colors ${
-          lang === "en" ? "text-obsidian" : "text-obsidian/35 hover:text-obsidian/60"
-        }`}
+        className={`text-[12px] font-semibold tracking-[0.16em] uppercase px-1.5 py-1 transition-colors ${lang === "en" ? "text-obsidian" : "text-obsidian/35 hover:text-obsidian/60"
+          }`}
       >
         EN
       </button>
@@ -41,18 +39,16 @@ function LanguageToggle({ mobile = false }: { mobile?: boolean }) {
     <div className={`flex items-center gap-1 ${mobile ? "mt-10 border-t border-border-col pt-6" : ""}`}>
       <button
         onClick={() => setLang("da")}
-        className={`text-[13px] font-semibold tracking-[0.18em] uppercase px-2 py-1 transition-colors ${
-          lang === "da" ? "text-obsidian" : "text-obsidian/40 hover:text-obsidian/70"
-        }`}
+        className={`text-[13px] font-semibold tracking-[0.18em] uppercase px-2 py-1 transition-colors ${lang === "da" ? "text-obsidian" : "text-obsidian/40 hover:text-obsidian/70"
+          }`}
       >
         DA
       </button>
       <span className="text-obsidian/20 text-sm">|</span>
       <button
         onClick={() => setLang("en")}
-        className={`text-[13px] font-semibold tracking-[0.18em] uppercase px-2 py-1 transition-colors ${
-          lang === "en" ? "text-obsidian" : "text-obsidian/40 hover:text-obsidian/70"
-        }`}
+        className={`text-[13px] font-semibold tracking-[0.18em] uppercase px-2 py-1 transition-colors ${lang === "en" ? "text-obsidian" : "text-obsidian/40 hover:text-obsidian/70"
+          }`}
       >
         EN
       </button>
@@ -68,11 +64,11 @@ export default function Navigation() {
   const [atTop, setAtTop] = React.useState(true);
 
   const navLinks = [
-    { label: t.menu,         href: "/menu" },
-    { label: t.concertMenu,  href: "/koncertmenu" },
+    { label: t.menu, href: "/menu" },
+    { label: t.concertMenu, href: "/koncertmenu" },
     { label: t.privateEvents, href: "/selskaber" },
-    { label: t.giftCards,    href: "/gavekort" },
-    { label: t.contact,      href: "/kontakt" },
+    { label: t.giftCards, href: "/gavekort" },
+    { label: t.contact, href: "/kontakt" },
   ];
 
   React.useEffect(() => {
@@ -97,7 +93,7 @@ export default function Navigation() {
         className="fixed inset-x-0 z-50 hidden lg:block"
         animate={scrolled
           ? { paddingTop: 12, paddingLeft: lang === "en" ? 60 : 120, paddingRight: lang === "en" ? 60 : 120, top: 0 }
-          : { paddingTop: 0,  paddingLeft: 0,   paddingRight: 0,   top: atTop ? 40 : 0 }}
+          : { paddingTop: 0, paddingLeft: 0, paddingRight: 0, top: atTop ? 40 : 0 }}
         transition={navTransition}
       >
         <motion.div
@@ -133,9 +129,9 @@ export default function Navigation() {
               <Image
                 src="/images/image copy.png"
                 alt="PULS Kitchen & Bar"
-                width={80}
-                height={49}
-                className="h-12 w-auto object-contain"
+                width={140}
+                height={60}
+                className="h-[85px] w-auto object-contain brightness-0"
                 unoptimized
                 priority
               />
@@ -163,7 +159,7 @@ export default function Navigation() {
         className="fixed top-0 inset-x-0 z-50 lg:hidden"
         animate={scrolled
           ? { paddingTop: 10, paddingLeft: 10, paddingRight: 10 }
-          : { paddingTop: 0,  paddingLeft: 0,  paddingRight: 0  }}
+          : { paddingTop: 0, paddingLeft: 0, paddingRight: 0 }}
         transition={navTransition}
       >
         <motion.div

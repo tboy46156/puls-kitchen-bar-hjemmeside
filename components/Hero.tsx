@@ -43,43 +43,43 @@ export default function Hero() {
         transition={{ duration: 0.9, ease: [0.2, 0.65, 0.2, 1], delay: 0.2 }}
         className="absolute inset-x-0 -bottom-20 md:-bottom-24 flex justify-center px-4"
       >
-      <div className="w-full max-w-[500px] bg-[#F5F7F2]/95 backdrop-blur-md rounded-2xl shadow-2xl px-6 py-5 text-center">
-        <h1 className="flex justify-center">
-          <Image
-            src="/images/image copy.png"
-            alt="PULS Kitchen & Bar"
-            width={200}
-            height={123}
-            className="w-[120px] md:w-[150px] h-auto object-contain"
-            unoptimized
-            priority
-          />
-        </h1>
+        <div className="w-full max-w-[500px] bg-[#F5F7F2]/95 backdrop-blur-md rounded-2xl shadow-2xl px-6 py-5 text-center">
+          <h1 className="flex justify-center">
+            <Image
+              src="/images/image copy.png"
+              alt="PULS Kitchen & Bar"
+              width={200}
+              height={123}
+              className="w-[160px] md:w-[170px] h-auto object-contain brightness-0"
+              unoptimized
+              priority
+            />
+          </h1>
 
-        <p
-          className="mt-3 font-sans text-forest/65 max-w-xs mx-auto leading-relaxed"
-          style={{ fontSize: "clamp(0.8rem,1.1vw,0.875rem)" }}
-        >
-          {t.tagline}
-        </p>
-
-        <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-2">
-          <Link href="/menu" className="btn-sage-solid justify-center whitespace-nowrap">
-            {t.viewMenu}
-          </Link>
-          <Link href="/koncertmenu" className="btn-sage-solid justify-center whitespace-nowrap">
-            {t.concertMenu}
-          </Link>
-          <Link
-            href="https://book.easytable.com/book/?id=1214a&lang=auto"
-            target="_blank"
-            rel="noopener"
-            className="btn-dark justify-center whitespace-nowrap"
+          <p
+            className="mt-3 font-sans text-forest/65 max-w-xs mx-auto leading-relaxed"
+            style={{ fontSize: "clamp(0.8rem,1.1vw,0.875rem)" }}
           >
-            {t.bookTable}
-          </Link>
+            {t.tagline}
+          </p>
+
+          <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-2">
+            <Link href="/menu" className="btn-sage-solid justify-center whitespace-nowrap">
+              {t.viewMenu}
+            </Link>
+            <Link href="/koncertmenu" className="btn-sage-solid justify-center whitespace-nowrap">
+              {t.concertMenu}
+            </Link>
+            <Link
+              href="https://book.easytable.com/book/?id=1214a&lang=auto"
+              target="_blank"
+              rel="noopener"
+              className="btn-dark justify-center whitespace-nowrap"
+            >
+              {t.bookTable}
+            </Link>
+          </div>
         </div>
-      </div>
       </motion.div>
 
     </div>
