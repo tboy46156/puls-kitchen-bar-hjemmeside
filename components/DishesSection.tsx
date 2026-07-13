@@ -10,7 +10,7 @@ const cardImages = [
   { image: "/images/brunch-dish.jpg",  href: "/menu?tab=brunch"  },
   { image: "/images/food.jpg",         href: "/menu?tab=frokost" },
   { image: "/images/aften-dish.jpg",   href: "/menu?tab=aften"   },
-  { image: "/images/image.png", image2: "/images/royal-arena.jpg", href: "/koncertmenu" },
+  { image: "/images/royal-arena.jpg", image2: "/images/image.png", href: "/koncertmenu" },
 ];
 
 export default function DishesSection() {

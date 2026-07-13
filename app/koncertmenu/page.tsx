@@ -104,7 +104,7 @@ export default function KoncertmenuPage() {
           </FadeIn>
           <FadeIn delay={0.16}>
             <p className="mt-6 font-sans text-ivory/80 max-w-lg mx-auto leading-relaxed text-base md:text-lg">
-              Vi ligger få minutters gang fra Royal Arena og 600 m fra Bella Centret. Kom og spis i ro, og start koncerten med høj PULS.
+              Vi ligger 500 m fra Royal Arena og 600 m fra Bella Centret. Kom og spis i ro, og start koncerten med høj PULS.
             </p>
           </FadeIn>
           <FadeIn delay={0.24}>
