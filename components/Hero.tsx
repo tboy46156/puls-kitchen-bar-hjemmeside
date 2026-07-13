@@ -46,7 +46,7 @@ export default function Hero() {
       <div className="w-full max-w-[500px] bg-[#F5F7F2]/95 backdrop-blur-md rounded-2xl shadow-2xl px-6 py-5 text-center">
         <h1 className="flex justify-center">
           <Image
-            src="/images/PULS_logo.svg"
+            src="/images/image copy.png"
             alt="PULS Kitchen & Bar"
             width={200}
             height={123}
