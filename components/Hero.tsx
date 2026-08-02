@@ -46,11 +46,11 @@ export default function Hero() {
         <div className="w-full max-w-[500px] bg-[#F5F7F2]/95 backdrop-blur-md rounded-2xl shadow-2xl px-6 py-5 text-center">
           <h1 className="flex justify-center">
             <Image
-              src="/images/image copy.png"
+              src="/images/PULS_logo.svg"
               alt="PULS Kitchen & Bar"
               width={200}
               height={123}
-              className="w-[160px] md:w-[170px] h-auto object-contain brightness-0"
+              className="w-[120px] md:w-[150px] h-auto object-contain"
               unoptimized
               priority
             />

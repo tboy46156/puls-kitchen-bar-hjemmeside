@@ -127,7 +127,7 @@ export default function Navigation() {
             {/* Center — Logo */}
             <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex-shrink-0">
               <Image
-                src="/images/image copy.png"
+                src="/images/PULS_logo_nav.svg"
                 alt="PULS Kitchen & Bar"
                 width={140}
                 height={60}
@@ -178,7 +178,7 @@ export default function Navigation() {
           <div className="px-4 flex items-center justify-between h-[64px]">
             <Link href="/">
               <Image
-                src="/images/image copy.png"
+                src="/images/PULS_logo_nav.svg"
                 alt="PULS Kitchen & Bar"
                 width={64}
                 height={39}
