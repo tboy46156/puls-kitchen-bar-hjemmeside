@@ -7,8 +7,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/lib/translations";
 
 const lokalerImages = [
-  "/images/selskaber-1.jpg",
   "/images/selskaber-2.jpg",
+  "/images/selskaber-1.jpg",
   "/images/selskaber.jpg",
 ];
 
