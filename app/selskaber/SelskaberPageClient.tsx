@@ -7,8 +7,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/lib/translations";
 
 const lokalerImages = [
-  "/images/selskaber.jpg",
-  "/images/selskaber.jpg",
+  "/images/selskaber-1.jpg",
+  "/images/selskaber-2.jpg",
   "/images/selskaber.jpg",
 ];
 
@@ -63,8 +63,9 @@ export default function SelskaberPageClient() {
                     alt={`${l.navn} — PULS Kitchen & Bar`}
                     fill
                     sizes="(min-width:768px) 33vw, 100vw"
-                    className="object-cover"
+                    className="object-cover brightness-[0.88] contrast-[1.08] saturate-[1.05]"
                   />
+                  <div className="absolute inset-0 bg-obsidian/15" />
                 </div>
                 <div className="p-8 md:p-10 flex flex-col flex-1">
                   <p className="text-xs tracking-[0.28em] uppercase text-stone font-semibold mb-3">{l.kapacitet}</p>
