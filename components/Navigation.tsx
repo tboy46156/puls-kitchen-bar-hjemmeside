@@ -131,7 +131,7 @@ export default function Navigation() {
                 alt="PULS Kitchen & Bar"
                 width={140}
                 height={60}
-                className="h-[85px] w-auto object-contain brightness-0"
+                className="h-[64px] w-auto object-contain brightness-0"
                 unoptimized
                 priority
               />

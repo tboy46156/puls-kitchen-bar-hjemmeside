@@ -33,7 +33,7 @@ export default function Footer() {
     <footer className="bg-forest text-ivory border-t border-white/10">
       <div className="container-max py-14 md:py-16">
 
-        <div className="grid md:grid-cols-3 gap-10 md:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
 
           {/* Col 1 — Info */}
           <div>
@@ -72,7 +72,29 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 3 — Follow us */}
+          {/* Col 3 — Nyttige links */}
+          <div>
+            <p className="text-xs tracking-[0.24em] uppercase text-ivory/70 font-semibold mb-6">Nyttige links</p>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <a href="https://www.fields.dk" target="_blank" rel="noopener" className="text-ivory/80 hover:text-ivory transition-colors">
+                  Fields Shopping Center ↗
+                </a>
+              </li>
+              <li>
+                <a href="https://www.cabinn.com/hotel/cabinn-metro-hotel/" target="_blank" rel="noopener" className="text-ivory/80 hover:text-ivory transition-colors">
+                  Cabinn Metro Hotel ↗
+                </a>
+              </li>
+              <li>
+                <a href="https://www.bellacenter.dk" target="_blank" rel="noopener" className="text-ivory/80 hover:text-ivory transition-colors">
+                  Bella Center ↗
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 4 — Follow us */}
           <div>
             <p className="text-xs tracking-[0.24em] uppercase text-ivory/70 font-semibold mb-6">{t.followUs}</p>
 
