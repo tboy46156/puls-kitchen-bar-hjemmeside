@@ -63,9 +63,9 @@ export default function SelskaberPageClient() {
                     alt={`${l.navn} — PULS Kitchen & Bar`}
                     fill
                     sizes="(min-width:768px) 33vw, 100vw"
-                    className="object-cover brightness-[0.88] contrast-[1.08] saturate-[1.05]"
+                    className="object-cover brightness-[0.95] contrast-[1.15] saturate-[1.07]"
                   />
-                  <div className="absolute inset-0 bg-obsidian/15" />
+                  <div className="absolute inset-0 bg-obsidian/10" />
                 </div>
                 <div className="p-8 md:p-10 flex flex-col flex-1">
                   <p className="text-xs tracking-[0.28em] uppercase text-stone font-semibold mb-3">{l.kapacitet}</p>
