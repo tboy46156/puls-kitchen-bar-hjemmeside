@@ -16,8 +16,8 @@ export const translations = {
     },
     hero: {
       tagline: "New Yorker Rawness with Parisian elegance. Midt i Ørestad — få minutter fra Royal Arena.",
-      viewMenu: "Se menukort",
-      concertMenu: "Se koncertmenu",
+      viewMenu: "Menu",
+      takeaway: "Take Away",
       bookTable: "Reservation",
     },
     about: {
@@ -209,8 +209,8 @@ export const translations = {
     },
     hero: {
       tagline: "New Yorker Rawness with Parisian elegance. In the heart of Ørestad — minutes from Royal Arena.",
-      viewMenu: "View menu",
-      concertMenu: "Concert menu",
+      viewMenu: "Menu",
+      takeaway: "Take Away",
       bookTable: "Reservation",
     },
     about: {

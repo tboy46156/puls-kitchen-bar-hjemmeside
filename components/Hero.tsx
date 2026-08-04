@@ -67,8 +67,13 @@ export default function Hero() {
             <Link href="/menu" className="btn-sage-solid justify-center whitespace-nowrap">
               {t.viewMenu}
             </Link>
-            <Link href="/koncertmenu" className="btn-sage-solid justify-center whitespace-nowrap">
-              {t.concertMenu}
+            <Link
+              href="https://wolt.com/da/dnk/copenhagen/restaurant/puls-kitchen-bar"
+              target="_blank"
+              rel="noopener"
+              className="btn-sage-solid justify-center whitespace-nowrap"
+            >
+              {t.takeaway}
             </Link>
             <Link
               href="https://book.easytable.com/book/?id=1214a&lang=auto"
