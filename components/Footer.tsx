@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/lib/translations";
+import { openCookieSettings } from "@/lib/consent";
 
 const navLinks = [
   { da: "Menu",         en: "Menu",           href: "/menu" },
@@ -165,10 +166,7 @@ export default function Footer() {
             </Link>
             <span className="text-ivory/20">·</span>
             <button
-              onClick={() => {
-                const w = window as Window & { Cookiebot?: { renew: () => void } };
-                w.Cookiebot?.renew();
-              }}
+              onClick={openCookieSettings}
               className="hover:text-ivory transition-colors cursor-pointer"
             >
               {t.cookies}

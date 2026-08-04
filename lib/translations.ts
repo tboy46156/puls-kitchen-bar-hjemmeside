@@ -14,6 +14,27 @@ export const translations = {
     topbar: {
       hours: "Åbningstider",
     },
+    cookieBanner: {
+      title: "Vi bruger cookies",
+      body: "Nogle cookies er nødvendige for at siden virker. Andre hjælper os med at forstå, hvordan siden bruges. Du bestemmer selv.",
+      privacyLink: "Læs mere",
+      necessary: {
+        title: "Nødvendige",
+        body: "Får siden til at fungere. Kan ikke fravælges.",
+      },
+      statistics: {
+        title: "Statistik",
+        body: "Hjælper os med at se, hvordan siden bliver brugt.",
+      },
+      marketing: {
+        title: "Marketing",
+        body: "Bruges til at vise dig relevante annoncer.",
+      },
+      acceptAll: "Accepter alle",
+      declineAll: "Kun nødvendige",
+      customise: "Tilpas indstillinger",
+      saveChoice: "Gem mit valg",
+    },
     hero: {
       tagline: "New Yorker Rawness with Parisian elegance. Midt i Ørestad — få minutter fra Royal Arena.",
       viewMenu: "Menu",
@@ -206,6 +227,27 @@ export const translations = {
     },
     topbar: {
       hours: "Opening hours",
+    },
+    cookieBanner: {
+      title: "We use cookies",
+      body: "Some cookies are needed for the site to work. Others help us understand how it is used. The choice is yours.",
+      privacyLink: "Read more",
+      necessary: {
+        title: "Necessary",
+        body: "Makes the site work. Cannot be turned off.",
+      },
+      statistics: {
+        title: "Statistics",
+        body: "Helps us see how the site is being used.",
+      },
+      marketing: {
+        title: "Marketing",
+        body: "Used to show you relevant ads.",
+      },
+      acceptAll: "Accept all",
+      declineAll: "Necessary only",
+      customise: "Customise settings",
+      saveChoice: "Save my choice",
     },
     hero: {
       tagline: "New Yorker Rawness with Parisian elegance. In the heart of Ørestad — minutes from Royal Arena.",
